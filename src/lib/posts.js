@@ -22,6 +22,7 @@ export function getSortedPostsData() {
 
     return {
       id,
+      tags: matterResult.data.tags || [],
       ...matterResult.data
     }
   })
@@ -61,6 +62,7 @@ export function getPostData(id) {
   // Combine the data with the id
   return {
     id,
+    tags: matterResult.data.tags || [],
     ...matterResult.data
   }
 }
@@ -70,6 +72,7 @@ export function getPosts() {
   return allPostsData.map((post) => ({
     slug: post.id,
     title: post.title,
-    date: post.date
+    date: post.date,
+    tags: post.tags
   }))
 }
