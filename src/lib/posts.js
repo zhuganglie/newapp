@@ -15,7 +15,7 @@ export async function getPosts() {
 
       return {
         slug,
-        title: frontmatter.title,
+        title: frontmatter?.title,
         content,
         ...frontmatter,
       }

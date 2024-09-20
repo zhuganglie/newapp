@@ -10,7 +10,7 @@ export default async function HomePage() {
       <ul>
         {posts.map((post) => (
           <li key={post.slug}>
-            <Link href={`/posts/${post.slug}`}>{post.title}</Link>
+            <Link href={`/posts/${post.slug}`}>{post.title ?? 'Untitled'}</Link>
           </li>
         ))}
       </ul>

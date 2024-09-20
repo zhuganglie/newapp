@@ -11,7 +11,7 @@ export default async function PostPage({ params }) {
 
   return (
     <div>
-      <h1>{post.title}</h1>
+      <h1>{post.title ?? 'Untitled'}</h1>
       <p>{post.content}</p>
     </div>
   )
