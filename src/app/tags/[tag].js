@@ -2,11 +2,27 @@ import { getPostsByTag } from '@/lib/posts'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 
-export default async function TagPage() {
+export default function TagPage() {
   const router = useRouter()
   const { tag } = router.query
 
-  const posts = await getPostsByTag(tag)
+  const [posts, setPosts] = React.useState([]);
+  const [loading, setLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    const fetchPosts = async () => {
+      if (tag) {
+        const fetchedPosts = await getPostsByTag(tag);
+        setPosts(fetchedPosts);
+      }
+      setLoading(false);
+    };
+    fetchPosts();
+  }, [tag]);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div>
