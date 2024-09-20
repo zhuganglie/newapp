@@ -53,7 +53,7 @@ export function getAllPostIds() {
 }
 
 export function getPostData(id) {
-  const fullPath = path.join(postsDirectory, `${id}.md`)
+  const fullPath = path.join(postsDirectory, `${id}.md`.replace(/\.md\.md$/, '.md'))
   const fileContents = fs.readFileSync(fullPath, 'utf8')
 
   // Use gray-matter to parse the post metadata
