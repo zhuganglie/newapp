@@ -14,6 +14,17 @@ export default async function HomePage() {
             <Link href={`/posts/${post.slug}`}>
               {post.title ?? 'Untitled'}
             </Link>
+            <div>
+              {post.tags && post.tags.length > 0 && (
+                <span>
+                  Tags: {post.tags.map(tag => (
+                    <Link key={tag} href={`/tags/${tag}`} style={{ marginLeft: '5px' }}>
+                      {tag}
+                    </Link>
+                  ))}
+                </span>
+              )}
+            </div>
           </li>
         ))}
       </ul>
