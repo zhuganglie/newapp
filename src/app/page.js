@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { getPosts } from '@/lib/posts'
+import ReactMarkdown from 'react-markdown'
 
 export default async function HomePage() {
   const posts = await getPosts()
@@ -10,7 +11,9 @@ export default async function HomePage() {
       <ul>
         {posts.map((post) => (
           <li key={post.slug}>
-            <Link href={`/posts/${post.slug}`}>{post.title ?? 'Untitled'}</Link>
+            <Link href={`/posts/${post.slug}`}>
+              <ReactMarkdown>{post.title ?? 'Untitled'}</ReactMarkdown>
+            </Link>
           </li>
         ))}
       </ul>
