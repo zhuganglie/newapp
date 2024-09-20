@@ -3,11 +3,12 @@ import Link from 'next/link'
 
 export default async function TagPage({ params }) {
   const { slug } = params;
-  const posts = await getPostsByTag(slug);
+  const decodedSlug = decodeURIComponent(slug); // Decode the slug
+  const posts = await getPostsByTag(decodedSlug);
 
   return (
     <div>
-      <h1>Posts tagged with "{slug}"</h1>
+      <h1>Posts tagged with "{decodedSlug}"</h1>
       <ul>
         {posts.length > 0 ? (
           posts.map(post => (
