@@ -22,6 +22,8 @@ export async function getPosts() {
       }
     })
   )
+}
+
 export async function getUniqueTags() {
   const posts = await getPosts()
   const allTags = posts.reduce((acc, post) => acc.concat(post.tags), [])
