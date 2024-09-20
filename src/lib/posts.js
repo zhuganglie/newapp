@@ -35,6 +35,11 @@ export async function getUniqueTags() {
   return tagCount
 }
 
+export async function getPostsByTag(tag) {
+  const posts = await getPosts()
+  return posts.filter((post) => post.tags.includes(tag))
+}
+
 export async function getPostBySlug(slug) {
   const postsDirectory = path.join(process.cwd(), 'src/posts')
   const fullPath = path.join(postsDirectory, `${slug}.md`)
