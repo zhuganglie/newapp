@@ -12,13 +12,8 @@ export default async function HomePage() {
         {posts.map((post) => (
           <li key={post.slug}>
             <Link href={`/posts/${post.slug}`}>
-              <ReactMarkdown>{post.title ?? 'Untitled'}</ReactMarkdown>
+              {post.title ?? 'Untitled'}
             </Link>
-            <ul>
-              {(post.tags || []).map((tag) => (
-                <li key={tag}>{tag}</li>
-              ))}
-            </ul>
           </li>
         ))}
       </ul>
