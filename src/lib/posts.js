@@ -22,6 +22,15 @@ export async function getPosts() {
       }
     })
   )
+export async function getUniqueTags() {
+  const posts = await getPosts()
+  const allTags = posts.reduce((acc, post) => acc.concat(post.tags), [])
+  const uniqueTags = new Set(allTags)
+  const tagCount = {}
+  uniqueTags.forEach((tag) => {
+    tagCount[tag] = allTags.filter((t) => t === tag).length
+  })
+  return tagCount
 }
 
 export async function getPostBySlug(slug) {
