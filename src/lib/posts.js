@@ -11,13 +11,13 @@ export async function getPosts() {
       const slug = filename.replace('.md', '')
       const fullPath = path.join(postsDirectory, filename)
       const fileContents = await fs.readFile(fullPath, 'utf8')
-      const {  frontmatter, content } = matter(fileContents)
+      const { data, content } = matter(fileContents)
 
       return {
         slug,
-        title: frontmatter?.title,
+        title: data?.title,
         content,
-        ...frontmatter,
+        ...data,
       }
     })
   )
