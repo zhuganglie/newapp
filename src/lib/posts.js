@@ -17,6 +17,7 @@ export async function getPosts() {
         slug,
         title: data?.title,
         content,
+        tags: data?.tags || [], // Add tags field
         ...data,
       }
     })
@@ -33,6 +34,7 @@ export async function getPostBySlug(slug) {
     slug,
     title: data?.title,
     content,
+    tags: data?.tags || [], // Add tags field
     ...data,
   }
 }

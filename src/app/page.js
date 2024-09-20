@@ -14,6 +14,11 @@ export default async function HomePage() {
             <Link href={`/posts/${post.slug}`}>
               <ReactMarkdown>{post.title ?? 'Untitled'}</ReactMarkdown>
             </Link>
+            <ul>
+              {(post.tags || []).map((tag) => (
+                <li key={tag}>{tag}</li>
+              ))}
+            </ul>
           </li>
         ))}
       </ul>

@@ -13,6 +13,11 @@ export default async function PostPage({ params }) {
     <div>
       <h1>{post.title ?? 'Untitled'}</h1>
       <ReactMarkdown>{post.content}</ReactMarkdown>
+      <ul>
+        {(post.tags || []).map((tag) => (
+          <li key={tag}>{tag}</li>
+        ))}
+      </ul>
     </div>
   )
 }
