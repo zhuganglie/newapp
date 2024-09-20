@@ -1,12 +1,20 @@
 import { getUniqueTags, getPostsByTag } from '@/lib/posts'
 import Link from 'next/link'
 
-export default function TagsPage({ tags }) {
+export default async function TagsPage() {
+  const tags = await getUniqueTags();
+  const tagCounts = await Promise.all(
+    tags.map(async (tag) => {
+      const posts = await getPostsByTag(tag);
+      return { tag, count: posts.length };
+    })
+  );
+
   return (
     <div>
       <h1>Tags</h1>
       <ul>
-        {tags.map(({ tag, count }) => (
+        {tagCounts.map(({ tag, count }) => (
           <li key={tag}>
             <Link href={`/tags/${tag}`}>
               {tag} ({count})
@@ -19,18 +27,7 @@ export default function TagsPage({ tags }) {
   )
 }
 
-export async function getStaticProps() {
+export async function generateStaticParams() {
   const tags = await getUniqueTags();
-  const tagCounts = await Promise.all(
-    tags.map(async (tag) => {
-      const posts = await getPostsByTag(tag);
-      return { tag, count: posts.length };
-    })
-  );
-
-  return {
-    props: {
-      tags: tagCounts,
-    },
-  }
+  return tags.map(tag => ({ tag }));
 }
