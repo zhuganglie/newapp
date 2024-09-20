@@ -12,7 +12,7 @@ export default async function TagPage({ params }) {
         {posts.map((post) => (
           <li key={post.slug}>
             <Link href={`/posts/${post.slug}`}>
-              <ReactMarkdown>{post.title ?? 'Untitled'}</ReactMarkdown>
+              {post.title ?? 'Untitled'}
             </Link>
           </li>
         ))}
