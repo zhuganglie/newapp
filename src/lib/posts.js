@@ -1,56 +1,31 @@
-import matter from 'gray-matter'
-import { promises as fs } from 'fs'
-import path from 'path'
+const posts = [
+  {
+    slug: 'post-1',
+    title: 'Post 1',
+    tags: ['javascript', 'react']
+  },
+  {
+    slug: 'post-2',
+    title: 'Post 2',
+    tags: ['python']
+  },
+  {
+    slug: 'post-3',
+    title: 'Post 3',
+    tags: ['html', 'css']
+  }
+];
 
 export async function getPosts() {
-  const postsDirectory = path.join(process.cwd(), 'src/posts')
-  const filenames = await fs.readdir(postsDirectory)
-
-  return Promise.all(
-    filenames.map(async (filename) => {
-      const slug = filename.replace('.md', '')
-      const fullPath = path.join(postsDirectory, filename)
-      const fileContents = await fs.readFile(fullPath, 'utf8')
-      const { data, content } = matter(fileContents)
-
-      return {
-        slug,
-        title: data?.title,
-        content,
-        tags: data?.tags || [], // Add tags field
-        ...data,
-      }
-    })
-  )
+  // Simulate fetching posts from a database or API
+  return posts;
 }
 
 export async function getUniqueTags() {
-  const posts = await getPosts()
-  const allTags = posts.reduce((acc, post) => acc.concat(post.tags), [])
-  const uniqueTags = new Set(allTags)
-  const tagCount = {}
-  uniqueTags.forEach((tag) => {
-    tagCount[tag] = allTags.filter((t) => t === tag).length
-  })
-  return tagCount
+  const allTags = posts.flatMap(post => post.tags);
+  return [...new Set(allTags)];
 }
 
 export async function getPostsByTag(tag) {
-  const posts = await getPosts()
-  return posts.filter((post) => post.tags.includes(tag))
-}
-
-export async function getPostBySlug(slug) {
-  const postsDirectory = path.join(process.cwd(), 'src/posts')
-  const fullPath = path.join(postsDirectory, `${slug}.md`)
-  const fileContents = await fs.readFile(fullPath, 'utf8')
-  const { data, content } = matter(fileContents)
-
-  return {
-    slug,
-    title: data?.title,
-    content,
-    tags: data?.tags || [], // Add tags field
-    ...data,
-  }
+  return posts.filter(post => post.tags.includes(tag));
 }
