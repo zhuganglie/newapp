@@ -1,43 +1,36 @@
-import Link from 'next/link'
 import { getUniqueTags, getPostsByTag } from '@/lib/posts'
+import Link from 'next/link'
 
-export default async function TagsPage() {
-  const tags = await getUniqueTags()
-
+export default function TagsPage({ tags }) {
   return (
     <div>
       <h1>Tags</h1>
       <ul>
-        {Object.entries(tags).map(([tag, count]) => (
+        {tags.map(({ tag, count }) => (
           <li key={tag}>
-            <Link href={`/tags/${tag}`} onClick={() => showPosts(tag)}>
+            <Link href={`/tags/${tag}`}>
               {tag} ({count})
             </Link>
           </li>
         ))}
       </ul>
-      <div id="postContainer"></div>
+      <Link href="/">Back to Home</Link>
     </div>
   )
 }
 
-async function showPosts(tag) {
-  const posts = await getPostsByTag(tag);
-  const postContainer = document.getElementById('postContainer');
-  postContainer.innerHTML = ''; // Clear previous posts
+export async function getStaticProps() {
+  const tags = await getUniqueTags();
+  const tagCounts = await Promise.all(
+    tags.map(async (tag) => {
+      const posts = await getPostsByTag(tag);
+      return { tag, count: posts.length };
+    })
+  );
 
-  if (posts.length > 0) {
-    const postList = document.createElement('ul');
-    posts.forEach(post => {
-      const listItem = document.createElement('li');
-      const link = document.createElement('a');
-      link.href = `/posts/${post.id}`; // Assuming post has an id
-      link.textContent = post.title; // Assuming post has a title
-      listItem.appendChild(link);
-      postList.appendChild(listItem);
-    });
-    postContainer.appendChild(postList);
-  } else {
-    postContainer.innerHTML = '<p>No posts found for this tag.</p>';
+  return {
+    props: {
+      tags: tagCounts,
+    },
   }
 }
