@@ -23,6 +23,16 @@ export async function getPosts() {
   )
 }
 
-export function getPostBySlug(posts, slug) {
-  return posts.find((post) => post.slug === slug)
+export async function getPostBySlug(slug) {
+  const postsDirectory = path.join(process.cwd(), 'src/posts')
+  const fullPath = path.join(postsDirectory, `${slug}.md`)
+  const fileContents = await fs.readFile(fullPath, 'utf8')
+  const { data, content } = matter(fileContents)
+
+  return {
+    slug,
+    title: data?.title,
+    content,
+    ...data,
+  }
 }
