@@ -3,7 +3,7 @@ import { promises as fs } from 'fs'
 import path from 'path'
 
 export async function getPosts() {
-  const postsDirectory = path.join(process.cwd(), '/src/posts')
+  const postsDirectory = path.join(process.cwd(), 'src/posts')
   const filenames = await fs.readdir(postsDirectory)
 
   return Promise.all(
