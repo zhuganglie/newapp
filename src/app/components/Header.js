@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from 'next/navigation';
 import { useRouter } from 'next/router';
 
 export default function Header() {
