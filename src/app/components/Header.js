@@ -1,8 +1,7 @@
+'use client'
 import Link from 'next/navigation';
-import { useRouter } from 'next/router';
 
 export default function Header() {
-  const router = useRouter();
   return (
     <header className="bg-gray-900">
       <nav className="container mx-auto px-4 py-6 flex items-center justify-between">
