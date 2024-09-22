@@ -25,6 +25,11 @@ export default function Header() {
           </Link>
           </li>
           <li>
+            <Link href="/blog" className={`text-white hover:text-gray-300 ${pathname === '/blog' ? 'font-bold' : 'font-medium'}`}>
+              Blog
+            </Link>
+          </li>
+          <li>
             <Link href="/contact" className={`text-white hover:text-gray-300 ${pathname === '/contact' ? 'font-bold' : 'font-medium'}`}>
               Contact
             </Link>
