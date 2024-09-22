@@ -12,12 +12,14 @@ export default function RootLayout({ children }) {
       */}
       <head />
       <body>
-        <Header />
+        <div className="flex flex-col min-h-screen">
+          <Header />
           <Breadcrumbs />
-        <main className="container mx-auto px-4 py-8">
-          {children}
-        </main>
-        <Footer />
+          <main className="container mx-auto px-4 py-8 flex-grow">
+            {children}
+          </main>
+          <Footer />
+        </div>
       </body>
     </html>
   )
