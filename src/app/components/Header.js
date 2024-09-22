@@ -1,4 +1,5 @@
-import Link from 'next/navigation';
+"use client"
+import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 export default function Header() {
@@ -18,7 +19,7 @@ export default function Header() {
             </Link>
           </li>
           <li>
-            <Link href="/tags" className={`${pathname === '/tags' ? 'font-bold' : ''} text-white hover:text-gray-300 font-medium`}>
+            <Link href="/tags" className={`${pathname.startsWith('/tags') ? 'font-bold' : ''} text-white hover:text-gray-300 font-medium`}>
               Tags
             </Link>
           </li>
