@@ -1,0 +1,39 @@
+"use client";
+
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+
+export default function Breadcrumbs() {
+  const pathname = usePathname();
+  const segments = pathname.split('/').filter(Boolean);
+
+  return (
+    <nav aria-label="breadcrumb">
+      <ol className="flex items-center space-x-2 text-sm text-gray-400">
+        <li>
+          <Link href="/" className="hover:text-gray-600">
+            Home
+          </Link>
+        </li>
+        {segments.map((segment, index) => {
+          const isLast = index === segments.length - 1;
+          const href = '/' + segments.slice(0, index + 1).join('/');
+          const segmentDisplay = segment.charAt(0).toUpperCase() + segment.slice(1).replace('-', ' ');
+
+          return (
+            <li key={segment} aria-current={isLast ? 'page' : undefined}>
+              <span className="mx-2 text-gray-500">/</span>
+              {isLast ? (
+                <span className="text-gray-700">{segmentDisplay}</span>
+              ) : (
+                <Link href={href} className="hover:text-gray-600">
+                  {segmentDisplay}
+                </Link>
+              )}
+            </li>
+          );
+        })}
+      </ol>
+    </nav>
+  );
+}
