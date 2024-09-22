@@ -20,7 +20,7 @@ export default function Header() {
             </Link>
           </li>
           <li>
-          <Link href="/tags" className={`text-white hover:text-gray-300 ${pathname === '/tags' ? 'font-bold' : 'font-medium'}`}>
+          <Link href="/tags" className={`text-white hover:text-gray-300 ${pathname.includes( '/tags') ? 'font-bold' : 'font-medium'}`}>
           Tags
           </Link>
           </li>
