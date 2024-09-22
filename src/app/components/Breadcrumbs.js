@@ -32,6 +32,9 @@ const ClientComponent = () => {
 };
 
 export default function Breadcrumbs() {
+  const pathname = usePathname();
+  const segments = pathname.split('/').filter(Boolean);
+
   return (
     <nav aria-label="breadcrumb">
       <ol className="flex items-center space-x-2 text-sm text-gray-400">
@@ -40,6 +43,17 @@ export default function Breadcrumbs() {
             Home
           </Link>
         </li>
+        {segments.map((segment, index) => (
+          <li key={index}>
+            <span className="text-gray-500"> / </span>
+            <Link
+              href={`/${segments.slice(0, index + 1).join('/')}`}
+              className="hover:text-gray-600"
+            >
+              {decodeURIComponent(segment)}
+            </Link>
+          </li>
+        ))}
         <ClientComponent />
       </ol>
     </nav>
