@@ -15,7 +15,7 @@ export default async function PostPage({ params }) {
       <ReactMarkdown>{post.content}</ReactMarkdown>
       <ul>
         {(post.tags || []).map((tag) => (
-          <li key={tag}>{tag}</li>
+          <li key={tag}><a href={`/tags/${tag}`}>{tag}</a></li>
         ))}
       </ul>
     </div>
