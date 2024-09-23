@@ -46,11 +46,7 @@ export default function Header() {
               Blog
             </Link>
           </li>
-          <li>
-            <Link href="/contact" className={`text-white hover:text-gray-300 ${pathname === '/contact' ? 'font-bold' : 'font-medium'}`}>
-              Contact
-            </Link>
-          </li>
+          
         </ul>
       </nav>
     </header>

@@ -1,6 +1,5 @@
 import './globals.css';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import SideBar from './components/SideBar';
 import Breadcrumbs from './components/Breadcrumbs';
 
 export default function RootLayout({ children }) {
@@ -13,12 +12,14 @@ export default function RootLayout({ children }) {
       <head />
       <body>
         <div className="flex flex-col min-h-screen">
-          <Header />
-          <Breadcrumbs />
-          <main className="container mx-auto px-4 py-8 flex-grow">
-            {children}
-          </main>
-          <Footer />
+          <SideBar />
+          <div className="ml-64 p-8">
+            <Breadcrumbs />
+            <main className="container mx-auto px-4 py-8 flex-grow">
+              {children}
+            </main>
+          </div>
+        
         </div>
       </body>
     </html>
