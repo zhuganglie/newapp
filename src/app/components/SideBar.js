@@ -20,7 +20,7 @@ export default function SideBar() {
         {isOpen ? 'Close Menu' : 'Open Menu'}
       </button>
       <aside
-        className={`bg-gray-900 p-8 h-screen fixed top-0 left-0 flex flex-col justify-between transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0`}
+        className={`bg-gray-900 p-8 h-screen fixed top-0 left-0 flex flex-col justify-between transition-transform duration-300 ${isOpen ? 'block' : 'hidden'} md:block`}
       >
         <h1 className="text-center text-3xl font-bold text-blue-500">YZC</h1>
         <div className="p-6">
