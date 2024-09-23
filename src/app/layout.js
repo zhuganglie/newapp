@@ -11,9 +11,9 @@ export default function RootLayout({ children }) {
       */}
       <head />
       <body>
-        <div className="flex flex-col min-h-screen">
+        <div className="w-full flex min-h-screen">
           <SideBar />
-          <div className="ml-64 p-8">
+          <div className="w-4/5 ml-64 p-8">
             <Breadcrumbs />
             <main className="container mx-auto px-4 py-8 flex-grow">
               {children}
