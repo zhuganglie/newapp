@@ -6,12 +6,16 @@ export async function getPosts() {
   const postsDirectory = path.join(process.cwd(), 'src/posts')
   const filenames = await fs.readdir(postsDirectory)
 
-  return Promise.all(
+  const posts = await Promise.all(
     filenames.map(async (filename) => {
       const slug = filename.replace('.md', '')
       const fullPath = path.join(postsDirectory, filename)
       const fileContents = await fs.readFile(fullPath, 'utf8')
       const { data, content } = matter(fileContents)
+
+      if (data.draft === true) {
+        return null;
+      }
 
       return {
         slug,
@@ -22,6 +26,8 @@ export async function getPosts() {
       }
     })
   )
+
+  return posts.filter(post => post !== null)
 }
 
 export async function getUniqueTags() {
