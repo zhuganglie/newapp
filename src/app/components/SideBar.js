@@ -1,19 +1,29 @@
 'use client'
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useState } from 'react';
 
 export default function SideBar() {
   const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <div>
-     
-      <aside
-        className="bg-gray-900 p-8 h-screen fixed top-0 left-0 flex flex-col justify-between"
+      <button 
+        onClick={toggleSidebar} 
+        className="md:hidden p-2 text-white bg-blue-500 rounded"
       >
-        
-          <h1 className="text-center text-3xl font-bold text-blue-500">YZC</h1>
-          <div className="p-6">
+        {isOpen ? 'Close Menu' : 'Open Menu'}
+      </button>
+      <aside
+        className={`bg-gray-900 p-8 h-screen fixed top-0 left-0 flex flex-col justify-between transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0`}
+      >
+        <h1 className="text-center text-3xl font-bold text-blue-500">YZC</h1>
+        <div className="p-6">
           <ul className="text-center">
             <li>
               <Link
