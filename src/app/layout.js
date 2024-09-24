@@ -2,10 +2,11 @@
 import './globals.css';
 import SideBar from './components/SideBar';
 import Breadcrumbs from './components/Breadcrumbs';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export default function RootLayout({ children }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const sidebarRef = useRef(null);
 
   useEffect(() => {
     // Check screen size on component mount and resize
@@ -24,6 +25,17 @@ export default function RootLayout({ children }) {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (sidebarRef.current && !sidebarRef.current.contains(event.target) && isSidebarOpen && window.innerWidth < 768) {
+        setIsSidebarOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isSidebarOpen]);
+
   return (
     <html lang="en" data-theme="garden">
       {/*
@@ -33,7 +45,7 @@ export default function RootLayout({ children }) {
       <head />
       <body>
         <div className="w-full flex min-h-screen">
-          <SideBar isOpen={isSidebarOpen} />
+          <SideBar isOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} ref={sidebarRef} />
           <div className={`w-full ${isSidebarOpen ? 'ml-64' : ''} p-8 transition-all duration-300 ease-in-out`}>
             <button
               className="fixed top-4 left-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"

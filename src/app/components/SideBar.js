@@ -1,13 +1,21 @@
 'use client'
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { forwardRef } from 'react';
 
-export default function SideBar({ isOpen }) {
+const SideBar = forwardRef(({ isOpen, setIsSidebarOpen }, ref) => {
   const pathname = usePathname();
+
+  const handleClick = (href) => {
+    if (window.innerWidth < 768) {
+      setIsSidebarOpen(false);
+    }
+  };
 
   return (
     <aside
-      className={`bg-gray-900 p-8 h-screen fixed top-0 left-0 flex flex-col justify-between transition-transform duration-300 md:flex-col ${isOpen ? 'flex-col' : 'hidden'}`  }
+      ref={ref}
+      className={`bg-gray-900 p-8 h-screen fixed top-0 left-0 flex flex-col justify-between transition-transform duration-300 md:flex-col ${isOpen ? 'flex-col' : 'hidden'}`}
     >
       <h1 className="text-center text-3xl font-bold text-blue-500">YZC</h1>
       <div className="p-6">
@@ -15,6 +23,7 @@ export default function SideBar({ isOpen }) {
           <li>
             <Link
               href="/about"
+              onClick={() => handleClick('/about')}
               className={`text-white hover:text-gray-300 ${pathname === '/about' ? 'font-bold' : 'font-medium'}`}
             >
               ABOUT
@@ -23,6 +32,7 @@ export default function SideBar({ isOpen }) {
           <li>
             <Link
               href="/posts"
+              onClick={() => handleClick('/posts')}
               className={`text-white hover:text-gray-300 ${pathname.includes('/posts') ? 'font-bold' : 'font-medium'}`}
             >
               BLOG
@@ -31,6 +41,7 @@ export default function SideBar({ isOpen }) {
           <li>
             <Link
               href="/tags"
+              onClick={() => handleClick('/tags')}
               className={`text-white hover:text-gray-300 ${pathname.includes('/tags') ? 'font-bold' : 'font-medium'}`}
             >
               TAGS
@@ -54,4 +65,6 @@ export default function SideBar({ isOpen }) {
       </footer>
     </aside>
   );
-}
+});
+
+export default SideBar;
