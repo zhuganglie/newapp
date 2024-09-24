@@ -3,6 +3,7 @@ import './globals.css';
 import SideBar from './components/SideBar';
 import Breadcrumbs from './components/Breadcrumbs';
 import { useState, useEffect, useRef } from 'react';
+import { FaMugSaucer } from "react-icons/fa6";
 
 export default function RootLayout({ children }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -46,12 +47,12 @@ export default function RootLayout({ children }) {
       <body>
         <div className="w-full flex min-h-screen">
           <SideBar isOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} ref={sidebarRef} />
-          <div className={`w-full ${isSidebarOpen ? 'ml-64' : ''} p-8 transition-all duration-300 ease-in-out`}>
+          <div className={`w-full ${isSidebarOpen ? 'ml-72' : ''} p-8 transition-all duration-300 ease-in-out`}>
             <button
-              className="fixed top-4 left-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              className="md:hidden font-bold py-1 px-2 rounded"
               onClick={toggleSidebar}
             >
-              Toggle Sidebar
+              <FaMugSaucer size={28} />
             </button>
             <Breadcrumbs />
             <main className="container mx-auto px-4 py-8 flex-grow">
