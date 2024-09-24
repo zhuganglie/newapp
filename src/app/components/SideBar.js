@@ -7,7 +7,7 @@ export default function SideBar({ isOpen }) {
 
   return (
     <aside
-      className={`bg-gray-900 p-8 h-screen fixed top-0 left-0 flex flex-col justify-between transition-transform duration-300 ${isOpen ? 'block' : 'hidden'} md:block`}
+      className={`bg-gray-900 p-8 h-screen fixed top-0 left-0 flex flex-col justify-between transition-transform duration-300 md:flex-col ${isOpen ? 'flex-col' : 'hidden'}`  }
     >
       <h1 className="text-center text-3xl font-bold text-blue-500">YZC</h1>
       <div className="p-6">
