@@ -19,7 +19,7 @@ const SideBar = forwardRef(({ isOpen, setIsSidebarOpen }, ref) => {
       className={`bg-gray-900 p-8 h-screen fixed top-0 left-0 flex flex-col justify-between transition-transform duration-300 md:flex-col ${isOpen ? 'flex-col' : 'hidden'}`}
     >
       <div>
-      <h1 className="text-center text-3xl font-bold text-blue-500">zhuganglie</h1>
+      <h1 className="text-center text-3xl font-bold text-blue-500">Why?</h1>
       <p className="text-center">γνῶθι σεαυτόν</p>
       </div>
       <div className="p-6">
