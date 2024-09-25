@@ -25,3 +25,43 @@ body {
     text-wrap: balance;
   }
 }
+
+@layer base {
+  h1 {
+    @apply  text-2xl font-bold md:text-3xl;
+  }
+ 
+  h2 {
+    @apply  text-xl font-bold md:text-2xl;
+  }
+ 
+  h3 {
+    @apply text-lg font-bold md:text-xl;
+  }
+ 
+  h4 {
+    @apply  text-base font-bold md:text-lg;
+  }
+ 
+  body {
+    @apply  text-sm md:text-base;
+  }
+ 
+  .layout {
+    /* 750px */
+    /* max-width: 43.75rem; */
+ 
+    /* 1100px */
+    max-width: 68.75rem;
+    @apply mx-auto w-11/12;
+  }
+ 
+  .bg-dark a.custom-link {
+    @apply border-gray-200 hover:border-gray-200/0;
+  }
+ 
+  /* Class to adjust with sticky footer */
+  .min-h-main {
+    @apply min-h-[calc(100vh-56px)];
+  }
+}

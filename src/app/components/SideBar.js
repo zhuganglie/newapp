@@ -7,7 +7,7 @@ import { FaRegEnvelope,  FaXTwitter, FaGithub  } from 'react-icons/fa6';
 const SideBar = forwardRef(({ isOpen, setIsSidebarOpen }, ref) => {
   const pathname = usePathname();
 
-  const handleClick = (href) => {
+  const handleClick = () => {
     if (window.innerWidth < 768) {
       setIsSidebarOpen(false);
     }

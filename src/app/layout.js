@@ -49,7 +49,7 @@ export default function RootLayout({ children }) {
           <SideBar isOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} ref={sidebarRef} />
           <div className={`w-full ${isSidebarOpen ? 'ml-72' : ''} p-8 transition-all duration-300 ease-in-out`}>
             <button
-              className="md:hidden font-bold py-1 px-2 rounded"
+              className="md:hidden"
               onClick={toggleSidebar}
             >
               <FaMugSaucer size={28} />
