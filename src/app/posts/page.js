@@ -6,11 +6,13 @@ export default async function BlogPage() {
 
   return (
     <div>
-    <h1>Welcome to My Blog</h1>
-    <ul>
+    <h1>Articles</h1>
+    <hr></hr>
+    <ul className="space-y-12">
     {posts.map((post) => (
       <li key={post.slug}>
-      <Link href={`/posts/${post.slug}`}>
+        <p>{post.date}</p>
+      <Link href={`/posts/${post.slug}`} className="text-xl">
       {post.title ?? 'Untitled'}
       </Link>
       <div>

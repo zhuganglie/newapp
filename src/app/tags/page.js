@@ -13,6 +13,7 @@ export default async function TagsPage() {
   return (
     <div>
       <h1>Tags</h1>
+      <hr></hr>
       <ul>
         {tagCounts.map(({ tag, count }) => (
           <li key={tag}>

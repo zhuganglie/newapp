@@ -38,12 +38,10 @@ export default function RootLayout({ children }) {
   }, [isSidebarOpen]);
 
   return (
-    <html lang="en" data-theme="garden">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.js. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
-      <head />
+    <html lang="en" > 
+      {/*}  <head> 
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css" />
+      </head > */}
       <body>
         <div className="w-full flex min-h-screen">
           <SideBar isOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} ref={sidebarRef} />

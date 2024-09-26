@@ -16,19 +16,19 @@ const SideBar = forwardRef(({ isOpen, setIsSidebarOpen }, ref) => {
   return (
     <aside
       ref={ref}
-      className={`bg-gray-900 p-8 h-screen fixed top-0 left-0 flex flex-col justify-between transition-transform duration-300 md:flex-col ${isOpen ? 'flex-col' : 'hidden'}`}
+      className={`bg-zinc-900 p-8 h-screen fixed top-0 left-0 flex flex-col justify-between transition-transform duration-300 md:flex-col ${isOpen ? 'flex-col' : 'hidden'}`}
     >
       <div>
-      <h1 className="text-center text-3xl font-bold text-blue-500">Why?</h1>
-      <p className="text-center">γνῶθι σεαυτόν</p>
+      <h1 className="text-center text-3xl font-bold text-yellow-500">Why?</h1>
+      <p className="text-center text-zinc-300">γνῶθι σεαυτόν</p>
       </div>
       <div className="p-6">
-        <ul className="text-center">
+        <ul className="text-center px-0 mx-0">
           <li>
             <Link
               href="/about"
               onClick={() => handleClick('/about')}
-              className={`text-white hover:text-gray-300 ${pathname === '/about' ? 'font-bold' : 'font-medium'}`}
+              className={`text-zinc-300 hover:text-zinc-300 ${pathname === '/about' ? 'font-bold text-yellow-500' : 'font-medium'}`}
             >
               ABOUT
             </Link>
@@ -37,7 +37,7 @@ const SideBar = forwardRef(({ isOpen, setIsSidebarOpen }, ref) => {
             <Link
               href="/posts"
               onClick={() => handleClick('/posts')}
-              className={`text-white hover:text-gray-300 ${pathname.includes('/posts') ? 'font-bold' : 'font-medium'}`}
+              className={`text-zinc-300 hover:text-zinc-300 ${pathname.includes('/posts') ? 'font-bold text-yellow-500' : 'font-medium'}`}
             >
               BLOG
             </Link>
@@ -46,7 +46,7 @@ const SideBar = forwardRef(({ isOpen, setIsSidebarOpen }, ref) => {
             <Link
               href="/tags"
               onClick={() => handleClick('/tags')}
-              className={`text-white hover:text-gray-300 ${pathname.includes('/tags') ? 'font-bold' : 'font-medium'}`}
+              className={`text-zinc-300 hover:text-zinc-300 ${pathname.includes('/tags') ? 'font-bold text-yellow-500' : 'font-medium'}`}
             >
               TAGS
             </Link>
@@ -54,18 +54,18 @@ const SideBar = forwardRef(({ isOpen, setIsSidebarOpen }, ref) => {
         </ul>
       </div>
       <div className="p-6 flex justify-center space-x-4 md:p-4 ">
-        <a href="#" className="text-white hover:text-gray-300">
+        <a href="#" className="text-zinc-300 hover:text-zinc-300">
         <FaRegEnvelope />
         </a>
-        <a href="#" className="text-white hover:text-gray-300">
+        <a href="#" className="text-zinc-300 hover:text-zinc-300">
         <FaXTwitter />
         </a>
-        <a href="#" className="text-white hover:text-gray-300">
+        <a href="#" className="text-zinc-300 hover:text-zinc-300">
         <FaGithub />
         </a>
       </div>
       <footer className="mt-8 md:mt-0">
-        <p className="text-center text-gray-500 text-sm">&copy; 2024 zhuganglie - Built with Next.js</p>
+        <p className="text-center text-zinc-500 text-sm">&copy; 2024 zhuganglie - Built with Next.js</p>
       </footer>
     </aside>
   );
