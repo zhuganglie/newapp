@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { forwardRef } from 'react';
-import { FaRegEnvelope,  FaXTwitter, FaGithub  } from 'react-icons/fa6';
+import { FaRegEnvelope, FaXTwitter, FaGithub } from 'react-icons/fa6';
 
 const SideBar = forwardRef(({ isOpen, setIsSidebarOpen }, ref) => {
   const pathname = usePathname();
@@ -19,8 +19,8 @@ const SideBar = forwardRef(({ isOpen, setIsSidebarOpen }, ref) => {
       className={`bg-zinc-900 p-8 h-screen fixed top-0 left-0 flex flex-col justify-between transition-transform duration-300 md:flex-col ${isOpen ? 'flex-col' : 'hidden'}`}
     >
       <div>
-      <h1 className="text-center text-3xl font-bold text-yellow-500">Why?</h1>
-      <p className="text-center text-zinc-300">γνῶθι σεαυτόν</p>
+        <h1 className="text-center text-3xl font-bold text-yellow-500">Why?</h1>
+        <p className="text-center text-zinc-300">γνῶθι σεαυτόν</p>
       </div>
       <div className="p-6">
         <ul className="text-center px-0 mx-0">
@@ -53,15 +53,15 @@ const SideBar = forwardRef(({ isOpen, setIsSidebarOpen }, ref) => {
           </li>
         </ul>
       </div>
-      <div className="p-6 flex justify-center space-x-4 md:p-4 ">
+      <div className="p-6 flex justify-center space-x-4 md:p-4">
         <a href="#" className="text-zinc-300 hover:text-zinc-300">
-        <FaRegEnvelope />
+          <FaRegEnvelope />
         </a>
         <a href="#" className="text-zinc-300 hover:text-zinc-300">
-        <FaXTwitter />
+          <FaXTwitter />
         </a>
         <a href="#" className="text-zinc-300 hover:text-zinc-300">
-        <FaGithub />
+          <FaGithub />
         </a>
       </div>
       <footer className="mt-8 md:mt-0">
@@ -70,5 +70,7 @@ const SideBar = forwardRef(({ isOpen, setIsSidebarOpen }, ref) => {
     </aside>
   );
 });
+
+SideBar.displayName = 'SideBar';
 
 export default SideBar;

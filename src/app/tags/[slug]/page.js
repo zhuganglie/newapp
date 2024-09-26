@@ -8,7 +8,7 @@ export default async function TagPage({ params }) {
 
   return (
     <div>
-      <h1>Posts tagged with "{decodedSlug}"</h1>
+      <h1>Posts tagged with &quot;{decodedSlug}&quot;</h1>
       <ul>
         {posts.length > 0 ? (
           posts.map(post => (
