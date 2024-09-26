@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation'
-import { getPosts, getPostBySlug } from '@/lib/posts'
+import { getPostBySlug } from '@/lib/posts'
 import ReactMarkdown from 'react-markdown'
 
 export default async function PostPage({ params }) {

@@ -12,7 +12,7 @@ const ClientComponent = () => {
       {segments.map((segment, index) => {
         const isLast = index === segments.length - 1;
         const href = '/' + segments.slice(0, index + 1).join('/');
-        const segmentDisplay = segment.charAt(0).toUpperCase() + segment.slice(1).replace('-', ' ');
+     /*   const segmentDisplay = segment.charAt(0).toUpperCase() + segment.slice(1).replace('-', ' '); */
         const decodedSegment = decodeURIComponent(segment);
 
         return (
