@@ -9,6 +9,7 @@ export default async function TagPage({ params }) {
   return (
     <div>
       <h1> &quot;{decodedSlug}&quot; 标签下的文章</h1>
+      <hr></hr>
       <ul>
         {posts.length > 0 ? (
           posts.map(post => (
