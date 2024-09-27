@@ -17,7 +17,7 @@ export default async function PostPage({ params }) {
      <span>Tags:</span>
       <ul className="flex gap-2">
         {(post.tags || []).map((tag) => (
-          <li key={tag}><a href={`/tags/${tag}`}>{tag}</a></li>
+          <li key={tag} className="min-w-max"><a href={`/tags/${tag}`}>{tag}</a></li>
         ))}
       </ul>
       </div>
