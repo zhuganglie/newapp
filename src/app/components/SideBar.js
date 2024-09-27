@@ -28,7 +28,7 @@ const SideBar = forwardRef(({ isOpen, setIsSidebarOpen }, ref) => {
             <Link
               href="/about"
               onClick={() => handleClick('/about')}
-              className={`text-zinc-300 hover:text-zinc-300 ${pathname === '/about' ? 'font-bold text-yellow-500' : 'font-medium'}`}
+              className={` ${pathname === '/about' ? 'font-bold text-ywllow-300' : 'font-medium'}`}
             >
               ABOUT
             </Link>
@@ -37,7 +37,7 @@ const SideBar = forwardRef(({ isOpen, setIsSidebarOpen }, ref) => {
             <Link
               href="/posts"
               onClick={() => handleClick('/posts')}
-              className={`text-zinc-300 hover:text-zinc-300 ${pathname.includes('/posts') ? 'font-bold text-yellow-500' : 'font-medium'}`}
+              className={` ${pathname.includes('/posts') ? 'font-bold text-yellow-300' : 'font-medium'}`}
             >
               BLOG
             </Link>
@@ -46,7 +46,7 @@ const SideBar = forwardRef(({ isOpen, setIsSidebarOpen }, ref) => {
             <Link
               href="/tags"
               onClick={() => handleClick('/tags')}
-              className={`text-zinc-300 hover:text-zinc-300 ${pathname.includes('/tags') ? 'font-bold text-yellow-500' : 'font-medium'}`}
+              className={` ${pathname.includes('/tags') ? 'font-bold text-yellow-300' : 'font-medium'}`}
             >
               TAGS
             </Link>
@@ -54,13 +54,13 @@ const SideBar = forwardRef(({ isOpen, setIsSidebarOpen }, ref) => {
         </ul>
       </div>
       <div className="p-6 flex justify-center space-x-4 md:p-4">
-        <a href="#" className="text-zinc-300 hover:text-zinc-300">
+        <a href="#" className="">
           <FaRegEnvelope />
         </a>
-        <a href="#" className="text-zinc-300 hover:text-zinc-300">
+        <a href="#" className="">
           <FaXTwitter />
         </a>
-        <a href="#" className="text-zinc-300 hover:text-zinc-300">
+        <a href="#" className="">
           <FaGithub />
         </a>
       </div>
