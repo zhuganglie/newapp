@@ -43,7 +43,7 @@ export default function RootLayout({ children }) {
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css" />
       </head > */}
       <body>
-        <div className="w-full flex min-h-screen">
+        <div className="w-full md:w-5/6 flex min-h-screen">
           <SideBar isOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} ref={sidebarRef} />
           <div className={`w-full ${isSidebarOpen ? 'ml-72' : ''} p-8 transition-all duration-300 ease-in-out`}>
             <button

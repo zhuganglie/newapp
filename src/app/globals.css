@@ -43,7 +43,7 @@ a {
 }
 
 a:active, a:hover {
-  @apply outline-0;
+  @apply outline-0 text-yellow-300;
 }
 
 abbr[title] {
@@ -99,7 +99,7 @@ figure {
 }
 
 hr {
-  @apply mb-[calc(1.45rem_-_1px)] bg-black/20 border-none h-[1px];
+  @apply mb-[calc(1.45rem_-_1px)] bg-zinc-300 border-none h-[1px];
 }
 
 button, input, optgroup, select, textarea {

@@ -20,19 +20,11 @@ const SideBar = forwardRef(({ isOpen, setIsSidebarOpen }, ref) => {
     >
       <div>
         <h1 className="text-center text-3xl font-bold text-yellow-500">Why?</h1>
-        <p className="text-center text-zinc-300">γνῶθι σεαυτόν</p>
+        <p className="text-center text-zinc-300">Διὰ τί δὴ τοῦτο ἐστίν</p>
       </div>
       <div className="p-6">
         <ul className="text-center px-0 mx-0">
-          <li>
-            <Link
-              href="/about"
-              onClick={() => handleClick('/about')}
-              className={` ${pathname === '/about' ? 'font-bold text-ywllow-300' : 'font-medium'}`}
-            >
-              ABOUT
-            </Link>
-          </li>
+          
           <li>
             <Link
               href="/posts"
@@ -51,6 +43,15 @@ const SideBar = forwardRef(({ isOpen, setIsSidebarOpen }, ref) => {
               TAGS
             </Link>
           </li>
+          <li>
+            <Link
+              href="/about"
+              onClick={() => handleClick('/about')}
+              className={` ${pathname === '/about' ? 'font-bold text-ywllow-300' : 'font-medium'}`}
+            >
+              ABOUT
+            </Link>
+          </li>
         </ul>
       </div>
       <div className="p-6 flex justify-center space-x-4 md:p-4">
@@ -65,7 +66,7 @@ const SideBar = forwardRef(({ isOpen, setIsSidebarOpen }, ref) => {
         </a>
       </div>
       <footer className="mt-8 md:mt-0">
-        <p className="text-center text-zinc-500 text-sm">&copy; 2024 zhuganglie - Built with Next.js</p>
+        <p className="text-center text-zinc-300 text-sm">&copy; 2024 zhuganglie - Powered by Next.js</p>
       </footer>
     </aside>
   );

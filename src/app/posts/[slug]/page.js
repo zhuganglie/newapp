@@ -12,12 +12,13 @@ export default async function PostPage({ params }) {
   return (
     <div>
       <h1>{post.title ?? 'Untitled'}</h1>
+      <hr></hr>
       <ReactMarkdown>{post.content}</ReactMarkdown>
       <div className="flex">
-     <span>Tags:</span>
+     <span>标签：</span>
       <ul className="flex gap-2">
         {(post.tags || []).map((tag) => (
-          <li key={tag} className="min-w-max"><a href={`/tags/${tag}`}>{tag}</a></li>
+          <li key={tag} className="min-w-max"><a href={`/tags/${tag}`}><span>&#9900;</span> {tag}</a></li>
         ))}
       </ul>
       </div>

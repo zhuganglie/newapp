@@ -8,13 +8,13 @@ export default async function TagPage({ params }) {
 
   return (
     <div>
-      <h1>Posts tagged with &quot;{decodedSlug}&quot;</h1>
+      <h1> &quot;{decodedSlug}&quot; 标签下的文章</h1>
       <ul>
         {posts.length > 0 ? (
           posts.map(post => (
             <li key={post.slug}>
               <Link href={`/posts/${post.slug}`}>
-                {post.title}
+               {post.title}
               </Link>
             </li>
           ))

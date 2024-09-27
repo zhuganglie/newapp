@@ -6,7 +6,7 @@ export default async function BlogPage() {
 
   return (
     <div>
-    <h1>Articles</h1>
+    <h1>全部文章</h1>
     <hr></hr>
     <ul className="space-y-12">
     {posts.map((post) => (
@@ -20,7 +20,7 @@ export default async function BlogPage() {
         <span>
         Tags: {post.tags.map(tag => (
           <Link key={tag} href={`/tags/${tag}`} style={{ marginLeft: '5px' }}>
-          {tag}
+         <span>&#9900;</span> {tag}
           </Link>
         ))}
         </span>

@@ -16,16 +16,18 @@ const ClientComponent = () => {
         const decodedSegment = decodeURIComponent(segment);
 
         return (
+         
           <li key={segment} aria-current={isLast ? 'page' : undefined}>
-            <span className="mx-2 text-gray-500">/</span>
+            <span className="mx-1 text-gray-500">/</span>
             {isLast ? (
-              <span className="text-gray-700">{decodedSegment}</span>
+              <span className="text-gray-700 truncate text-ellipsis overflow-hidden">{decodedSegment}</span>
             ) : (
-              <Link href={href} className="hover:text-gray-600">
-                {decodedSegment}
+              <Link href={href} className="hover:text-gray-600 ">
+               {decodedSegment}
               </Link>
             )}
           </li>
+         
         );
       })}
     </>

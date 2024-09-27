@@ -12,13 +12,13 @@ export default async function TagsPage() {
 
   return (
     <div>
-      <h1>Tags</h1>
+      <h1>全部标签</h1>
       <hr></hr>
       <ul>
         {tagCounts.map(({ tag, count }) => (
           <li key={tag}>
             <Link href={`/tags/${tag}`}>
-              {tag} ({count})
+            <span>&#9900;</span> {tag} ({count})
             </Link>
           </li>
         ))}
