@@ -22,12 +22,13 @@ export async function getPosts() {
         title: data?.title,
         content,
         tags: data?.tags || [], // Add tags field
+        date: data.date,
         ...data,
       }
     })
   )
 
-  return posts.filter(post => post !== null)
+  return posts.filter(post => post !== null).sort((a, b) => new Date(b.date) - new Date(a.date))
 }
 
 export async function getUniqueTags() {
