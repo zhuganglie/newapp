@@ -7,9 +7,6 @@ tags:
 draft: false
 ---
 
-
-
-
 人们在讨论社会运动时，常常会自觉不自觉地把抗议活动和压迫、不平等、怨恨联系起来，认为当社会中积累了足够的怨恨和不满时，运动便会自发地爆发。但事实上，许多处于高度压迫和不平等状态的社会，并没有出现预期的大规模抗议活动。相反，在一些较为宽松或有改革潜力的政治环境下，社会运动反而更为活跃。社会运动的研究者还注意到，正经历相似的不公和压迫的两个社会中，人民同样愤怒不满，一个社会爆发了大规模的抗议活动，而另一个社会却寂静无声。例如，在20世纪80年代末和90年代初，东欧国家都处在苏联的卫星国地位，面对着类似的政治压迫、经济困难和社会不满。然而，这些国家的社会运动和政权更迭的结果却大相径庭。其中，波兰和罗马尼亚的对比非常具有代表性。
 
 波兰在1980年爆发了大规模的工人抗议活动，这些抗议由“团结工会”领导，最终发展成一个广泛的社会运动。尽管波兰当局最初进行了镇压，但由于政府内部的分歧、教会的支持、以及国际社会特别是西方国家的关注，抗议者逐渐获得了更大的空间。1989年，波兰通过谈判和平过渡，举行了部分自由选举，最终导致了共产主义政权的和平倒台。
@@ -44,7 +41,7 @@ draft: false
 
 民权运动的案例清楚地展示了政治机会结构对社会运动起源和结果的深远影响。同时，它也凸显了运动领袖和活动家在利用这些机会方面的关键作用。它表明，即使在看似封闭的政治体系中，变革的机会也可能出现，而通过战略动员和持续的行动，社会运动可以抓住这些机会，最终实现目标，推动社会进步。
 
-**Bibliography**
+#### 参考文献
 
 * Kriesi, H., Koopmans, R., Duyvendak, J. W., & Giugni, M. G. (1995). New social movements in Western Europe: A comparative analysis. University of Minnesota Press.
 * McAdam, D. (1982). Political process and the development of Black insurgency, 1930-1970. University of Chicago Press.
@@ -52,6 +49,6 @@ draft: false
 * Tarrow, S. G. (2011). Power in movement: Social movements and contentious politics (3rd ed.). Cambridge University Press.
 * Vráblíková, K. (2014). How context matters? Mobilization, political opportunity structures, and nonelectoral political participation in old and new democracies. Comparative Political Studies, 47(2), 203-229.
 
-**思考与讨论：**
+#### 思考与讨论
 
 您还能想到其他有效利用政治机会结构的社会运动的例子吗？在当今不断变化的政治格局中，您认为哪些因素正在创造新的政治机会？欢迎分享您的想法！
