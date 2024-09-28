@@ -1,44 +1,13 @@
 ---
-title: 独裁政治课程大纲
+title: 独裁政治学阅读书目
 date: "2024-09-28"
 tags:
 - 独裁政治
-- 课程大纲
+- 阅读指南
 draft: false
 ---
 
-### **Advanced Seminar: The Politics of Dictatorship**  
-**Course Code:** POLS 621  
-**Instructor:** 
-**Class Time:** 
-**Location:** 
-**Office Hours:**
-
-#### **Course Description:**
-
-This seminar course offers an in-depth examination of the political dynamics of authoritarian regimes, exploring both historical and contemporary examples. We will study the structures, mechanisms, and strategies employed by dictatorships to consolidate power, manage elites, and control society. The course will analyze how dictatorships are sustained, the role of institutions within autocracies, the process of transition to and from dictatorship, and the conditions under which authoritarian regimes collapse. By the end of the course, students will have a nuanced understanding of the various forms of dictatorship and the theoretical tools to analyze authoritarian governance.
-
----
-
-#### **Course Objectives:**
-By the end of this course, students will:
-1. Understand different typologies of authoritarianism and dictatorship.
-2. Analyze how dictatorships maintain power and manage elites.
-3. Evaluate the role of ideology, repression, and co-optation in authoritarian stability.
-4. Investigate the conditions under which dictatorships democratize or collapse.
-5. Apply theories of authoritarianism to empirical case studies from around the world.
-6. Engage critically with academic debates on the nature of dictatorship.
-
----
-
-#### **Course Requirements:**
-
-- **Participation (20%)**: Active participation in discussions, having completed the readings.
-- **Response Papers (20%)**: Four response papers (2-3 pages) analyzing weekly readings.
-- **Research Proposal (20%)**: A detailed research proposal (5 pages) on a relevant topic of choice, due mid-semester.
-- **Final Paper (40%)**: A comprehensive research paper (20-25 pages) due at the end of the course.
-
----
+## **Readings on the Politics of Dictatorship**  
 
 ### **Weekly Topics & Readings:**
 
@@ -116,10 +85,6 @@ By the end of this course, students will:
 
 ---
 
-#### **Final Paper Due: [Insert Date]**
-
----
-
 #### **Recommended Supplementary Readings:**
 - **Tullock, Gordon.** *The Social Dilemma of Autocracy, Revolution, Coup d'Etat, and War*. Liberty Fund, 2005.
 - **Levitsky, Steven, and Lucan A. Way.** *Revolution and Dictatorship: The Violent Origins of Durable Authoritarianism*. Princeton University Press, 2022.
@@ -128,8 +93,4 @@ By the end of this course, students will:
 
 --- 
 
-### **Expectations:**
-Students are expected to actively participate in seminars, complete all assigned readings, and submit written assignments on time. Class discussions will critically engage with the readings, aiming to refine theoretical insights and apply them to contemporary authoritarian regimes.
-
---- 
 
