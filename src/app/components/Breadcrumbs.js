@@ -16,18 +16,16 @@ const ClientComponent = () => {
         const decodedSegment = decodeURIComponent(segment);
 
         return (
-         
           <li key={segment} aria-current={isLast ? 'page' : undefined}>
             <span className="mx-1 text-gray-500">/</span>
             {isLast ? (
               <span className="text-gray-700 truncate text-ellipsis overflow-hidden">{decodedSegment}</span>
             ) : (
-              <Link href={href} className="hover:text-gray-600 ">
+              <Link href={href} className="hover:text-gray-600 truncate text-ellipsis overflow-hidden">
                {decodedSegment}
               </Link>
             )}
           </li>
-         
         );
       })}
     </>
@@ -37,9 +35,9 @@ const ClientComponent = () => {
 export default function Breadcrumbs() {
   return (
     <nav aria-label="breadcrumb">
-      <ol className="flex items-center space-x-2 text-sm text-gray-400">
-        <li>
-          <Link href="/" className="hover:text-gray-600">
+      <ol className="flex items-center space-x-1 text-sm text-zinc-400 list-none list-inside">
+        <li className="">
+          <Link href="/" className="hover:text-zinc-400">
             Home
           </Link>
         </li>

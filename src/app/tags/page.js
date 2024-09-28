@@ -18,12 +18,12 @@ export default async function TagsPage() {
         {tagCounts.map(({ tag, count }) => (
           <li key={tag}>
             <Link href={`/tags/${tag}`}>
-            <span>&#9900;</span> {tag} ({count})
+            {tag} ({count})
             </Link>
           </li>
         ))}
       </ul>
-      <Link href="/">Back to Home</Link>
+      <p>Back to <a href="/">Home</a></p>
     </div>
   )
 }

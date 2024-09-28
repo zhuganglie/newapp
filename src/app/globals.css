@@ -187,11 +187,11 @@ hgroup {
 }
 
 ul {
-  @apply ml-[1.45rem] mb-[1.45rem] list-outside list-none;
+  @apply ml-[1.45rem] mb-[1.45rem] list-outside list-disc;
 }
 
 ol {
-  @apply ml-[1.45rem] mb-[1.45rem] list-outside list-none;
+  @apply ml-[1.45rem] mb-[1.45rem] list-outside list-decimal;
 }
 
 dl {
