@@ -10,7 +10,7 @@ draft: false
 
 想象一下，你是一位独裁者，掌控着一个国家的所有权力。你控制着军队、警察和媒体，可以通过任何你想要的法律，并且将反对者投入监狱。从表面上看，你似乎天下无敌。然而，事情可能并不像你想象的那么简单：即使你拥有如此大的权力，你仍然会生活在持续的恐惧中。这是为什么呢？这是因为你不可避免地要面对政治科学家门所谓的“独裁者的困境”。
 
-## 什么是独裁者的困境？
+## 什么是独裁困境？
 
 独裁者的困境是许多威权统治者面临的一个悖论。简单来说，独裁者积累的权力越多，越难以知道人民真正的想法。你控制了一切，但同时也被困在一个充满不确定和不信任的世界中。
 
@@ -56,7 +56,7 @@ draft: false
 
 因此，请记住，在绝对控制的表面下，隐藏着一张由恐惧、不信任和不确定性编织的复杂网络——即使是最有权势的人也无法逃脱的现实困境。
 
-## Bibliography
+## 参考资料
 
 1. Wintrobe, Ronald. *The Political Economy of Dictatorship*. Cambridge University Press, 1998.
    - This book provides a thorough analysis of how dictators use both repression and loyalty strategies to maintain power, while also dealing with the inherent uncertainty in their rule.

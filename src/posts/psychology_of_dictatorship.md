@@ -22,7 +22,7 @@ draft: false
 
 《独裁心理学》不是简单地分析独裁者个人的性格和心理特点，而是独辟蹊径把独裁作为一种统治方式，分析其运作的心理机制，为我们理解独裁统治提供了一个全新的视角。这本书为我们敲响了警钟：独裁统治的幽灵从未远离，我们必须时刻保持警惕，捍卫来之不易的自由与民主。
 
-## Bibliography
+## 参考资料
 
 - Fathali M. Moghaddam, The Psychology of Dictatorship, American Psychological Association, 2013.
 - Here is a video summary of the book by Fathali M. Moghaddam: https://youtu.be/sHe7rfUwi8c?si=qjq5TPo1sE34G2CY
