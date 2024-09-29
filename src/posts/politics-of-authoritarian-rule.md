@@ -4,7 +4,7 @@ date: "2024-09-11"
 tags:
 - authoritarian regime
 - comparative politics
-draft: false
+draft: true
 ---
 
 "The Politics of Authoritarian Rule", written by Milan Svolik and published in 2012, isn't just another book about dictatorships. It's a powerful and insightful analysis that delves into the heart of authoritarian regimes, dissecting the intricate power dynamics that allow them to thrive, and often, to crumble.
