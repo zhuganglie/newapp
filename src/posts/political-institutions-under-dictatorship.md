@@ -8,7 +8,7 @@ draft: false
 ---
 
 
-詹妮弗·甘地 (Jennifer Gandhi) 的《专制政权下的政治制度》(*Political Institutions under Dictatorship*) 一书深入探讨了专制政权中看似“民主”的制度——比如立法机构和政党——的作用。与传统观点不同，甘地认为这些制度不仅仅是表面装饰或摆设，而是对政策结果和政权稳定有实质性影响的重要工具。这本书对独裁政治的研究做出了重要贡献，尽管也有一些不足，但它为学者和政策制定者提供了非常有价值的见解。
+詹妮弗·甘地 (Jennifer Gandhi) 的《专制政权下的政治制度》(*Political Institutions under Dictatorship*) 一书深入探讨了专制政权中那些看似“民主”的制度——比如立法机构和政党——的作用。与传统观点不同，甘地认为这些制度不仅仅是表面装饰或摆设，而是对政策结果和政权稳定有实质性影响的重要工具。这本书对独裁政治的研究做出了重要贡献，尽管也有一些不足，但它为学者和政策制定者提供了非常有价值的见解。
 
 #### 核心观点与研究方法
 
@@ -59,4 +59,4 @@ draft: false
 
 #### 参考资料
 
-- Jennifer Gandhi， Political Institutions under Dictatorship, Cambridge University Press, 2008.
+- Jennifer Gandhi， *Political Institutions under Dictatorship*, Cambridge University Press, 2008.
