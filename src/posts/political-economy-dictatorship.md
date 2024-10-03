@@ -1,4 +1,12 @@
-### **Academic Book Review: *The Political Economy of Dictatorship* by Ronald Wintrobe**
+---
+title: The Political Economy of Dictatorship
+date: "2024-10-03"
+tags:
+- dictatorship
+- political economy
+- dictator's dilemma
+draft: true
+---
 
 #### **Introduction**
 
