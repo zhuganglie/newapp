@@ -20,7 +20,7 @@ const SideBar = forwardRef(({ isOpen, setIsSidebarOpen }, ref) => {
     >
       <div>
         <h1 className="text-center font-bold text-zinc-200">Why?</h1>
-        <p className="text-center text-zinc-300">Διὰ τί δὴ τοῦτο ἐστίν</p>
+        <p className="text-center text-zinc-300 font-serif font-semibold italic">Fact not Truth</p>
       </div>
       <div className="p-6">
         <ul className="text-center px-0 mx-0 list-none">
