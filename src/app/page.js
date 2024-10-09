@@ -3,7 +3,7 @@
 export default async function HomePage() {
   return (
     <div>
-      <h1>政治背后的科学</h1>
+      <h1>用科学的视角看政治</h1>
 
 <p>你是否曾好奇，为什么有些国家和平稳定，而有些国家却总是陷入冲突？或者为什么有些政府运作良好，而另一些效率低下？在这里，我们用政治学的视角来探索这些问题。这里没有偏见或立场，我们专注于理解政治运作背后的真实规律。</p>
 
@@ -32,7 +32,7 @@ export default async function HomePage() {
 
 <p>政治复杂难懂，但好奇心能带来理解。在这里，政治将其变得简单、有趣、贴近生活。来吧，探索 Why? 的<a href="https://zhuganglie.vercel.app/posts">最新文章</a>，或者，选择<a href="https://zhuganglie.vercel.app/tags">话题标签</a>查找你感兴趣的文章。让我们一起学习，真正理解政治如何运作。</p>
 
-<p className="">政治塑造了我们的世界，理解它能帮助我们塑造未来。</p>
+<p className="font-bold">政治塑造了我们的世界，理解它能帮助我们塑造未来。</p>
 
     </div>
   );
