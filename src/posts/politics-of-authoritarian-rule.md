@@ -1,9 +1,9 @@
 ---
-title: Dissecting Authoritarian Rule
-date: "2024-09-11"
+title: 读《威权统治的政治学》
+date: "2024-10-16"
 tags:
-- authoritarian regime
-- comparative politics
+- 独裁政治
+- 威权韧性
 draft: true
 ---
 
