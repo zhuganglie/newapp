@@ -4,6 +4,7 @@ import SideBar from './components/SideBar';
 import Breadcrumbs from './components/Breadcrumbs';
 import { useState, useEffect, useRef } from 'react';
 import { FaMugSaucer } from "react-icons/fa6";
+import Script from 'next/script'
 
 export default function RootLayout({ children }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -39,9 +40,22 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en" > 
-      {/*}  <head> 
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css" />
-      </head > */}
+      <head>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-C61DTYKQV6"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-C61DTYKQV6', {
+            page_path: window.location.pathname,
+          });
+        `}
+      </Script>
+      </head>
       <body>
         <div className="w-full md:w-5/6 flex min-h-screen">
           <SideBar isOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} ref={sidebarRef} />
