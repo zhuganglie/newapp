@@ -66,7 +66,7 @@ const SideBar = forwardRef(({ isOpen, setIsSidebarOpen }, ref) => {
         </a>
       </div>
       <footer className="mt-8 md:mt-0">
-        <p className="text-center text-zinc-300 text-sm">&copy; {new Date().getFullYear()} zhuganglie - Powered by <a href="https://nextjs.org/">Next.js</a></p>
+        <p className="text-center text-zinc-300 text-sm">&copy; {new Date().getFullYear()} zhuganglie - Code with <a href="https://aider.chat/">aider</a></p>
       </footer>
     </aside>
   );
