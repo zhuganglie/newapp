@@ -65,8 +65,8 @@ const SideBar = forwardRef(({ isOpen, setIsSidebarOpen }, ref) => {
           <FaGithub />
         </a>
       </div>
-      <footer className="mt-8 md:mt-0">
-        <p className="text-center text-zinc-300 text-sm">&copy; {new Date().getFullYear()} zhuganglie - Code with <a href="https://aider.chat/">aider</a></p>
+      <footer>
+        <p className="text-center text-zinc-300 text-sm footer-text">&copy; {new Date().getFullYear()} zhuganglie - Coding with <a href="https://aider.chat/">aider</a></p>
       </footer>
     </aside>
   );
