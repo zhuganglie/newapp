@@ -3,50 +3,78 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 
+const NAV_ITEMS = [
+  { href: '/', label: 'Home', matchPattern: (path) => path === '/' },
+  { href: '/about', label: 'About', matchPattern: (path) => path === '/about' },
+  { href: '/tags', label: 'Tags', matchPattern: (path) => path.includes('/tags') },
+  { href: '/posts', label: 'Blog', matchPattern: (path) => path.includes('/posts') }
+];
+
 export default function Header() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
+    if (!isOpen) return;
+
     const handleClickOutside = (event) => {
-      if (isOpen && !event.target.closest('ul.flex.space-x-6')) {
+      if (!event.target.closest('ul.flex.space-x-6')) {
         setIsOpen(false);
       }
     };
+
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [isOpen]);
 
+  const toggleMenu = () => setIsOpen(!isOpen);
+
+  const getLinkClassName = (matchPattern) => `
+    text-white hover:text-gray-300 
+    ${matchPattern(pathname) ? 'font-bold' : 'font-medium'}
+  `.trim();
+
   return (
     <header className="bg-gray-900">
       <nav className="container mx-auto px-4 py-6 flex items-center justify-between">
-        <button onClick={() => setIsOpen(!isOpen)} className="md:hidden focus:outline-none">
-          <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={isOpen ? "M6 18L18 6" : "M4 6h16M4 12h16M4 18h16"} />
+        <button 
+          onClick={toggleMenu} 
+          className="md:hidden focus:outline-none"
+          aria-label={isOpen ? 'Close menu' : 'Open menu'}
+        >
+          <svg 
+            className="w-6 h-6 text-white" 
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24" 
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              strokeWidth={2} 
+              d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} 
+            />
           </svg>
         </button>
-        <ul className={`flex space-x-6 ${isOpen ? 'flex flex-col' : 'hidden'} md:flex md:flex-row md:space-x-6`} onClick={() => setIsOpen(false)}>
-          <li>
-            <Link href="/" className={`text-white hover:text-gray-300 ${pathname === '/' ? 'font-bold' : 'font-medium'}`}>
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link href="/about" className={`text-white hover:text-gray-300 ${pathname === '/about' ? 'font-bold' : 'font-medium'}`}>
-              About
-            </Link>
-          </li>
-          <li>
-          <Link href="/tags" className={`text-white hover:text-gray-300 ${pathname.includes( '/tags') ? 'font-bold' : 'font-medium'}`}>
-          Tags
-          </Link>
-          </li>
-          <li>
-            <Link href="/posts" className={`text-white hover:text-gray-300 ${pathname.includes('/posts') ? 'font-bold' : 'font-medium'}`}>
-              Blog
-            </Link>
-          </li>
-          
+        <ul 
+          className={`
+            flex space-x-6 
+            ${isOpen ? 'flex flex-col absolute top-16 left-0 right-0 bg-gray-900 p-4' : 'hidden'} 
+            md:flex md:flex-row md:space-x-6 md:static
+          `}
+        >
+          {NAV_ITEMS.map(({ href, label, matchPattern }) => (
+            <li key={href}>
+              <Link 
+                href={href} 
+                className={getLinkClassName(matchPattern)}
+                onClick={() => setIsOpen(false)}
+              >
+                {label}
+              </Link>
+            </li>
+          ))}
         </ul>
       </nav>
     </header>
