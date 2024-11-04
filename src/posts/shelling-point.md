@@ -9,12 +9,4 @@ draft: true
 
 ### Introduction
 
-- **Hook**: Brief mention of recent protests in China (e.g., COVID-19 lockdown protests) as examples of collective action in a repressive environment.
-- **Thesis Statement**: Shelling points, or focal points where individuals coordinate without direct communication, play a critical role in enabling protest movements in repressive societies like China by leveraging implicit social understanding, pre-existing symbols, and strategic public spaces.
-- **Purpose of the Essay**: To explore how these focal points contribute to organizing protests and maintaining resilience under tight governmental control.
-
-### Explanation of Shelling Points
-
-- **Definition**: Introduce the concept of Shelling points as developed by Thomas Schelling—a focal point that people use to make decisions in coordination games without prior communication.
-- **Relevance to Social Movements**: Explain why Shelling points are particularly valuable in environments where open communication is restricted or monitored.
-- **Examples from Non-Repressive Environments**: Brief mention of how Shelling points operate in freer societies (e.g., meeting in a town square or common knowledge events).
+The recent protests against stringent COVID-19 lockdowns across China served as a stark reminder of the enduring human capacity for collective action, even under conditions of pervasive state surveillance and control.  These acts of defiance highlight the crucial role of "Shelling points," or focal points for coordination without direct communication, in enabling protest movements within repressive societies.  This essay will explore how Shelling points, leveraging implicit social understandings, pre-existing symbols, and strategic public spaces, empower individuals to organize and sustain resistance in environments like China where overt dissent is often swiftly and harshly suppressed.
