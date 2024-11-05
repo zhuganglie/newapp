@@ -9,7 +9,7 @@ draft: false
 
 
 
-The recent protests against stringent COVID-19 lockdowns across China served as a stark reminder of the enduring human capacity for collective action, even under conditions of pervasive state surveillance and control. These acts of defiance highlight the crucial role of "Shelling points," or focal points for coordination without direct communication, in enabling protest movements within repressive societies. This essay will explore how Shelling points, leveraging implicit social understandings, pre-existing symbols, and strategic public spaces, empower individuals to organize and sustain resistance in environments like China where overt dissent is often swiftly and harshly suppressed.
+The 2022 protests against stringent COVID-19 lockdowns across China demonstrated how citizens can coordinate collective action even under intense surveillance and control. These unprecedented demonstrations revealed the power of "Shelling points" - focal points that enable coordination without explicit communication - in mobilizing protest movements within authoritarian societies. This essay explores how these Shelling points leverage shared cultural knowledge, symbolic meanings, and strategic locations to facilitate organized resistance in environments like China where open dissent meets immediate suppression. Through examination of recent protest movements, we analyze how these coordination mechanisms emerge, evolve, and enable collective action despite formidable state opposition.
 
 ### I. What is Shelling Point
 
