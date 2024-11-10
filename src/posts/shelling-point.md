@@ -1,5 +1,5 @@
 ---
-title: Shelling Points and Protests in Repressive China
+title: Shelling Points and Decentralized Collective Actions in China
 date: "2024-11-01"
 tags:
 - 谢林点
