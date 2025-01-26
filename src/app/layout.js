@@ -41,6 +41,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" > 
       <head>
+        <title>Why? - 用科学的视角看政治</title>
+        <meta name="description" content="Why? - 用科学的视角探索政治问题。我们专注于理解政治运作背后的真实规律，帮助你理解周围的政治世界。" />
+        <meta name="keywords" content="政治学, 政府运作, 选举, 民主, 政策, 比较政治, 政治制度, 政治行为" />
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-C61DTYKQV6"
         strategy="afterInteractive"
