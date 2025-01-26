@@ -67,7 +67,7 @@ const SideBar = forwardRef(({ isOpen, setIsSidebarOpen }, ref) => {
 
       <footer>
         <p className="text-center text-zinc-300 text-sm footer-text">
-          &copy; {new Date().getFullYear()} zhuganglie - Coded with <a href="https://aider.chat/">aider</a>
+          &copy; {new Date().getFullYear()} zhuganglie - <a href="https://aider.chat/">aider</a> as copilot
         </p>
       </footer>
     </aside>
