@@ -2,7 +2,7 @@
 import './globals.css';
 import SideBar from './components/SideBar';
 import Breadcrumbs from './components/Breadcrumbs';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { FaMugSaucer } from "react-icons/fa6";
 import Script from 'next/script'
 
@@ -23,9 +23,9 @@ export default function RootLayout({ children }) {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-  };
+  const toggleSidebar = useCallback(() => {
+    setIsSidebarOpen(prevIsOpen => !prevIsOpen);
+  }, []);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
