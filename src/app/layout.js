@@ -39,7 +39,7 @@ export default function RootLayout({ children }) {
   }, [isSidebarOpen]);
 
   return (
-    <html lang="en" > 
+    <html lang="zh" > 
       <head>
         <title>Why? - 用科学的视角看政治</title>
         <meta name="description" content="Why? - 用科学的视角探索政治问题。我们专注于理解政治运作背后的真实规律，帮助你理解周围的政治世界。" />
@@ -70,10 +70,8 @@ export default function RootLayout({ children }) {
               <FaMugSaucer size={28} />
             </button>
             <Breadcrumbs />
-            <main className="container mx-auto px-4 py-8 flex-grow">
-            <div className="flex justify-center">
-                {children}
-            </div>
+            <main className="container mx-auto flex-grow">
+              {children}
             </main>
           </div>
         </div>

@@ -34,21 +34,25 @@ const SideBar = forwardRef(({ isOpen, setIsSidebarOpen }, ref) => {
   return (
     <aside
       ref={ref}
-      className={`bg-zinc-900 p-8 h-screen fixed top-0 left-0 flex flex-col justify-between transition-transform duration-300 ${isOpen ? 'flex' : 'hidden'}`}
+      className={`bg-zinc-900 border-r border-zinc-800 p-8 h-screen fixed top-0 left-0 flex flex-col justify-between transition-transform duration-300 ${isOpen ? 'flex' : 'hidden'}`}
     >
-      <div>
-        <h1 className="text-center font-bold text-yellow-500">Why?</h1>
-        <p className="text-center text-zinc-300 font-serif font-semibold italic">Fact, Not Truth</p>
+      <div className="space-y-2">
+        <h1 className="text-center font-bold text-2xl text-[#d9a705]">Why?</h1>
+        <p className="text-center text-zinc-400 font-serif font-semibold italic">Fact, Not Truth</p>
       </div>
 
       <nav className="p-6">
-        <ul className="text-center px-0 mx-0 list-none">
+        <ul className="text-center px-0 mx-0 list-none space-y-6">
           {NAV_LINKS.map(({ href, label }) => (
             <li key={href}>
               <Link
                 href={href}
                 onClick={handleClick}
-                className={isActiveLink(href) ? 'font-bold text-yellow-300' : 'font-medium'}
+                className={`transition-all duration-300 hover:text-[#d9a705] ${
+                  isActiveLink(href) 
+                    ? 'font-bold text-[#d9a705] bg-zinc-800/50 px-4 py-1 rounded' 
+                    : 'font-medium text-zinc-400'
+                }`}
               >
                 {label}
               </Link>
@@ -57,16 +61,21 @@ const SideBar = forwardRef(({ isOpen, setIsSidebarOpen }, ref) => {
         </ul>
       </nav>
 
-      <div className="p-6 flex justify-center space-x-4 md:p-4">
+      <div className="p-6 flex justify-center space-x-6 md:p-4">
         {SOCIAL_LINKS.map(({ icon: Icon, href, ariaLabel }) => (
-          <a key={ariaLabel} href={href} aria-label={ariaLabel}>
-            <Icon />
+          <a 
+            key={ariaLabel} 
+            href={href} 
+            aria-label={ariaLabel}
+            className="text-zinc-400 hover:text-[#d9a705] hover:scale-110 transition-all duration-300"
+          >
+            <Icon size={20} />
           </a>
         ))}
       </div>
 
-      <footer>
-        <p className="text-center text-zinc-300 text-sm footer-text">
+      <footer className="border-t border-zinc-800 pt-6">
+        <p className="text-center text-zinc-400 text-sm footer-text">
           &copy; {new Date().getFullYear()} zhuganglie - <a href="https://aider.chat/">aider</a> as copilot
         </p>
       </footer>
