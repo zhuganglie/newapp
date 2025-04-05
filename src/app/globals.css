@@ -2,6 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Geist';
+  src: url('./fonts/GeistVF.woff') format('woff');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('./fonts/GeistMonoVF.woff') format('woff');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer utilities {
   .text-balance {
     @apply text-wrap: balance;
@@ -9,13 +25,18 @@
 }
 
 @layer base {
+  :root {
+    --font-scale: 1.18;
+    --line-height: 1.45;
+  }
+
   html {
-    @apply text-[118%] leading-[1.45em] box-border overflow-y-scroll bg-zinc-900 text-zinc-300;
+    @apply text-[118%] leading-[var(--line-height)] box-border overflow-y-scroll bg-zinc-900 text-zinc-300 antialiased;
+    font-feature-settings: "kern", "liga", "clig", "calt";
   }
 
   body {
-    @apply m-0 antialiased font-normal break-words tracking-normal;
-    font-family: Arial, sans-serif;
+    @apply m-0 font-normal break-words tracking-normal;
   }
 
   article,
@@ -54,14 +75,15 @@
   }
 
   a {
-    @apply bg-transparent;
-    color: #d9a705;
+    @apply bg-transparent text-primary transition-colors duration-200;
   }
 
-  a:active,
   a:hover {
-    @apply outline-0;
-    color: #b88c04;
+    @apply text-primary-hover outline-none;
+  }
+
+  a:focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary rounded-sm;
   }
 
   abbr[title] {
@@ -77,52 +99,44 @@
     @apply italic;
   }
 
+  :is(h1, h2, h3, h4, h5, h6) {
+    @apply font-bold text-zinc-100 mb-6;
+  }
+
   h1 {
-    @apply mb-[1.45rem] font-sans font-bold text-[2.25rem] leading-[1.1];
+    @apply text-[2.25rem] leading-tight;
   }
 
-  mark {
-    @apply bg-yellow-400 text-black;
+  h2 {
+    @apply text-[1.62671rem] leading-tight mt-12;
   }
 
-  small {
-    @apply text-[80%];
+  h3 {
+    @apply text-[1.38316rem] leading-tight mt-8;
   }
 
-  sub,
-  sup {
-    @apply text-[75%] leading-none relative align-baseline;
+  h4 {
+    @apply text-[1.2rem] leading-tight mt-6;
   }
 
-  sub {
-    @apply bottom-[-0.25em];
+  h5 {
+    @apply text-[1.1rem] leading-tight mt-4;
   }
 
-  sup {
-    @apply top-[-0.5em];
+  h6 {
+    @apply text-[1rem] leading-tight mt-4;
   }
 
-  img {
-    @apply border-none max-w-full mb-[1.45rem];
-  }
-
-  svg:not(:root) {
-    @apply overflow-hidden;
-  }
-
-  code,
-  kbd,
-  pre,
-  samp {
-    @apply font-mono text-[1em];
+  :is(code, kbd, pre, samp) {
+    @apply font-mono;
   }
 
   figure {
-    @apply mb-[1.45rem];
+    @apply my-6;
   }
 
   hr {
-    @apply mb-[calc(1.45rem_-_1px)] bg-zinc-300 border-none h-[1px];
+    @apply my-8 border-none h-px bg-zinc-800;
   }
 
   button,
@@ -155,15 +169,26 @@
   }
 
   fieldset {
-    @apply border border-solid border-gray-300 p-[0.35em_0.625em_0.75em] mb-[1.45rem];
+    @apply my-6 border border-solid border-zinc-700 rounded-lg p-4;
   }
 
   legend {
-    @apply box-border text-inherit table max-w-full p-0 whitespace-normal;
+    @apply px-2 text-zinc-300;
   }
 
   textarea {
-    @apply overflow-auto;
+    @apply overflow-auto bg-zinc-800 text-zinc-300 border border-zinc-700 rounded-md p-2;
+  }
+
+  select {
+    @apply bg-zinc-800 text-zinc-300 border border-zinc-700 rounded-md p-2;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="search"] {
+    @apply bg-zinc-800 text-zinc-300 border border-zinc-700 rounded-md px-3 py-2;
   }
 
   [type='checkbox'],
@@ -189,76 +214,48 @@
     @apply text-inherit opacity-50;
   }
 
-  h2 {
-    @apply mb-[1.45rem] font-sans font-bold text-[1.62671rem] leading-[1.1];
-  }
-
-  h3 {
-    @apply mb-[1.45rem] font-sans font-bold text-[1.38316rem] leading-[1.1];
-  }
-
-  h4 {
-    @apply mb-[1.45rem] font-sans font-bold text-[1rem] leading-[1.1];
-  }
-
-  h5 {
-    @apply mb-[1.45rem] font-sans font-bold text-[0.85028rem] leading-[1.1];
-  }
-
-  h6 {
-    @apply mb-[1.45rem] font-sans font-bold text-[0.78405rem] leading-[1.1];
-  }
-
   hgroup {
-    @apply mb-[1.45rem];
+    @apply my-6;
+  }
+
+  :is(ul, ol) {
+    @apply my-6 pl-8 space-y-2;
   }
 
   ul {
-    @apply ml-[1.45rem] mb-[1.45rem] list-outside list-disc;
+    @apply list-disc marker:text-zinc-500;
   }
 
   ol {
-    @apply ml-[1.45rem] mb-[1.45rem] list-outside list-decimal;
+    @apply list-decimal marker:text-zinc-500;
   }
 
   dl {
-    @apply mb-[1.45rem];
+    @apply my-6 space-y-4;
   }
 
   dd {
-    @apply mb-[1.45rem];
+    @apply mt-2;
   }
 
   p {
-    @apply mb-[1.45rem] max-w-prose;
+    @apply my-6 max-w-prose text-zinc-300;
   }
 
   pre {
-    @apply mb-[1.45rem] text-[0.85rem] leading-[1.42] bg-black rounded-[3px] overflow-auto break-normal p-[1.45rem];
+    @apply my-6 text-[0.85rem] leading-relaxed bg-black/40 rounded-lg overflow-x-auto p-6;
   }
 
   table {
-    @apply mb-[1.45rem] text-[1rem] leading-[1.45rem] border-collapse w-full;
+    @apply my-6 w-full border-collapse text-[0.95rem] leading-relaxed;
   }
 
   blockquote {
-    @apply mx-[1.45rem] mb-[1.45rem];
+    @apply my-8 pl-6 border-l-4 border-zinc-700 italic text-zinc-300;
   }
 
-  form {
-    @apply mb-[1.45rem];
-  }
-
-  noscript {
-    @apply mb-[1.45rem];
-  }
-
-  iframe {
-    @apply mb-[1.45rem];
-  }
-
-  address {
-    @apply mb-[1.45rem];
+  :is(form, noscript, iframe, address) {
+    @apply my-6;
   }
 
   dt {
@@ -270,39 +267,19 @@
   }
 
   li {
-    @apply mb-[calc(1.45rem_/_2)];
+    @apply mb-2;
   }
 
-  ol li {
-    @apply pl-0;
+  li > :is(ol, ul) {
+    @apply mt-2 ml-6;
   }
 
-  ul li {
-    @apply pl-0;
-  }
-
-  li > ol {
-    @apply ml-[1.45rem] my-[calc(1.45rem_/_2)];
-  }
-
-  li > ul {
-    @apply ml-[1.45rem] my-[calc(1.45rem_/_2)];
-  }
-
-  blockquote *:last-child {
-    @apply mb-0;
-  }
-
-  li *:last-child {
-    @apply mb-0;
-  }
-
-  p *:last-child {
+  :is(blockquote, li, p) *:last-child {
     @apply mb-0;
   }
 
   li > p {
-    @apply mb-[calc(1.45rem_/_2)];
+    @apply mb-2;
   }
 
   code {
@@ -317,31 +294,28 @@
     @apply text-[0.85rem] leading-[1.45rem];
   }
 
-  abbr {
-    @apply border-b border-dotted border-black/50 cursor-help;
-  }
-
-  acronym {
-    @apply border-b border-dotted border-black/50 cursor-help;
+  :is(abbr, acronym) {
+    @apply border-b border-dotted border-zinc-600 cursor-help;
   }
 
   thead {
-    @apply text-left;
+    @apply text-left bg-zinc-800/50;
   }
 
-  td,
   th {
-    @apply text-left border-b border-solid border-black/10 px-[0.96667rem] py-[0.725rem] pb-[calc(0.725rem_-_1px)];
+    @apply text-left py-3 px-4 text-zinc-200 font-bold border-b border-zinc-700;
   }
 
-  th:first-child,
-  td:first-child {
-    @apply pl-0;
+  td {
+    @apply text-left py-3 px-4 border-b border-zinc-800;
   }
 
-  th:last-child,
-  td:last-child {
-    @apply pr-0;
+  :is(th, td):first-child {
+    @apply pl-4;
+  }
+
+  :is(th, td):last-child {
+    @apply pr-4;
   }
 
   tt,
