@@ -1,9 +1,44 @@
-"use client";
+'use client';
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-const ClientComponent = () => {
+/**
+ * @param {{ segment: string; href: string; isLast: boolean }} props
+ */
+const BreadcrumbSegment = ({ segment, href, isLast }) => {
+  const decodedSegment = decodeURIComponent(segment);
+
+  return (
+    <li key={segment} aria-current={isLast ? 'page' : undefined}>
+      <div className="flex items-center">
+        <span className="mx-2 text-zinc-600" aria-hidden="true">
+          <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </span>
+        {isLast ? (
+          <span 
+            className="text-zinc-300 font-medium truncate max-w-[200px] inline-block align-middle"
+            title={decodedSegment}
+          >
+            {decodedSegment}
+          </span>
+        ) : (
+          <Link 
+            href={href}
+            className="text-zinc-400 hover:text-[#d9a705] hover:scale-105 active:scale-95 transition-all duration-200 truncate max-w-[200px] inline-block align-middle rounded px-2 py-1 hover:bg-zinc-700/30"
+            title={decodedSegment}
+          >
+            {decodedSegment}
+          </Link>
+        )}
+      </div>
+    </li>
+  );
+};
+
+const BreadcrumbSegments = () => {
   const pathname = usePathname();
   const segments = pathname.split('/').filter(Boolean);
 
@@ -12,20 +47,14 @@ const ClientComponent = () => {
       {segments.map((segment, index) => {
         const isLast = index === segments.length - 1;
         const href = '/' + segments.slice(0, index + 1).join('/');
-     /*   const segmentDisplay = segment.charAt(0).toUpperCase() + segment.slice(1).replace('-', ' '); */
-        const decodedSegment = decodeURIComponent(segment);
-
+        
         return (
-          <li key={segment} aria-current={isLast ? 'page' : undefined}>
-            <span className="mx-1 text-gray-500">/</span>
-            {isLast ? (
-              <span className="text-gray-700 truncate text-ellipsis overflow-hidden">{decodedSegment}</span>
-            ) : (
-              <Link href={href} className="hover:text-gray-600 truncate text-ellipsis overflow-hidden">
-               {decodedSegment}
-              </Link>
-            )}
-          </li>
+          <BreadcrumbSegment 
+            key={segment}
+            segment={segment}
+            href={href}
+            isLast={isLast}
+          />
         );
       })}
     </>
@@ -34,15 +63,25 @@ const ClientComponent = () => {
 
 export default function Breadcrumbs() {
   return (
-    <nav aria-label="breadcrumb">
-      <ol className="flex items-center space-x-1 text-sm text-zinc-400 list-none list-inside">
-        <li className="">
-          <Link href="/" className="hover:text-zinc-400">
-            Home
-          </Link>
+    <nav 
+      aria-label="breadcrumb"
+      className="sticky top-4 z-10 mb-6 mx-4 overflow-x-auto scrollbar-none motion-safe:animate-fadeIn"
+    >
+      <ul className="flex items-center text-sm whitespace-nowrap bg-zinc-800/30 backdrop-blur-sm px-4 py-3 rounded-lg border border-zinc-700/50 shadow-lg shadow-black/5">
+        <li>
+          <div className="flex items-center">
+            <Link 
+              href="/" 
+              className="text-zinc-400 hover:text-[#d9a705] hover:scale-105 active:scale-95 transition-all duration-200 rounded px-2 py-1 hover:bg-zinc-700/30 inline-block align-middle"
+            >
+              Home
+            </Link>
+          </div>
         </li>
-        <ClientComponent />
-      </ol>
+        <li className="flex items-center">
+        <BreadcrumbSegments />
+        </li>
+      </ul>
     </nav>
   );
 }

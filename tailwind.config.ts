@@ -13,6 +13,24 @@ const config: Config = {
         sans: ['Geist', 'system-ui', 'sans-serif'],
         mono: ['Geist Mono', 'monospace'],
       },
+      animation: {
+        fadeIn: 'fadeIn 0.5s ease-out',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0', transform: 'translateY(-10px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+      },
+      utilities: {
+        '.scrollbar-none': {
+          '-ms-overflow-style': 'none',
+          'scrollbar-width': 'none',
+          '&::-webkit-scrollbar': {
+            display: 'none'
+          }
+        }
+      },
       colors: {
         primary: {
           DEFAULT: '#d9a705',
