@@ -24,8 +24,8 @@ import BreadcrumbsList from './BreadcrumbsList';
 export default function Breadcrumbs({ 
   className,
   items: customItems,
-  showHomeIcon = true,
-  homeLabel = 'Home'
+ // showHomeIcon = true,
+ // homeLabel = 'Home'
 }: BreadcrumbsProps) {
   // Get breadcrumb items either from custom props or generated from URL
   const items = useBreadcrumbs(customItems);

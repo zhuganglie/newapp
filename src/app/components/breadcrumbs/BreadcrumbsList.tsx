@@ -22,7 +22,7 @@ export default function BreadcrumbsList({ items }: BreadcrumbsListProps) {
         </Link>
       </li>
 
-      {items.map((item, index) => (
+      {items.map((item) => (
         <BreadcrumbItem
           key={item.href}
           {...item}
