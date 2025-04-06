@@ -1,7 +1,7 @@
 'use client'
 import './globals.css';
 import SideBar from './components/SideBar';
-import Breadcrumbs from './components/Breadcrumbs';
+import Breadcrumbs from '@/app/components/breadcrumbs';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { FaMugSaucer } from "react-icons/fa6";
 import Script from 'next/script'

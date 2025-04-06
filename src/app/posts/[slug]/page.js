@@ -34,7 +34,7 @@ export default async function PostPage({ params }) {
       {post.tags && post.tags.length > 0 && (
         <footer className="border-t border-zinc-800 pt-8">
           <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-            <h2 className="text-zinc-400 font-medium min-w-max">标签：</h2>
+            <div className="text-zinc-400 font-md font-bold min-w-max">标签：</div>
             <div className="flex flex-wrap gap-2">
               {post.tags.map((tag) => (
                 <Link
