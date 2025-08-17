@@ -10,7 +10,7 @@ Notion 很好，Obsidian 很好，其它的笔记软件也都很好。但是，�
 ### 1. **安装和设置 Gemini CLI**
 
 在开始使用 Gemini CLI 管理笔记之前，需要确保已正确安装并配置：
-- **安装**：根据，确保你有 Node.js（版本 18 或更高）。然后运行以下命令全局安装 Gemini CLI：[](https://proflead.dev/posts/gemini-cli-tutorial/)
+- **安装**：根据，确保你有 Node.js（版本 18 或更高）。然后运行以下命令全局安装 Gemini CLI：[Read here...](https://proflead.dev/posts/gemini-cli-tutorial/)
   ```bash
   npm install -g @google/gemini-cli
   ```
@@ -26,7 +26,7 @@ Notion 很好，Obsidian 很好，其它的笔记软件也都很好。但是，�
 
 ### 2. **使用 GEMINI.md 作为笔记的持久化上下文**
 
-GEMINI.md 文件是 Gemini CLI 的核心功能之一，可用于存储项目或笔记相关的上下文信息，适合长期管理和组织笔记。[](https://softwareplanetgroup.co.uk/best-practices-for-using-gemini-cli/)[](https://danicat.dev/posts/20250715-gemini-cli-system-prompt/)
+GEMINI.md 文件是 Gemini CLI 的核心功能之一，可用于存储项目或笔记相关的上下文信息，适合长期管理和组织笔记。[Read here...](https://softwareplanetgroup.co.uk/best-practices-for-using-gemini-cli/)[](https://danicat.dev/posts/20250715-gemini-cli-system-prompt/)
 
 - **创建 GEMINI.md 文件**：
   在你的项目根目录或全局目录（`~/.gemini/`）创建一个 `GEMINI.md` 文件，用于存储笔记的结构化信息。例如：
@@ -60,7 +60,7 @@ GEMINI.md 文件是 Gemini CLI 的核心功能之一，可用于存储项目或�
 
 ### 3. **创建和编辑笔记**
 
-Gemini CLI 支持直接操作文件，适合创建和编辑 Markdown 格式的笔记。[](https://www.hackingnote.com/en/cheatsheets/gemini/),[](https://proflead.dev/posts/gemini-cli-tutorial/)
+Gemini CLI 支持直接操作文件，适合创建和编辑 Markdown 格式的笔记。[Read here...](https://www.hackingnote.com/en/cheatsheets/gemini/),[](https://proflead.dev/posts/gemini-cli-tutorial/)
 
 - **创建新笔记**：
   使用 `write-file` 工具创建新笔记。例如：
@@ -90,10 +90,10 @@ Gemini CLI 支持直接操作文件，适合创建和编辑 Markdown 格式的�
   Gemini CLI 会显示更改的差异（diff），需要你确认后应用。
 
 - **安全编辑**：
-  启用检查点模式（`gemini -c`）以在每次文件操作前创建快照，允许通过 `/restore` 撤销更改。[](https://www.geeky-gadgets.com/gemini-cli-pro-tips-and-tricks/)
+  启用检查点模式（`gemini -c`）以在每次文件操作前创建快照，允许通过 `/restore` 撤销更改。[Read here...](https://www.geeky-gadgets.com/gemini-cli-pro-tips-and-tricks/)
 
 ### 4. **总结和分析笔记**
-Gemini CLI 擅长处理和分析文本文件（），可用于总结或提取笔记中的关键信息。[](https://www.hackingnote.com/en/cheatsheets/gemini/)
+Gemini CLI 擅长处理和分析文本文件，可用于总结或提取笔记中的关键信息。[](https://www.hackingnote.com/en/cheatsheets/gemini/)
 
 - **总结单篇笔记**：
   ```bash
@@ -112,7 +112,7 @@ Gemini CLI 擅长处理和分析文本文件（），可用于总结或提取笔
   ```bash
   gemini -f notes/daily/ "Summarize all daily notes from this week."
   ```
-  或者使用 `@` 语法：[](https://gist.github.com/alkimiadev/1a6401a29a7844f6b64fccd826d9bd7a)
+  或者使用 `@` 语法：[Read here...](https://gist.github.com/alkimiadev/1a6401a29a7844f6b64fccd826d9bd7a)
   ```bash
   gemini -p "@notes/daily/ Summarize tasks completed this week."
   ```
@@ -124,7 +124,7 @@ Gemini CLI 擅长处理和分析文本文件（），可用于总结或提取笔
   ```
 
 ### 5. **自动化笔记管理**
-Gemini CLI 支持自动化任务，可用于定期整理或生成笔记。[](https://www.geeky-gadgets.com/gemini-cli-pro-tips-and-tricks/)
+Gemini CLI 支持自动化任务，可用于定期整理或生成笔记。[Read here...](https://www.geeky-gadgets.com/gemini-cli-pro-tips-and-tricks/)
 
 - **创建自定义命令**：
   在 `~/.gemini/commands/` 或项目根目录的 `.gemini/commands/` 中创建一个 TOML 文件（如 `create_note.toml`）：
@@ -161,7 +161,7 @@ Gemini CLI 支持自动化任务，可用于定期整理或生成笔记。[](htt
   ```
 
 ### 6. **管理笔记历史**
-Gemini CLI 支持会话历史管理，可用于记录与笔记相关的交互历史。[](https://github.com/google-gemini/gemini-cli/issues/3882)
+Gemini CLI 支持会话历史管理，可用于记录与笔记相关的交互历史。[Read here...](https://github.com/google-gemini/gemini-cli/issues/3882)
 
 - **保存交互历史**：
   
@@ -187,7 +187,7 @@ Gemini CLI 支持会话历史管理，可用于记录与笔记相关的交互历
   当前 Gemini CLI 不自动保存所有会话历史。你需要手动保存，或等待未来版本添加自动保存功能。[](https://github.com/google-gemini/gemini-cli/issues/3882)
 
 ### 7. **高级功能：多模态笔记管理**
-Gemini CLI 支持多模态输入，可用于处理包含图片的笔记。[](https://www.geeky-gadgets.com/gemini-cli-pro-tips-and-tricks/)
+Gemini CLI 支持多模态输入，可用于处理包含图片的笔记。[Read here...](https://www.geeky-gadgets.com/gemini-cli-pro-tips-and-tricks/)
 
 - **分析图片笔记**：
   
@@ -204,10 +204,10 @@ Gemini CLI 支持多模态输入，可用于处理包含图片的笔记。[](htt
   ```
 
 ### 8. **注意事项和最佳实践**
-- **明确提示**：避免模糊指令，如“整理我的笔记”。改为具体任务，如“将 notes/daily/ 中的所有任务提取到一个新文件 notes/tasks.md”。[](https://softwareplanetgroup.co.uk/best-practices-for-using-gemini-cli/)
-- **使用检查点**：在批量编辑笔记时，始终启用 `--checkpointing` 以防意外更改。[](https://www.geeky-gadgets.com/gemini-cli-pro-tips-and-tricks/)
-- **定期更新 GEMINI.md**：保持 GEMINI.md 内容的最新性，确保笔记管理规则与项目需求一致。[](https://softwareplanetgroup.co.uk/best-practices-for-using-gemini-cli/)
-- **避免全局编辑**：不要对整个笔记目录执行未经确认的大规模更改，逐步处理以确保准确性。[](https://softwareplanetgroup.co.uk/best-practices-for-using-gemini-cli/)
+- **明确提示**：避免模糊指令，如“整理我的笔记”。改为具体任务，如“将 notes/daily/ 中的所有任务提取到一个新文件 notes/tasks.md”。[Read here...](https://softwareplanetgroup.co.uk/best-practices-for-using-gemini-cli/)
+- **使用检查点**：在批量编辑笔记时，始终启用 `--checkpointing` 以防意外更改。[Read here...](https://www.geeky-gadgets.com/gemini-cli-pro-tips-and-tricks/)
+- **定期更新 GEMINI.md**：保持 GEMINI.md 内容的最新性，确保笔记管理规则与项目需求一致。[Read here...](https://softwareplanetgroup.co.uk/best-practices-for-using-gemini-cli/)
+- **避免全局编辑**：不要对整个笔记目录执行未经确认的大规模更改，逐步处理以确保准确性。[Read here...](https://softwareplanetgroup.co.uk/best-practices-for-using-gemini-cli/)
 
 ### 总结
 Gemini CLI 通过文件操作、上下文管理和自动化功能，为笔记管理提供了强大支持。你可以利用 GEMINI.md 组织笔记结构，使用文件处理命令创建和编辑笔记，借助搜索和总结功能提取关键信息，并通过自定义命令自动化任务，结合其多模态支持和检查点功能，Gemini CLI 能高效满足笔记记录、整理和应用的需要。此外，Gemini CLI 内置了Git整合功能，可以将笔记目录转化为 Git 仓库，实现版本追踪。
