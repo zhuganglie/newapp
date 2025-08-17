@@ -124,7 +124,7 @@ Gemini CLI 擅长处理和分析文本文件（），可用于总结或提取笔
   ```
 
 ### 5. **自动化笔记管理**
-Gemini CLI 支持自动化任务（），可用于定期整理或生成笔记。[](https://www.geeky-gadgets.com/gemini-cli-pro-tips-and-tricks/)
+Gemini CLI 支持自动化任务，可用于定期整理或生成笔记。[](https://www.geeky-gadgets.com/gemini-cli-pro-tips-and-tricks/)
 
 - **创建自定义命令**：
   在 `~/.gemini/commands/` 或项目根目录的 `.gemini/commands/` 中创建一个 TOML 文件（如 `create_note.toml`）：
@@ -161,7 +161,7 @@ Gemini CLI 支持自动化任务（），可用于定期整理或生成笔记。
   ```
 
 ### 6. **管理笔记历史**
-Gemini CLI 支持会话历史管理（），可用于记录与笔记相关的交互历史。[](https://github.com/google-gemini/gemini-cli/issues/3882)
+Gemini CLI 支持会话历史管理，可用于记录与笔记相关的交互历史。[](https://github.com/google-gemini/gemini-cli/issues/3882)
 
 - **保存交互历史**：
   
