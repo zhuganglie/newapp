@@ -1,5 +1,6 @@
 'use client'
 import './globals.css';
+import 'prism-themes/themes/prism-okaidia.css';
 import SideBar from './components/SideBar';
 import Breadcrumbs from '@/app/components/breadcrumbs';
 import { useState, useEffect, useRef, useCallback } from 'react';

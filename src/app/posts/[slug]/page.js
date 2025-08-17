@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import { getPostBySlug } from '@/lib/posts'
 import ReactMarkdown from 'react-markdown'
 import Link from 'next/link'
+import rehypePrism from 'rehype-prism-plus'
 
 export default async function PostPage({ params }) {
   const post = await getPostBySlug(params.slug)
@@ -28,7 +29,7 @@ export default async function PostPage({ params }) {
       </header>
 
       <article className="prose prose-lg prose-zinc prose-invert max-w-none mb-12">
-        <ReactMarkdown>{post.content}</ReactMarkdown>
+        <ReactMarkdown rehypePlugins={[rehypePrism]}>{post.content}</ReactMarkdown>
       </article>
 
       {post.tags && post.tags.length > 0 && (
