@@ -60,7 +60,7 @@ GEMINI.md 文件是 Gemini CLI 的核心功能之一，可用于存储项目或�
 
 ### 3. **创建和编辑笔记**
 
-Gemini CLI 支持直接操作文件，适合创建和编辑 Markdown 格式的笔记（，）。[](https://www.hackingnote.com/en/cheatsheets/gemini/)[](https://proflead.dev/posts/gemini-cli-tutorial/)
+Gemini CLI 支持直接操作文件，适合创建和编辑 Markdown 格式的笔记。[](https://www.hackingnote.com/en/cheatsheets/gemini/),[](https://proflead.dev/posts/gemini-cli-tutorial/)
 
 - **创建新笔记**：
   使用 `write-file` 工具创建新笔记。例如：
@@ -90,7 +90,7 @@ Gemini CLI 支持直接操作文件，适合创建和编辑 Markdown 格式的�
   Gemini CLI 会显示更改的差异（diff），需要你确认后应用。
 
 - **安全编辑**：
-  启用检查点模式（`gemini -c`）以在每次文件操作前创建快照，允许通过 `/restore` 撤销更改（）。[](https://www.geeky-gadgets.com/gemini-cli-pro-tips-and-tricks/)
+  启用检查点模式（`gemini -c`）以在每次文件操作前创建快照，允许通过 `/restore` 撤销更改。[](https://www.geeky-gadgets.com/gemini-cli-pro-tips-and-tricks/)
 
 ### 4. **总结和分析笔记**
 Gemini CLI 擅长处理和分析文本文件（），可用于总结或提取笔记中的关键信息。[](https://www.hackingnote.com/en/cheatsheets/gemini/)
@@ -112,7 +112,7 @@ Gemini CLI 擅长处理和分析文本文件（），可用于总结或提取笔
   ```bash
   gemini -f notes/daily/ "Summarize all daily notes from this week."
   ```
-  或者使用 `@` 语法（）：[](https://gist.github.com/alkimiadev/1a6401a29a7844f6b64fccd826d9bd7a)
+  或者使用 `@` 语法：[](https://gist.github.com/alkimiadev/1a6401a29a7844f6b64fccd826d9bd7a)
   ```bash
   gemini -p "@notes/daily/ Summarize tasks completed this week."
   ```
@@ -187,7 +187,7 @@ Gemini CLI 支持会话历史管理（），可用于记录与笔记相关的交
   当前 Gemini CLI 不自动保存所有会话历史。你需要手动保存，或等待未来版本添加自动保存功能。[](https://github.com/google-gemini/gemini-cli/issues/3882)
 
 ### 7. **高级功能：多模态笔记管理**
-Gemini CLI 支持多模态输入（），可用于处理包含图片的笔记。[](https://www.geeky-gadgets.com/gemini-cli-pro-tips-and-tricks/)
+Gemini CLI 支持多模态输入，可用于处理包含图片的笔记。[](https://www.geeky-gadgets.com/gemini-cli-pro-tips-and-tricks/)
 
 - **分析图片笔记**：
   
