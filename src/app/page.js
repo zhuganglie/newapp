@@ -4,7 +4,7 @@ export default async function HomePage() {
       <h1 className="text-center text-4xl md:text-5xl font-bold text-[#d9a705] mb-12">
         杂记
       </h1>
-      <h2>嘿，终于等到你了！</h2>
+      <h2>嘿，你好！终于等到你了！</h2>
       <div className="flex gap-8 items-center justify-center">
         
         <a
