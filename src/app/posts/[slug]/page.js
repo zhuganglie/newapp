@@ -21,22 +21,22 @@ export default async function PostPage({ params }) {
 
       <article className="max-w-3xl mx-auto relative">
         <header className="mb-16 text-center space-y-6 animate-fade-in">
-          <div className="inline-block">
+          <div className="inline-block relative">
             <h1 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-light via-white to-secondary tracking-tight drop-shadow-lg pb-2 leading-tight">
               {post.title ?? 'Untitled'}
             </h1>
-            <div className="h-1 w-full bg-gradient-to-r from-transparent via-primary to-transparent rounded-full opacity-50" />
-          </div>
+            <div className="h-1 w-full bg-gradient-to-r from-transparent via-primary to-transparent rounded-full opacity-50 mb-6" />
 
-          {post.date && (
-            <time className="block text-primary/80 font-mono text-sm bg-surface/50 inline-block px-4 py-1 rounded-full border border-white/5">
-              {new Date(post.date).toLocaleDateString('zh-CN', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-              })}
-            </time>
-          )}
+            {post.date && (
+              <time className="block text-primary/60 font-mono text-sm tracking-wider uppercase">
+                {new Date(post.date).toLocaleDateString('zh-CN', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric'
+                })}
+              </time>
+            )}
+          </div>
         </header>
 
         <div className="prose prose-lg prose-invert max-w-none mb-16 animate-slide-up glass p-8 md:p-12 rounded-3xl border border-white/5 shadow-2xl">
