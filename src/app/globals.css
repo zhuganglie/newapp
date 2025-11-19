@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --background: #0f172a;
+  --foreground: #f8fafc;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
 @font-face {
   font-family: 'Geist';
   src: url('./fonts/GeistVF.woff') format('woff');
@@ -19,8 +31,20 @@
 }
 
 @layer utilities {
+  .glass {
+    @apply bg-surface/70 backdrop-blur-lg border border-white/10 shadow-xl;
+  }
+
+  .glass-hover {
+    @apply hover:bg-surface/90 transition-all duration-300;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-light via-primary to-primary-hover;
+  }
+
   .text-balance {
-    @apply text-wrap: balance;
+    text-wrap: balance;
   }
 }
 
@@ -270,7 +294,7 @@
     @apply mb-2;
   }
 
-  li > :is(ol, ul) {
+  li> :is(ol, ul) {
     @apply mt-2 ml-6;
   }
 
@@ -278,7 +302,7 @@
     @apply mb-0;
   }
 
-  li > p {
+  li>p {
     @apply mb-2;
   }
 

@@ -10,62 +10,65 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Geist', 'system-ui', 'sans-serif'],
-        mono: ['Geist Mono', 'monospace'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        serif: ['Merriweather', 'serif'],
+        mono: ['JetBrains Mono', 'monospace'],
+      },
+      colors: {
+        background: '#0f172a', // Slate 900
+        surface: '#1e293b', // Slate 800
+        primary: {
+          DEFAULT: '#fbbf24', // Amber 400
+          hover: '#f59e0b', // Amber 500
+          light: '#fcd34d', // Amber 300
+          dark: '#b45309', // Amber 700
+        },
+        secondary: {
+          DEFAULT: '#38bdf8', // Sky 400
+          hover: '#0ea5e9', // Sky 500
+        },
+        text: {
+          main: '#f8fafc', // Slate 50
+          muted: '#94a3b8', // Slate 400
+        }
       },
       animation: {
-        fadeIn: 'fadeIn 0.5s ease-out',
+        'fade-in': 'fadeIn 0.8s ease-out forwards',
+        'slide-up': 'slideUp 0.8s ease-out forwards',
+        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
       keyframes: {
         fadeIn: {
-          '0%': { opacity: '0', transform: 'translateY(-10px)' },
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        slideUp: {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
       },
-      utilities: {
-        '.scrollbar-none': {
-          '-ms-overflow-style': 'none',
-          'scrollbar-width': 'none',
-          '&::-webkit-scrollbar': {
-            display: 'none'
-          }
-        }
-      },
-      colors: {
-        primary: {
-          DEFAULT: '#d9a705',
-          hover: '#b88c04',
-          light: '#e6b618',
-          dark: '#947203',
-        },
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
       typography: ({ theme }: { theme: (path: string) => string }) => ({
-        zinc: {
+        DEFAULT: {
           css: {
-            '--tw-prose-body': theme('colors.zinc[300]'),
-            '--tw-prose-headings': theme('colors.zinc[100]'),
-            '--tw-prose-lead': theme('colors.zinc[300]'),
+            '--tw-prose-body': theme('colors.text.muted'),
+            '--tw-prose-headings': theme('colors.text.main'),
+            '--tw-prose-lead': theme('colors.text.muted'),
             '--tw-prose-links': theme('colors.primary.DEFAULT'),
-            '--tw-prose-bold': theme('colors.zinc[100]'),
-            '--tw-prose-counters': theme('colors.zinc[400]'),
-            '--tw-prose-bullets': theme('colors.zinc[600]'),
-            '--tw-prose-hr': theme('colors.zinc[700]'),
-            '--tw-prose-quotes': theme('colors.zinc[100]'),
-            '--tw-prose-quote-borders': theme('colors.zinc[700]'),
-            '--tw-prose-captions': theme('colors.zinc[400]'),
-            '--tw-prose-code': theme('colors.zinc[100]'),
-            '--tw-prose-pre-code': theme('colors.zinc[300]'),
-            '--tw-prose-pre-bg': 'rgb(0 0 0 / 0.4)',
-            '--tw-prose-th-borders': theme('colors.zinc[600]'),
-            '--tw-prose-td-borders': theme('colors.zinc[700]'),
+            '--tw-prose-bold': theme('colors.text.main'),
+            '--tw-prose-counters': theme('colors.text.muted'),
+            '--tw-prose-bullets': theme('colors.text.muted'),
+            '--tw-prose-hr': theme('colors.surface'),
+            '--tw-prose-quotes': theme('colors.text.main'),
+            '--tw-prose-quote-borders': theme('colors.surface'),
+            '--tw-prose-captions': theme('colors.text.muted'),
+            '--tw-prose-code': theme('colors.primary.light'),
+            '--tw-prose-pre-code': theme('colors.text.muted'),
+            '--tw-prose-pre-bg': theme('colors.surface'),
+            '--tw-prose-th-borders': theme('colors.surface'),
+            '--tw-prose-td-borders': theme('colors.surface'),
           },
         },
       }),
-      spacing: {
-        '1.45rem': '1.45rem',
-      },
     },
   },
   plugins: [typography],

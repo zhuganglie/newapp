@@ -40,17 +40,17 @@ export default function RootLayout({ children }) {
   }, [isSidebarOpen]);
 
   return (
-    <html lang="zh" > 
+    <html lang="zh" >
       <head>
         <title>Why? 为什么？</title>
         <meta name="description" content="Why? 我的好奇心" />
         <meta name="keywords" content="杂记" />
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-C61DTYKQV6"
-        strategy="afterInteractive"
-      />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-C61DTYKQV6"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
@@ -58,22 +58,24 @@ export default function RootLayout({ children }) {
             page_path: window.location.pathname,
           });
         `}
-      </Script>
+        </Script>
       </head>
       <body>
-        <div className="w-full md:w-5/6 flex min-h-screen">
+        <div className="w-full min-h-screen bg-background text-text-main selection:bg-primary/30 selection:text-primary-light">
           <SideBar isOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} ref={sidebarRef} />
-          <div className={`w-full ${isSidebarOpen ? 'ml-72' : ''} p-8 transition-all duration-300 ease-in-out`}>
-            <button
-              className="md:hidden"
-              onClick={toggleSidebar}
-            >
-              <FaMugSaucer size={28} />
-            </button>
-            <Breadcrumbs />
-            <main className="container mx-auto flex-grow">
-              {children}
-            </main>
+          <div className={`w-full ${isSidebarOpen ? 'md:pl-72' : ''} transition-all duration-500 ease-out min-h-screen flex flex-col`}>
+            <div className="p-8 flex-grow">
+              <button
+                className="md:hidden mb-8 text-text-muted hover:text-primary transition-colors"
+                onClick={toggleSidebar}
+              >
+                <FaMugSaucer size={28} />
+              </button>
+              <Breadcrumbs />
+              <main className="container mx-auto flex-grow mt-8">
+                {children}
+              </main>
+            </div>
           </div>
         </div>
       </body>

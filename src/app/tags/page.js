@@ -14,24 +14,38 @@ export default async function TagsPage() {
   const sortedTagCounts = tagCounts.sort((a, b) => b.count - a.count);
 
   return (
-    <main className="max-w-4xl mx-auto px-4 py-12">
-      <h1 className="text-3xl md:text-4xl font-bold text-[#d9a705] mb-12 text-center">
-        全部标签
-      </h1>
+    <main className="min-h-screen py-20 px-4 relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-[100px] animate-pulse-slow" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-[100px] animate-pulse-slow" style={{ animationDelay: '2s' }} />
+      </div>
 
-      <div className="flex flex-wrap gap-3">
-        {sortedTagCounts.map(({ tag, count }) => (
-          <Link
-            key={tag}
-            href={`/tags/${tag}`}
-            className="inline-flex items-center bg-zinc-800 hover:bg-[#d9a705] text-zinc-300 hover:text-zinc-900 text-base px-4 py-2 rounded-lg transition-colors group"
-          >
-            <span>{tag}</span>
-            <span className="ml-2 text-sm text-zinc-400 group-hover:text-zinc-800">
-              ({count})
-            </span>
-          </Link>
-        ))}
+      <div className="max-w-5xl mx-auto space-y-16">
+        <h1 className="text-5xl md:text-6xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-primary-light via-white to-secondary animate-fade-in tracking-tight drop-shadow-lg">
+          全部标签
+        </h1>
+
+        <div className="flex flex-wrap justify-center gap-4 animate-slide-up" style={{ animationDelay: '0.2s' }}>
+          {sortedTagCounts.map(({ tag, count }, index) => (
+            <Link
+              key={tag}
+              href={`/tags/${tag}`}
+              className="group relative"
+              style={{ animation: `fadeIn 0.5s ease-out forwards ${index * 0.05}s`, opacity: 0 }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="relative flex items-center gap-3 px-6 py-3 bg-surface/40 backdrop-blur-md border border-white/10 rounded-full transition-all duration-300 group-hover:bg-surface/60 group-hover:scale-105 group-hover:border-primary/30 shadow-lg">
+                <span className="text-lg font-medium text-text-main group-hover:text-primary transition-colors">
+                  {tag}
+                </span>
+                <span className="flex items-center justify-center h-6 min-w-[1.5rem] px-2 text-xs font-bold text-surface bg-primary/80 rounded-full group-hover:bg-primary group-hover:text-black transition-colors">
+                  {count}
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
       </div>
     </main>
   )
