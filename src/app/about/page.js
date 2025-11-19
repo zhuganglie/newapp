@@ -1,4 +1,4 @@
-import { FaGraduationCap, FaUsers, FaBicycle, FaGamepad, FaChessBoard } from 'react-icons/fa6';
+import { FaGraduationCap, FaUsers, FaBicycle } from 'react-icons/fa6';
 
 export default function AboutPage() {
   const cards = [
