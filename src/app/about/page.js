@@ -9,7 +9,7 @@ export default function AboutPage() {
       color: "from-primary-light to-primary"
     },
     {
-      title: "Residential Community",
+      title: "Grassroots Leader",
       icon: FaUsers,
       content: "I'm a grassroots leader in my residential community. My main qualification? I'm excellent at nodding enthusiastically and saying 'That's a great idea!' while wondering who's going to actually do it.",
       color: "from-secondary to-secondary-hover"
