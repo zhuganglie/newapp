@@ -3,12 +3,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { forwardRef } from 'react';
-import { FaRegEnvelope, FaXTwitter, FaGithub, FaPenNib, FaHashtag, FaUserAstronaut } from 'react-icons/fa6';
+import { FaRegEnvelope, FaXTwitter, FaGithub, FaPenNib, FaHashtag, FaUserAstronaut, FaYoutube } from 'react-icons/fa6';
 
 const SOCIAL_LINKS = [
-  { icon: FaRegEnvelope, href: '#', ariaLabel: 'Email' },
-  { icon: FaXTwitter, href: '#', ariaLabel: 'Twitter' },
-  { icon: FaGithub, href: '#', ariaLabel: 'GitHub' }
+  { icon: FaRegEnvelope, href: 'mailto:zhuganglie@gmail.com', ariaLabel: 'Email' },
+  { icon: FaXTwitter, href: 'https://twitter.com/zhugangliet', ariaLabel: 'Twitter' },
+  { icon: FaYoutube, href: 'https://www.youtube.com/@gangliezhu7951', ariaLabel: 'Youtube' }
 ];
 
 const NAV_LINKS = [
