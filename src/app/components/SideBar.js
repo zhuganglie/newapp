@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { forwardRef } from 'react';
-import { FaRegEnvelope, FaXTwitter, FaGithub, FaPenNib, FaHashtag, FaUserAstronaut, FaYoutube } from 'react-icons/fa6';
+import { FaRegEnvelope, FaXTwitter, FaYoutube, FaPenNib, FaHashtag, FaUserAstronaut, FaYoutube } from 'react-icons/fa6';
 
 const SOCIAL_LINKS = [
   { icon: FaRegEnvelope, href: 'mailto:zhuganglie@gmail.com', ariaLabel: 'Email' },

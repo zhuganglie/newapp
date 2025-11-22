@@ -5,7 +5,7 @@ export default function AboutPage() {
     {
       title: "Life-long Learner",
       icon: FaGraduationCap,
-      content: "I used to be an educator, but now I'm just a professional student. I've spent a lifetime reading social sciences, giving me just enough knowledge to be dangerous at dinner parties—or at least annoying.",
+      content: "I used to be an educator, but now I'm just a professional student. I've spent a lifetime reading political science, giving me just enough knowledge to be dangerous at dinner parties—or at least annoying.",
       color: "from-primary-light to-primary"
     },
     {
