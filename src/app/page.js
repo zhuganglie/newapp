@@ -58,9 +58,6 @@ export default async function HomePage() {
           <h3 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-light to-secondary">
             最新（凑数）文章
           </h3>
-          <Link href="/posts" className="text-text-muted hover:text-primary transition-colors text-sm flex items-center gap-2 group">
-            查看全部 <span className="group-hover:translate-x-1 transition-transform">→</span>
-          </Link>
         </div>
 
         <div className="grid gap-8 md:grid-cols-3">
@@ -102,6 +99,12 @@ export default async function HomePage() {
               </div>
             </article>
           ))}
+        </div>
+
+        <div className="flex justify-center mt-12">
+          <Link href="/posts" className="text-text-muted hover:text-primary transition-colors text-sm flex items-center gap-2 group">
+            查看全部 <span className="group-hover:translate-x-1 transition-transform">→</span>
+          </Link>
         </div>
       </section>
     </main>
