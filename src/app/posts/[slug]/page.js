@@ -1,11 +1,13 @@
 import { notFound } from 'next/navigation'
 import { getPostBySlug } from '@/lib/posts'
-import ReactMarkdown from 'react-markdown'
+import { MDXRemote } from 'next-mdx-remote/rsc'
 import Link from 'next/link'
 import rehypePrism from 'rehype-prism-plus'
+import remarkGfm from 'remark-gfm'
 
 export default async function PostPage({ params }) {
-  const post = await getPostBySlug(params.slug)
+  const { slug } = await params;
+  const post = await getPostBySlug(slug);
 
   if (!post) {
     return notFound()
@@ -40,7 +42,18 @@ export default async function PostPage({ params }) {
         </header>
 
         <div className="prose prose-lg prose-invert max-w-none mb-16 animate-slide-up glass p-8 md:p-12 rounded-3xl border border-white/5 shadow-2xl">
-          <ReactMarkdown rehypePlugins={[rehypePrism]}>{post.content}</ReactMarkdown>
+          <MDXRemote
+            source={post.content}
+            options={{
+              mdExtensions: true,
+              rmdExtensions: true,
+              parseFrontmatter: false,
+              mdxOptions: {
+                remarkPlugins: [remarkGfm],
+                rehypePlugins: [rehypePrism]
+              }
+            }}
+          />
         </div>
 
         {post.tags && post.tags.length > 0 && (

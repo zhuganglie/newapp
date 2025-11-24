@@ -2,7 +2,7 @@ import { getPostsByTag } from '@/lib/posts'
 import Link from 'next/link'
 
 export default async function TagPage({ params }) {
-  const { slug } = params;
+  const { slug } = await params;
   const decodedSlug = decodeURIComponent(slug);
   const posts = await getPostsByTag(decodedSlug);
 
