@@ -190,31 +190,9 @@ AR的答案在于**承诺问题**（Commitment Problem）。关键是**时间不
 
 AR将民主化建模为精英在多个选项中的理性选择。简化的决策树如下：
 
-```mermaid
-graph TD
-    Start[革命威胁出现] --> Elite{精英的选择}
-    
-    %% Option 1
-    Elite -->|选项1| Repression[镇压 Repression]
-    Repression --> RepressionOutcome[成本: 监控与镇压开支<br>收益: 垄断权力与财富]
-    
-    %% Option 2
-    Elite -->|选项2| Redistribution[临时再分配]
-    Redistribution --> RedisOutcome[问题: 承诺不可信<br>结果: 革命继续]
-    
-    %% Option 3
-    Elite -->|选项3| Democracy[民主化 Democratization]
-    Democracy --> DemoOutcome[成本: 未来的税收与再分配<br>收益: 避免革命与资产保全]
+![民主化的决策树](/demo.png)
 
-    %% Styling
-    classDef default fill:#fff,stroke:#333,stroke-width:1px;
-    classDef highlight fill:#e6f3ff,stroke:#2196f3,stroke-width:2px;
-    
-    class Elite highlight;
-    class Democracy highlight;
-```
-
-**关键决策逻辑**：精英最终的选择取决于 `Cost(Repression)`（镇压成本）与 `Cost(Democratization)`（民主化成本）的比较。
+**关键决策逻辑**：精英最终的选择取决于镇压成本与民主化成本的比较。
 
 **关键不等式**：民主化发生当且仅当镇压的成本（包括革命成功的风险）大于民主化带来的未来财富损失。
 
