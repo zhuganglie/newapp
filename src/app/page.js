@@ -1,5 +1,13 @@
 import Link from 'next/link'
 import { getPosts } from '@/lib/posts'
+import { generateMetadata as generateSEOMetadata, generateWebSiteSchema } from '@/lib/seo'
+
+export const metadata = generateSEOMetadata({
+  title: 'Why? 为什么？',
+  description: 'Why? 我的好奇心 - 记录学习（摸鱼）日常，偶尔假装正经。探索政治学、比较政治、威权政治等话题。',
+  path: '/',
+  keywords: ['杂记', '政治学', '比较政治', '威权政治', 'comparative politics', 'authoritarian politics', '笔记', '博客']
+});
 
 // Helper function to extract the first sentence from content
 function getFirstSentence(content) {
@@ -24,6 +32,12 @@ export default async function HomePage() {
 
   return (
     <main className="min-h-screen relative overflow-hidden">
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateWebSiteSchema()) }}
+      />
+
       {/* Background elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[100px] animate-pulse-slow" />

@@ -1,4 +1,13 @@
 import { FaGraduationCap, FaUsers, FaBicycle } from 'react-icons/fa6';
+import { generateMetadata as generateSEOMetadata, generatePersonSchema } from '@/lib/seo';
+
+export const metadata = generateSEOMetadata({
+  title: '关于我',
+  description: 'Life-long learner, grassroots leader, and hobbyist. Just a middle-aged guy who believes he has a few good years left.',
+  path: '/about',
+  keywords: ['关于', 'about', '个人简介', '政治学', 'Go', '围棋', '自行车']
+});
+
 
 export default function AboutPage() {
   const cards = [
@@ -24,6 +33,12 @@ export default function AboutPage() {
 
   return (
     <main className="min-h-screen py-20 px-4 relative overflow-hidden">
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generatePersonSchema()) }}
+      />
+
       {/* Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
         <div className="absolute top-10 right-10 w-72 h-72 bg-primary/5 rounded-full blur-[80px] animate-pulse-slow" />

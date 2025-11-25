@@ -1,83 +1,22 @@
-'use client'
 import './globals.css';
 import 'prism-themes/themes/prism-dracula.css';
-import SideBar from './components/SideBar';
-import Breadcrumbs from '@/app/components/breadcrumbs';
-import { useState, useEffect, useRef, useCallback } from 'react';
-import { FaMugSaucer } from "react-icons/fa6";
-import Script from 'next/script'
+import ClientLayout from './components/ClientLayout';
+import GoogleAnalytics from './components/GoogleAnalytics';
+import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
+
+export const metadata = generateSEOMetadata({
+  title: 'Why? 为什么？',
+  description: 'Why? 我的好奇心 - 记录学习（摸鱼）日常，偶尔假装正经。',
+  path: '/',
+  keywords: ['杂记', '政治学', '比较政治', '威权政治', 'comparative politics', 'authoritarian politics']
+});
 
 export default function RootLayout({ children }) {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const sidebarRef = useRef(null);
-
-  useEffect(() => {
-    // Check screen size on component mount and resize
-    const handleResize = () => {
-      setIsSidebarOpen(window.innerWidth >= 768); // Adjust breakpoint as needed
-    };
-
-    handleResize(); // Set initial state
-    window.addEventListener('resize', handleResize);
-
-    // Clean up event listener on component unmount
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  const toggleSidebar = useCallback(() => {
-    setIsSidebarOpen(prevIsOpen => !prevIsOpen);
-  }, []);
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (sidebarRef.current && !sidebarRef.current.contains(event.target) && isSidebarOpen && window.innerWidth < 768) {
-        setIsSidebarOpen(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [isSidebarOpen]);
-
   return (
-    <html lang="zh" >
-      <head>
-        <title>Why? 为什么？</title>
-        <meta name="description" content="Why? 我的好奇心" />
-        <meta name="keywords" content="杂记" />
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-P3PES4S528"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-P3PES4S528', {
-            page_path: window.location.pathname,
-          });
-        `}
-        </Script>
-      </head>
+    <html lang="zh" suppressHydrationWarning>
       <body>
-        <div className="w-full min-h-screen bg-background text-text-main selection:bg-primary/30 selection:text-primary-light">
-          <SideBar isOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} ref={sidebarRef} />
-          <div className={`w-full ${isSidebarOpen ? 'md:pl-72' : ''} transition-all duration-500 ease-out min-h-screen flex flex-col`}>
-            <div className="p-8 flex-grow">
-              <button
-                className="md:hidden mb-8 text-text-muted hover:text-primary transition-colors"
-                onClick={toggleSidebar}
-              >
-                <FaMugSaucer size={28} />
-              </button>
-              <Breadcrumbs />
-              <main className="container mx-auto flex-grow mt-8">
-                {children}
-              </main>
-            </div>
-          </div>
-        </div>
+        <GoogleAnalytics />
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );

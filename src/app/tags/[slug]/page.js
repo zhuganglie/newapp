@@ -1,5 +1,28 @@
-import { getPostsByTag } from '@/lib/posts'
+import { getPostsByTag, getUniqueTags } from '@/lib/posts'
 import Link from 'next/link'
+import { generateMetadata as generateSEOMetadata } from '@/lib/seo'
+
+// Generate metadata for tag pages
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const decodedSlug = decodeURIComponent(slug);
+  const posts = await getPostsByTag(decodedSlug);
+
+  return generateSEOMetadata({
+    title: `${decodedSlug} - 标签`,
+    description: `浏览所有关于 "${decodedSlug}" 的文章 (${posts.length} 篇)`,
+    path: `/tags/${slug}`,
+    keywords: [decodedSlug, '标签', '文章']
+  });
+}
+
+// Generate static params for all tags
+export async function generateStaticParams() {
+  const tags = await getUniqueTags();
+  return tags.map((tag) => ({
+    slug: encodeURIComponent(tag)
+  }));
+}
 
 export default async function TagPage({ params }) {
   const { slug } = await params;

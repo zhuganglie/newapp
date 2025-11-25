@@ -1,9 +1,54 @@
 import { notFound } from 'next/navigation'
-import { getPostBySlug } from '@/lib/posts'
+import { getPostBySlug, getPosts } from '@/lib/posts'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import Link from 'next/link'
 import rehypePrism from 'rehype-prism-plus'
 import remarkGfm from 'remark-gfm'
+import { generateMetadata as generateSEOMetadata, generateArticleSchema } from '@/lib/seo'
+
+// Generate metadata for the post page
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const post = await getPostBySlug(slug);
+
+  if (!post) {
+    return {
+      title: 'Post Not Found',
+      description: 'The requested post could not be found.'
+    };
+  }
+
+  // Extract first sentence for description if no excerpt
+  const getFirstSentence = (content) => {
+    if (!content) return '';
+    const plainText = content
+      .replace(/^#{1,6}\s+/gm, '')
+      .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+      .replace(/`{1,3}[^`]+`{1,3}/g, '')
+      .replace(/[*_~]+/g, '')
+      .trim();
+    const match = plainText.match(/^[^.!?]+[.!?]/);
+    return match ? match[0].trim() : plainText.split('\n')[0].slice(0, 150) + '...';
+  };
+
+  const description = post.excerpt || getFirstSentence(post.content) || post.title;
+
+  return generateSEOMetadata({
+    title: post.title || 'Untitled',
+    description,
+    path: `/posts/${slug}`,
+    keywords: post.tags || [],
+    type: 'article'
+  });
+}
+
+// Generate static params for all posts
+export async function generateStaticParams() {
+  const posts = await getPosts();
+  return posts.map((post) => ({
+    slug: post.slug
+  }));
+}
 
 export default async function PostPage({ params }) {
   const { slug } = await params;
@@ -15,6 +60,22 @@ export default async function PostPage({ params }) {
 
   return (
     <main className="min-h-screen py-20 px-4 relative overflow-hidden">
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateArticleSchema({
+              title: post.title || 'Untitled',
+              description: post.excerpt || post.title,
+              slug,
+              date: post.date,
+              tags: post.tags || []
+            })
+          )
+        }}
+      />
+
       {/* Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
         <div className="absolute top-10 right-10 w-96 h-96 bg-primary/5 rounded-full blur-[100px] animate-pulse-slow" />

@@ -1,5 +1,14 @@
 import Link from 'next/link'
 import { getPosts } from '@/lib/posts'
+import { generateMetadata as generateSEOMetadata } from '@/lib/seo'
+
+export const metadata = generateSEOMetadata({
+  title: '全部文章',
+  description: '探索关于政治学、比较政治、威权政治等话题的深度文章和笔记。',
+  path: '/posts',
+  keywords: ['文章列表', '博客', '政治学', '比较政治']
+});
+
 
 export default async function BlogPage() {
   const posts = await getPosts()

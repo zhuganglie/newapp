@@ -1,5 +1,14 @@
 import { getUniqueTags, getPostsByTag } from '@/lib/posts'
 import Link from 'next/link'
+import { generateMetadata as generateSEOMetadata } from '@/lib/seo'
+
+export const metadata = generateSEOMetadata({
+  title: '全部标签',
+  description: '按标签浏览文章，包括政治学、比较政治、威权政治、笔记管理等主题。',
+  path: '/tags',
+  keywords: ['标签', '分类', '话题']
+});
+
 
 export default async function TagsPage() {
   const tags = await getUniqueTags();
