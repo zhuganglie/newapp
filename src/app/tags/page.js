@@ -39,7 +39,7 @@ export default async function TagsPage() {
           {sortedTagCounts.map(({ tag, count }, index) => (
             <Link
               key={tag}
-              href={`/tags/${tag}`}
+              href={`/tags/${encodeURIComponent(tag)}`}
               className="group relative"
               style={{ animation: `fadeIn 0.5s ease-out forwards ${index * 0.05}s`, opacity: 0 }}
             >
