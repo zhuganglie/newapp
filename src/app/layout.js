@@ -46,7 +46,7 @@ export default function RootLayout({ children }) {
         <meta name="description" content="Why? 我的好奇心" />
         <meta name="keywords" content="杂记" />
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-C61DTYKQV6"
+          src="https://www.googletagmanager.com/gtag/js?id=G-P3PES4S528"
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
@@ -54,7 +54,7 @@ export default function RootLayout({ children }) {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'G-C61DTYKQV6', {
+          gtag('config', 'G-P3PES4S528', {
             page_path: window.location.pathname,
           });
         `}
