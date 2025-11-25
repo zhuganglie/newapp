@@ -62,5 +62,5 @@ export default async function TagsPage() {
 
 export async function generateStaticParams() {
   const tags = await getUniqueTags();
-  return tags.map(tag => ({ tag }));
+  return tags.map(tag => ({ slug: encodeURIComponent(tag) }));
 }
