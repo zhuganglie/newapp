@@ -5,6 +5,7 @@ import { generateMetadata as generateSEOMetadata } from '@/lib/seo'
 // Generate metadata for tag pages
 export async function generateMetadata({ params }) {
   const { slug } = await params;
+  // Next.js does not automatically decode dynamic route params, so we must decode manually
   const decodedSlug = decodeURIComponent(slug);
   const posts = await getPostsByTag(decodedSlug);
 
@@ -26,6 +27,7 @@ export async function generateStaticParams() {
 
 export default async function TagPage({ params }) {
   const { slug } = await params;
+  // Next.js does not automatically decode dynamic route params, so we must decode manually
   const decodedSlug = decodeURIComponent(slug);
   const posts = await getPostsByTag(decodedSlug);
 
