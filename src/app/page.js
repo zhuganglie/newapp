@@ -1,6 +1,23 @@
 import Link from 'next/link'
 import { getPosts } from '@/lib/posts'
 
+// Helper function to extract the first sentence from content
+function getFirstSentence(content) {
+  if (!content) return ''
+
+  // Remove markdown syntax (headers, links, code blocks, etc.)
+  const plainText = content
+    .replace(/^#{1,6}\s+/gm, '') // Remove headers
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1') // Remove links but keep text
+    .replace(/`{1,3}[^`]+`{1,3}/g, '') // Remove inline code and code blocks
+    .replace(/[*_~]+/g, '') // Remove emphasis markers
+    .trim()
+
+  // Find the first sentence (ending with period, exclamation, or question mark)
+  const match = plainText.match(/^[^.!?]+[.!?]/)
+  return match ? match[0].trim() : plainText.split('\n')[0].slice(0, 150) + '...'
+}
+
 export default async function HomePage() {
   const posts = await getPosts()
   const recentPosts = posts.slice(0, 3)
@@ -88,7 +105,7 @@ export default async function HomePage() {
                 </Link>
 
                 <p className="text-text-muted text-sm line-clamp-3 mb-4 flex-grow">
-                  {post.excerpt || 'No summary available... probably because I was too lazy to write one.'}
+                  {post.excerpt || getFirstSentence(post.content) || 'No summary available... probably because I was too lazy to write one.'}
                 </p>
 
                 <div className="flex flex-wrap gap-2 mt-auto">
