@@ -39,7 +39,7 @@ export default async function TagsPage() {
           {sortedTagCounts.map(({ tag, count }, index) => (
             <Link
               key={tag}
-              href={`/tags/${encodeURIComponent(tag)}`}
+              href={`/tags/${tag}`}
               className="group relative"
               style={{ animation: `fadeIn 0.5s ease-out forwards ${index * 0.05}s`, opacity: 0 }}
             >
@@ -62,5 +62,5 @@ export default async function TagsPage() {
 
 export async function generateStaticParams() {
   const tags = await getUniqueTags();
-  return tags.map(tag => ({ slug: encodeURIComponent(tag) }));
+  return tags.map(tag => ({ slug: tag }));
 }

@@ -5,8 +5,8 @@ import { generateMetadata as generateSEOMetadata } from '@/lib/seo'
 // Generate metadata for tag pages
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-  // Next.js does not automatically decode dynamic route params, so we must decode manually
-  const decodedSlug = decodeURIComponent(slug);
+  // Handle both encoded and non-encoded slugs for compatibility
+  const decodedSlug = slug.includes('%') ? decodeURIComponent(slug) : slug;
   const posts = await getPostsByTag(decodedSlug);
 
   return generateSEOMetadata({
@@ -21,14 +21,14 @@ export async function generateMetadata({ params }) {
 export async function generateStaticParams() {
   const tags = await getUniqueTags();
   return tags.map((tag) => ({
-    slug: encodeURIComponent(tag)
+    slug: tag
   }));
 }
 
 export default async function TagPage({ params }) {
   const { slug } = await params;
-  // Next.js does not automatically decode dynamic route params, so we must decode manually
-  const decodedSlug = decodeURIComponent(slug);
+  // Handle both encoded and non-encoded slugs for compatibility
+  const decodedSlug = slug.includes('%') ? decodeURIComponent(slug) : slug;
   const posts = await getPostsByTag(decodedSlug);
 
   return (
