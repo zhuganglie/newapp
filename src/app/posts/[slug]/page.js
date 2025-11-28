@@ -126,7 +126,7 @@ export default async function PostPage({ params }) {
           <footer className="border-t border-white/10 pt-8 animate-fade-in" style={{ animationDelay: '0.4s' }}>
             <div className="flex flex-col sm:flex-row sm:items-center gap-4">
               <div className="text-text-muted font-medium min-w-max flex items-center gap-2">
-                <span className="text-primary">#</span> Tags
+                TAG
               </div>
               <div className="flex flex-wrap gap-2">
                 {post.tags.map((tag) => (
