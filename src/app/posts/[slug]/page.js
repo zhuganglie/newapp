@@ -5,6 +5,7 @@ import Link from 'next/link'
 import rehypePrism from 'rehype-prism-plus'
 import remarkGfm from 'remark-gfm'
 import { generateMetadata as generateSEOMetadata, generateArticleSchema } from '@/lib/seo'
+import ShareButtons from '@/app/components/ShareButtons'
 
 // Generate metadata for the post page
 export async function generateMetadata({ params }) {
@@ -115,6 +116,10 @@ export default async function PostPage({ params }) {
               }
             }}
           />
+        </div>
+
+        <div className="mb-8">
+          <ShareButtons title={post.title} slug={slug} />
         </div>
 
         {post.tags && post.tags.length > 0 && (
