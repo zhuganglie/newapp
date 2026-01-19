@@ -1,3 +1,4 @@
+import React from 'react'
 import { notFound } from 'next/navigation'
 import { getPostBySlug, getPosts } from '@/lib/posts'
 import { MDXRemote } from 'next-mdx-remote/rsc'
@@ -6,6 +7,7 @@ import rehypePrism from 'rehype-prism-plus'
 import remarkGfm from 'remark-gfm'
 import { generateMetadata as generateSEOMetadata, generateArticleSchema } from '@/lib/seo'
 import ShareButtons from '@/app/components/ShareButtons'
+import Mermaid from '@/app/components/Mermaid'
 
 // Generate metadata for the post page
 export async function generateMetadata({ params }) {
@@ -50,6 +52,48 @@ export async function generateStaticParams() {
     slug: post.slug
   }));
 }
+const components = {
+  h1: (props) => <h1 className="text-3xl font-bold mt-8 mb-4" {...props} />,
+  h2: (props) => <h2 className="text-2xl font-bold mt-6 mb-3" {...props} />,
+  h3: (props) => <h3 className="text-xl font-bold mt-4 mb-2" {...props} />,
+  ul: (props) => <ul className="list-disc pl-5 mb-4" {...props} />,
+  ol: (props) => <ol className="list-decimal pl-5 mb-4" {...props} />,
+  li: (props) => <li className="mb-1" {...props} />,
+  pre: ({ children, ...props }) => {
+    // Check if the children is a code block with language-mermaid
+    const codeElement = React.Children.toArray(children).find(
+      child => React.isValidElement(child) &&
+        child.type === 'code' &&
+        (child.props.className?.includes('language-mermaid'))
+    );
+
+    if (codeElement) {
+      return <div {...props}>{children}</div>;
+    }
+    return <pre {...props}>{children}</pre>
+  },
+  code: ({ className, children, ...props }) => {
+    const isMermaid = className?.includes('language-mermaid');
+
+    if (isMermaid) {
+      // Helper to recursively extract text from React children
+      const extractText = (node) => {
+        if (typeof node === 'string') return node;
+        if (typeof node === 'number') return String(node);
+        if (Array.isArray(node)) return node.map(extractText).join('');
+        if (React.isValidElement(node) && node.props && node.props.children) {
+          return extractText(node.props.children);
+        }
+        return '';
+      };
+
+      const chartString = extractText(children);
+      return <Mermaid chart={chartString} />;
+    }
+    return <code className={className} {...props}>{children}</code>
+  }
+}
+
 
 export default async function PostPage({ params }) {
   const { slug } = await params;
@@ -106,6 +150,7 @@ export default async function PostPage({ params }) {
         <div className="prose prose-lg prose-invert max-w-none mb-16 animate-slide-up glass p-8 md:p-12 rounded-3xl border border-white/5 shadow-2xl">
           <MDXRemote
             source={post.content}
+            components={components}
             options={{
               mdExtensions: true,
               rmdExtensions: true,
@@ -116,6 +161,7 @@ export default async function PostPage({ params }) {
               }
             }}
           />
+
         </div>
 
         <div className="mb-8">
