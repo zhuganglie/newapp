@@ -1,5 +1,6 @@
 import './globals.css';
 import 'prism-themes/themes/prism-dracula.css';
+import 'katex/dist/katex.min.css';
 import ClientLayout from './components/ClientLayout';
 import GoogleAnalytics from './components/GoogleAnalytics';
 import { generateMetadata as generateSEOMetadata } from '@/lib/seo';

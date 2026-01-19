@@ -5,6 +5,8 @@ import { MDXRemote } from 'next-mdx-remote/rsc'
 import Link from 'next/link'
 import rehypePrism from 'rehype-prism-plus'
 import remarkGfm from 'remark-gfm'
+import remarkMath from 'remark-math'
+import rehypeKatex from 'rehype-katex'
 import { generateMetadata as generateSEOMetadata, generateArticleSchema } from '@/lib/seo'
 import ShareButtons from '@/app/components/ShareButtons'
 import Mermaid from '@/app/components/Mermaid'
@@ -156,8 +158,8 @@ export default async function PostPage({ params }) {
               rmdExtensions: true,
               parseFrontmatter: false,
               mdxOptions: {
-                remarkPlugins: [remarkGfm],
-                rehypePlugins: [rehypePrism]
+                remarkPlugins: [remarkGfm, remarkMath],
+                rehypePlugins: [rehypePrism, rehypeKatex]
               }
             }}
           />
