@@ -35,7 +35,7 @@ export function generateMetadata({
 }) {
     const fullTitle = title === siteConfig.name ? title : `${title} | ${siteConfig.name}`;
     const url = `${siteConfig.url}${path}`;
-    const ogImage = image || `${siteConfig.url}/demo.png`;
+    const ogImage = image || `${siteConfig.url}/a.png`;
 
     return {
         title: fullTitle,
