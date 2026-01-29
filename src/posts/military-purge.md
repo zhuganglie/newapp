@@ -301,4 +301,4 @@ draft: false
 
 ---
 
-*本文是 ai 对作者的研究论文 The Loyalty Trap: Principal-Agent Problems and the Purge of Technocrats in Xi’s Military 的通俗化改写。原论文运用霍姆斯特姆-米尔格罗姆多任务委托代理模型，结合历史案例比较，对2023-2026年解放军高层清洗进行了系统性分析。*
+*本文是 ai 对作者的研究论文 The Loyalty Trap: Principal-Agent Problems and the Purge of Technocrats in Xi’s Military 的通俗化改写。论文基于公开报道与学术模型分析，部分细节仍待官方证实。*
