@@ -301,4 +301,4 @@ draft: false
 
 ---
 
-*本文是 ai 对作者的研究论文 The Loyalty Trap: Principal-Agent Problems and the Purge of Technocrats in Xi’s Military 的通俗化改写。论文基于公开报道与学术模型分析，部分细节仍待官方证实。*
+*本文是对研究论文 The Loyalty Trap: Principal-Agent Problems and the Purge of Technocrats in Xi’s Military 初稿的通俗化改写。本文基于公开报道与学术模型分析，部分细节仍待官方证实。*

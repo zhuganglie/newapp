@@ -50,8 +50,8 @@ const SideBar = forwardRef(({ isOpen, setIsSidebarOpen }, ref) => {
           />
         </div>
         <div className="text-center space-y-1">
-          <h1 className="font-bold text-3xl text-gradient font-serif tracking-wide">Why?</h1>
-          <p className="text-text-muted font-serif italic text-sm tracking-wider opacity-80">Fact, Not Truth</p>
+          <h1 className="font-bold text-3xl text-gradient font-serif tracking-wide">Puzzle</h1>
+          <p className="text-text-muted font-serif italic text-base tracking-wider opacity-80">Tell me, why?</p>
         </div>
       </div>
 
