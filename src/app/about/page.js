@@ -53,7 +53,7 @@ export default function AboutPage() {
           </h1>
           <p className="text-xl md:text-2xl text-text-muted max-w-3xl mx-auto font-light leading-relaxed">
             Just a middle-aged guy who believes he has a few good years left.
-            <span className="block mt-2 text-primary italic">Fact, Not Truth.</span>
+            <span className="block mt-2 text-primary italic">Tell me, why?</span>
           </p>
         </section>
 
