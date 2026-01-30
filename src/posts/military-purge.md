@@ -7,7 +7,7 @@ draft: false
 
 **一场看似荒诞的军队大清洗背后，隐藏着威权体制无法逃脱的结构性诅咒**
 
-![](/loyalty.png)
+![](/images/loyalty.png)
 
 ---
 
