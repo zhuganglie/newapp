@@ -1,7 +1,7 @@
 ---
-title: "The Loyalty Trap: A Verification Game Analysis of Xi Jinping's Military Purge"
+title: "The Loyalty Trap: A Verification Game of Xi Jinping's Military Purge"
 date: "2026-01-28"
-tags: ["Principal-Agent", "Dictator's Dilemma","Authoritarianism"]
+tags: ["Verification Game", "Dictator's Dilemma","Authoritarianism"]
 draft: false
 ---
 
