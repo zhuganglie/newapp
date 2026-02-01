@@ -159,7 +159,7 @@ export default async function PostPage({ params }) {
               parseFrontmatter: false,
               mdxOptions: {
                 remarkPlugins: [remarkGfm, remarkMath],
-                rehypePlugins: [rehypePrism, rehypeKatex]
+                rehypePlugins: [[rehypePrism, { ignoreMissing: true }], rehypeKatex]
               }
             }}
           />
