@@ -301,4 +301,4 @@ draft: false
 
 ---
 
-*本文是对研究论文 "The Loyalty Trap: A Verification Game of Xi Jinping's Military Purge" 初稿的通俗化改写。本文基于公开报道与学术模型分析，部分细节仍待官方证实。*
+*本文是对 "The Loyalty Trap: A Verification Game of Xi Jinping's Military Purge" 一文的通俗化改写。本中部分细节基于公开报道，仍待官方证实。*
