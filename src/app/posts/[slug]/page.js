@@ -83,8 +83,13 @@ const components = {
         if (typeof node === 'string') return node;
         if (typeof node === 'number') return String(node);
         if (Array.isArray(node)) return node.map(extractText).join('');
-        if (React.isValidElement(node) && node.props && node.props.children) {
-          return extractText(node.props.children);
+        if (React.isValidElement(node)) {
+          // Handle self-closing HTML tags (br, hr) that MDXRemote converts from <br/> etc.
+          if (node.type === 'br') return '<br/>';
+          if (node.type === 'hr') return '<hr/>';
+          if (node.props && node.props.children) {
+            return extractText(node.props.children);
+          }
         }
         return '';
       };
@@ -129,7 +134,7 @@ export default async function PostPage({ params }) {
         <div className="absolute bottom-10 left-10 w-96 h-96 bg-secondary/5 rounded-full blur-[100px] animate-pulse-slow" style={{ animationDelay: '2s' }} />
       </div>
 
-      <article className="max-w-3xl mx-auto relative">
+      <article className="max-w-4xl mx-auto relative">
         <header className="mb-16 text-center space-y-6 animate-fade-in">
           <div className="inline-block relative">
             <h1 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-light via-white to-secondary tracking-tight drop-shadow-lg pb-2 leading-tight">
