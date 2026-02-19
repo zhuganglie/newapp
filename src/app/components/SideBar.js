@@ -5,7 +5,7 @@ import { forwardRef } from 'react';
 import { FiFileText, FiHash, FiUser, FiMail, FiTwitter, FiYoutube } from 'react-icons/fi';
 
 const SOCIAL_LINKS = [
-  { icon: FiMail, href: 'mailto:zhuganglie@gmail.com', ariaLabel: 'Email' },
+  { icon: FiMail, href: 'mailto:pyrrhonianpig@gmail.com', ariaLabel: 'Email' },
   { icon: FiTwitter, href: 'https://twitter.com/zhugangliet', ariaLabel: 'Twitter' },
   { icon: FiYoutube, href: 'https://www.youtube.com/@gangliezhu7951', ariaLabel: 'Youtube' }
 ];
