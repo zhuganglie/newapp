@@ -39,20 +39,20 @@ const SideBar = forwardRef(({ isOpen, setIsSidebarOpen }, ref) => {
     >
       {/* Header / Logo Area */}
       <div>
-        <Link href="/" onClick={handleClick} className="block mb-8 no-underline">
-          <div className="flex flex-col items-start space-y-1">
-            <h1 className="font-serif font-bold text-xl text-text-main tracking-tight border-none m-0 p-0">
+        <Link href="/" onClick={handleClick} className="block mb-8 no-underline group">
+          <div className="flex flex-col items-center space-y-1 text-center">
+            <h1 className="font-serif font-bold text-xl text-text-main tracking-tight border-none m-0 p-0 group-hover:text-primary transition-colors duration-200">
               政治的逻辑
             </h1>
-            <p className="text-xs text-text-muted m-0 p-0 tracking-wide">
+            <p className="text-xs text-text-muted m-0 p-0 tracking-wide font-medium">
               The Logic of Politics
             </p>
           </div>
         </Link>
 
         {/* Navigation */}
-        <nav className="w-full">
-          <ul className="space-y-0.5 list-none p-0 m-0">
+        <nav className="w-full px-2">
+          <ul className="space-y-1 list-none p-0 m-0">
             {NAV_LINKS.map(({ href, label, icon: Icon }) => {
               const active = isActiveLink(href);
               return (
@@ -60,13 +60,13 @@ const SideBar = forwardRef(({ isOpen, setIsSidebarOpen }, ref) => {
                   <Link
                     href={href}
                     onClick={handleClick}
-                    className={`flex items-center gap-3 px-3 py-2 rounded-md transition-all duration-150 text-sm no-underline
+                    className={`flex items-center gap-3 px-4 py-2.5 rounded-lg transition-all duration-200 text-sm no-underline font-medium
                       ${active
-                        ? 'bg-primary-light text-primary font-medium'
+                        ? 'bg-primary/10 text-primary'
                         : 'text-text-muted hover:text-text-main hover:bg-surface-hover'
                       }`}
                   >
-                    <Icon size={16} className="flex-shrink-0" />
+                    <Icon size={18} className={`flex-shrink-0 ${active ? 'text-primary' : 'text-text-light group-hover:text-text-main'}`} />
                     <span>{label}</span>
                   </Link>
                 </li>
@@ -77,37 +77,39 @@ const SideBar = forwardRef(({ isOpen, setIsSidebarOpen }, ref) => {
       </div>
 
       {/* Subscribe Card */}
-      <div className="space-y-4">
-        <div className="mx-2 rounded-lg bg-gradient-to-br from-primary-light/60 to-surface border border-primary/10 p-4">
-          <div className="flex items-center gap-2 mb-1.5">
-            <div className="w-6 h-6 rounded-md bg-primary/10 flex items-center justify-center">
-              <FiMail size={13} className="text-primary" />
+      <div className="space-y-5 pb-2">
+        <div className="mx-2 rounded-xl bg-gradient-to-br from-white to-surface-hover border border-border/60 shadow-sm p-4 text-center">
+          <div className="flex flex-col items-center gap-2 mb-2">
+            <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-0.5">
+              <FiMail size={14} />
             </div>
-            <p className="text-xs font-semibold text-text-main m-0 p-0">
+            <p className="text-xs font-bold text-text-main m-0 p-0">
               订阅更新
             </p>
           </div>
-          <p className="text-[11px] text-text-muted leading-relaxed m-0 p-0 mb-3">
-            新文章发布时通知你，不定期更新。
+          <p className="text-[11px] text-text-muted leading-relaxed m-0 p-0 mb-3 px-1">
+            新文章发布时通知你，<br />不定期更新。
           </p>
           <SubscribeForm compact />
         </div>
 
-        <div className="flex justify-start gap-3 px-3">
+        <div className="flex justify-center gap-4 px-3">
           {SOCIAL_LINKS.map(({ icon: Icon, href, ariaLabel }) => (
             <a
               key={ariaLabel}
               href={href}
               aria-label={ariaLabel}
-              className="p-1.5 rounded-md text-text-light hover:text-primary hover:bg-primary-light/50 transition-all duration-150"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-full text-text-light hover:text-primary hover:bg-primary/5 transition-all duration-200"
             >
-              <Icon size={16} />
+              <Icon size={18} />
             </a>
           ))}
         </div>
 
-        <footer className="border-t border-border pt-4 px-3">
-          <p className="text-text-light text-[11px] m-0">
+        <footer className="border-t border-border/60 pt-4 px-3 text-center">
+          <p className="text-text-light text-[10px] m-0 font-medium tracking-wide">
             &copy; {new Date().getFullYear()} 政治的逻辑
           </p>
         </footer>
