@@ -76,13 +76,19 @@ const SideBar = forwardRef(({ isOpen, setIsSidebarOpen }, ref) => {
         </nav>
       </div>
 
-      {/* Footer / Subscribe + Socials */}
+      {/* Subscribe Card */}
       <div className="space-y-4">
-        {/* Subscribe */}
-        <div className="px-3">
-          <p className="text-xs font-medium text-text-muted mb-2 flex items-center gap-1.5">
-            <FiMail size={12} />
-            订阅更新
+        <div className="mx-2 rounded-lg bg-gradient-to-br from-primary-light/60 to-surface border border-primary/10 p-4">
+          <div className="flex items-center gap-2 mb-1.5">
+            <div className="w-6 h-6 rounded-md bg-primary/10 flex items-center justify-center">
+              <FiMail size={13} className="text-primary" />
+            </div>
+            <p className="text-xs font-semibold text-text-main m-0 p-0">
+              订阅更新
+            </p>
+          </div>
+          <p className="text-[11px] text-text-muted leading-relaxed m-0 p-0 mb-3">
+            新文章发布时通知你，不定期更新。
           </p>
           <SubscribeForm compact />
         </div>
@@ -93,7 +99,7 @@ const SideBar = forwardRef(({ isOpen, setIsSidebarOpen }, ref) => {
               key={ariaLabel}
               href={href}
               aria-label={ariaLabel}
-              className="p-1.5 rounded-md text-text-light hover:text-text-main hover:bg-surface-hover transition-all duration-150"
+              className="p-1.5 rounded-md text-text-light hover:text-primary hover:bg-primary-light/50 transition-all duration-150"
             >
               <Icon size={16} />
             </a>
