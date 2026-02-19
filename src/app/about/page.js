@@ -1,101 +1,79 @@
-import { FaGraduationCap, FaUsers, FaBicycle } from 'react-icons/fa6';
+import { FiBookOpen, FiUsers, FiTarget } from 'react-icons/fi';
 import { generateMetadata as generateSEOMetadata, generatePersonSchema } from '@/lib/seo';
 
 export const metadata = generateSEOMetadata({
-  title: '关于我',
-  description: 'Life-long learner, grassroots leader, and hobbyist. Just a middle-aged guy who believes he has a few good years left.',
+  title: '关于',
+  description: '「政治的逻辑」——用政治科学的方法，解读真实世界的政治逻辑。了解更多关于这个播客的信息。',
   path: '/about',
-  keywords: ['关于', 'about', '个人简介', '政治学', 'Go', '围棋', '自行车']
+  keywords: ['关于', '政治科学', '播客', '科普']
 });
 
 
 export default function AboutPage() {
-  const cards = [
+  const sections = [
     {
-      title: "Life-long Learner",
-      icon: FaGraduationCap,
-      content: "I used to be an educator, but now I'm just a professional student. I've spent a lifetime reading political science, giving me just enough knowledge to be dangerous at dinner parties—or at least annoying.",
-      color: "from-primary-light to-primary"
+      title: "这是什么？",
+      icon: FiBookOpen,
+      content: "「政治的逻辑」是一个政治科学科普项目。我们用学术但不枯燥的方式，解读真实世界中的政治现象——从威权体制的运作逻辑到民主化的艰难历程，从独裁者的生存策略到社会运动的内在动力。",
     },
     {
-      title: "Grassroots Leader",
-      icon: FaUsers,
-      content: "I'm a grassroots leader in my residential community. My main qualification? I'm excellent at nodding enthusiastically and saying 'That's a great idea!' while wondering who's going to actually do it.",
-      color: "from-secondary to-secondary-hover"
+      title: "为什么做这个？",
+      icon: FiTarget,
+      content: "政治科学拥有大量有趣且深刻的理论工具，但这些知识大多被锁在学术论文和英文教科书里。我希望把这些工具介绍给更多中文读者，帮助大家用「政治科学的方法」来理解我们所生活的这个世界。",
     },
     {
-      title: "The Hobbyist",
-      icon: FaBicycle,
-      content: "I'm a 2-dan Go player (on a good day), though the AI still beats me like I owe it money. When I'm not losing board games, I'm pedaling my bike, pretending I'm in the Tour de France—just much, much slower.",
-      color: "from-emerald-400 to-emerald-600"
+      title: "谁在写？",
+      icon: FiUsers,
+      content: "一个对政治科学保持热情的人，一直没停止阅读和思考。这个网站是我和 AI 一起搭的，文章也是在 AI 的帮助下写的——算是一个人加一台机器的科普实验。不写东西的时候，我在下围棋或者骑车。",
     }
   ];
 
   return (
-    <main className="min-h-screen py-20 px-4 relative overflow-hidden">
+    <main className="min-h-screen py-12">
       {/* Structured Data */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(generatePersonSchema()) }}
       />
 
-      {/* Background Elements */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
-        <div className="absolute top-10 right-10 w-72 h-72 bg-primary/5 rounded-full blur-[80px] animate-pulse-slow" />
-        <div className="absolute bottom-10 left-10 w-96 h-96 bg-secondary/5 rounded-full blur-[100px] animate-pulse-slow" style={{ animationDelay: '1.5s' }} />
-      </div>
-
-      <div className="max-w-6xl mx-auto space-y-20">
-        {/* Hero Section */}
-        <section className="text-center space-y-8 animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-light via-white to-secondary tracking-tight drop-shadow-lg">
-            关于我
+      <div className="max-w-3xl mx-auto">
+        {/* Header */}
+        <section className="mb-12 animate-fade-in">
+          <h1 className="text-3xl font-serif font-bold text-text-main mb-3 border-none">
+            关于「政治的逻辑」
           </h1>
-          <p className="text-xl md:text-2xl text-text-muted max-w-3xl mx-auto font-light leading-relaxed">
-            Just a middle-aged guy who believes he has a few good years left.
-            <span className="block mt-2 text-primary italic">Tell me, why?</span>
+          <p className="text-lg text-text-muted leading-relaxed max-w-xl">
+            用政治科学的方法，解读真实世界的政治逻辑。
           </p>
         </section>
 
-        {/* Cards Grid */}
-        <section className="grid grid-cols-1 md:grid-cols-3 gap-8 perspective-1000">
-          {cards.map((card, index) => (
-            <div
-              key={card.title}
-              className="group relative h-full"
-              style={{ animation: `slideUp 0.8s ease-out forwards ${index * 0.2}s`, opacity: 0 }}
+        {/* Content Sections */}
+        <div className="space-y-8">
+          {sections.map((section, index) => (
+            <section
+              key={section.title}
+              className="animate-fade-in"
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-white/0 rounded-2xl blur-xl transition-all duration-500 group-hover:blur-2xl group-hover:opacity-75 opacity-0" />
-
-              <div className="relative h-full glass p-8 rounded-2xl border border-white/10 transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-[0_0_40px_rgba(0,0,0,0.3)] overflow-hidden">
-                {/* Gradient Border Effect */}
-                <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${card.color}`} />
-
-                <div className="relative z-10 flex flex-col items-center text-center space-y-6">
-                  <div className={`p-4 rounded-full bg-gradient-to-br ${card.color} bg-opacity-10 shadow-lg group-hover:scale-110 transition-transform duration-500`}>
-                    <card.icon className="text-white text-3xl" />
-                  </div>
-
-                  <h3 className="text-2xl font-bold text-text-main group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 transition-all">
-                    {card.title}
-                  </h3>
-
-                  <p className="text-text-muted leading-relaxed">
-                    {card.content}
-                  </p>
+              <div className="flex items-start gap-3 mb-3">
+                <div className="p-2 bg-surface rounded-md flex-shrink-0 mt-0.5">
+                  <section.icon size={18} className="text-text-muted" />
                 </div>
-
-                {/* Hover Glow */}
-                <div className={`absolute -bottom-20 -right-20 w-40 h-40 bg-gradient-to-br ${card.color} opacity-0 group-hover:opacity-20 blur-3xl transition-all duration-700`} />
+                <h2 className="text-lg font-serif font-bold text-text-main border-none m-0 p-0">
+                  {section.title}
+                </h2>
               </div>
-            </div>
+              <p className="text-text-main leading-relaxed pl-[44px]">
+                {section.content}
+              </p>
+            </section>
           ))}
-        </section>
+        </div>
 
         {/* Footer Quote */}
-        <section className="text-center animate-fade-in" style={{ animationDelay: '0.8s' }}>
-          <blockquote className="text-2xl md:text-3xl font-serif italic text-text-muted/60 max-w-4xl mx-auto border-none">
-            "Life is a journey, and I am just here for the ride—preferably on two wheels."
+        <section className="mt-16 pt-8 border-t border-border animate-fade-in" style={{ animationDelay: '0.4s' }}>
+          <blockquote className="text-text-muted italic border-none pl-0 text-base">
+            "The purpose of political science is not to tell people what to think, but to teach them how to think about politics."
           </blockquote>
         </section>
       </div>

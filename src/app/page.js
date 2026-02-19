@@ -3,139 +3,112 @@ import { getPosts } from '@/lib/posts'
 import { generateMetadata as generateSEOMetadata, generateWebSiteSchema } from '@/lib/seo'
 
 export const metadata = generateSEOMetadata({
-  title: 'Why? 为什么？',
-  description: 'Why? 我的好奇心 - 记录学习（摸鱼）日常，偶尔假装正经。探索政治学、比较政治、威权政治等话题。',
+  title: '政治的逻辑',
+  description: '用政治科学的方法，解读真实世界的政治逻辑。探索比较政治、威权政治、民主化等话题。',
   path: '/',
-  keywords: ['杂记', '政治学', '比较政治', '威权政治', 'comparative politics', 'authoritarian politics', '笔记', '博客']
+  keywords: ['政治科学', '比较政治', '威权政治', '政治学科普', '播客', 'comparative politics', 'authoritarian politics']
 });
 
 // Helper function to extract the first sentence from content
 function getFirstSentence(content) {
   if (!content) return ''
 
-  // Remove markdown syntax (headers, links, code blocks, etc.)
   const plainText = content
-    .replace(/^#{1,6}\s+/gm, '') // Remove headers
-    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1') // Remove links but keep text
-    .replace(/`{1,3}[^`]+`{1,3}/g, '') // Remove inline code and code blocks
-    .replace(/[*_~]+/g, '') // Remove emphasis markers
+    .replace(/^#{1,6}\s+/gm, '')
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    .replace(/`{1,3}[^`]+`{1,3}/g, '')
+    .replace(/[*_~]+/g, '')
     .trim()
 
-  // Find the first sentence (ending with period, exclamation, or question mark)
-  const match = plainText.match(/^[^.!?]+[.!?]/)
+  const match = plainText.match(/^[^.!?。！？]+[.!?。！？]/)
   return match ? match[0].trim() : plainText.split('\n')[0].slice(0, 150) + '...'
 }
 
 export default async function HomePage() {
   const posts = await getPosts()
-  const recentPosts = posts.slice(0, 3)
+  const recentPosts = posts.slice(0, 6)
 
   return (
-    <main className="min-h-screen relative overflow-hidden">
+    <main className="min-h-screen">
       {/* Structured Data */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(generateWebSiteSchema()) }}
       />
 
-      {/* Background elements */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[100px] animate-pulse-slow" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-[100px] animate-pulse-slow" style={{ animationDelay: '2s' }} />
-      </div>
-
       {/* Hero Section */}
-      <section className="min-h-[80vh] flex flex-col justify-center items-center text-center p-8 relative">
-        <div className="space-y-8 max-w-4xl mx-auto z-10">
-          <div className="inline-block px-4 py-2 rounded-full bg-yellow-500/10 border border-yellow-500/20 text-yellow-500 text-sm font-mono mb-4 animate-fade-in">
-            ⚠️ Warning: May contain traces of bugs and bad puns.
-          </div>
-
-          <h1 className="text-7xl md:text-9xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-primary-light via-primary to-primary-dark animate-fade-in tracking-tighter drop-shadow-2xl">
-            杂记
+      <section className="py-16 md:py-24 animate-fade-in">
+        <div className="max-w-2xl">
+          <h1 className="text-4xl md:text-5xl font-serif font-bold text-text-main tracking-tight mb-4 border-none">
+            政治的逻辑
           </h1>
 
-          <h2 className="text-2xl md:text-4xl text-text-muted font-light animate-slide-up tracking-wide leading-relaxed" style={{ animationDelay: '0.2s' }}>
-            记录学习（摸鱼）日常，<br className="md:hidden" />偶尔假装正经。
-          </h2>
+          <p className="text-lg md:text-xl text-text-muted leading-relaxed mb-8 max-w-xl">
+            用政治科学的方法，解读真实世界的政治逻辑。
+          </p>
 
-          <div className="flex flex-col md:flex-row gap-6 justify-center items-center mt-12 animate-slide-up" style={{ animationDelay: '0.4s' }}>
+          <div className="flex gap-3">
             <Link
               href="/posts"
-              className="group relative w-56 h-16 flex items-center justify-center bg-surface/30 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden transition-all duration-500 hover:scale-105 hover:bg-surface/50 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(251,191,36,0.2)]"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-text-main text-white rounded-md text-sm font-medium hover:bg-text-main/90 transition-colors no-underline hover:no-underline"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-transparent to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
-              <span className="relative text-lg font-bold text-text-main group-hover:text-primary transition-colors tracking-widest">
-                探索废话
-              </span>
+              浏览全部文章
             </Link>
 
             <Link
               href="/tags"
-              className="group relative w-56 h-16 flex items-center justify-center bg-surface/30 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden transition-all duration-500 hover:scale-105 hover:bg-surface/50 hover:border-secondary/50 hover:shadow-[0_0_30px_rgba(56,189,248,0.2)]"
+              className="inline-flex items-center gap-2 px-5 py-2.5 border border-border text-text-main rounded-md text-sm font-medium hover:bg-surface-hover transition-colors no-underline hover:no-underline"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-secondary/20 via-transparent to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
-              <span className="relative text-lg font-bold text-text-main group-hover:text-secondary transition-colors tracking-widest">
-                脑洞合集
-              </span>
+              按主题浏览
             </Link>
           </div>
         </div>
       </section>
 
+      {/* Divider */}
+      <hr className="border-border" />
+
       {/* Recent Posts Section */}
-      <section className="max-w-6xl mx-auto px-8 pb-24">
-        <div className="flex items-center justify-between mb-12">
-          <h3 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-light to-secondary">
-            最新（凑数）文章
-          </h3>
+      <section className="py-12">
+        <div className="flex items-center justify-between mb-8">
+          <h2 className="text-xl font-serif font-bold text-text-main border-none m-0 p-0">
+            最新文章
+          </h2>
+          <Link href="/posts" className="text-sm text-text-muted hover:text-text-main transition-colors no-underline hover:no-underline">
+            查看全部 →
+          </Link>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="space-y-1">
           {recentPosts.map((post, index) => (
             <article
               key={post.slug}
-              className="group relative flex flex-col h-full"
-              style={{ animation: `slideUp 0.8s ease-out forwards ${index * 0.1}s` }}
+              className="animate-fade-in"
+              style={{ animationDelay: `${index * 0.05}s` }}
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-              <div className="relative flex flex-col h-full glass p-6 rounded-2xl border border-white/10 transition-all duration-300 group-hover:-translate-y-2 group-hover:border-primary/30 overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-                <time className="text-xs font-mono text-primary/80 mb-3 block">
+              <Link
+                href={`/posts/${post.slug}`}
+                className="group flex items-baseline gap-4 py-3 px-3 -mx-3 rounded-md hover:bg-surface-hover transition-colors no-underline hover:no-underline"
+              >
+                <time className="text-sm text-text-light font-mono whitespace-nowrap flex-shrink-0 tabular-nums">
                   {new Date(post.date).toLocaleDateString('zh-CN', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric'
+                    month: '2-digit',
+                    day: '2-digit'
                   })}
                 </time>
 
-                <Link
-                  href={`/posts/${post.slug}`}
-                  className="block text-xl font-bold text-text-main group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-primary-light group-hover:to-white transition-all mb-3"
-                >
+                <span className="text-text-main group-hover:text-primary transition-colors font-medium truncate">
                   {post.title ?? 'Untitled'}
-                </Link>
+                </span>
 
-                <p className="text-text-muted text-sm line-clamp-3 mb-4 flex-grow">
-                  {post.excerpt || getFirstSentence(post.content) || 'No summary available... probably because I was too lazy to write one.'}
-                </p>
-
-                <div className="flex flex-wrap gap-2 mt-auto">
-                  {post.tags && post.tags.slice(0, 2).map(tag => (
-                    <span key={tag} className="text-xs text-text-muted/60">#{tag}</span>
-                  ))}
-                </div>
-              </div>
+                {post.tags && post.tags.length > 0 && (
+                  <span className="hidden md:inline text-xs text-text-light flex-shrink-0">
+                    {post.tags[0]}
+                  </span>
+                )}
+              </Link>
             </article>
           ))}
-        </div>
-
-        <div className="flex justify-center mt-12">
-          <Link href="/posts" className="text-text-muted hover:text-primary transition-colors text-sm flex items-center gap-2 group">
-            查看全部 <span className="group-hover:translate-x-1 transition-transform">→</span>
-          </Link>
         </div>
       </section>
     </main>

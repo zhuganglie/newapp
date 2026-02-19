@@ -23,7 +23,6 @@ export async function generateMetadata({ params }) {
     };
   }
 
-  // Extract first sentence for description if no excerpt
   const getFirstSentence = (content) => {
     if (!content) return '';
     const plainText = content
@@ -32,7 +31,7 @@ export async function generateMetadata({ params }) {
       .replace(/`{1,3}[^`]+`{1,3}/g, '')
       .replace(/[*_~]+/g, '')
       .trim();
-    const match = plainText.match(/^[^.!?]+[.!?]/);
+    const match = plainText.match(/^[^.!?。！？]+[.!?。！？]/);
     return match ? match[0].trim() : plainText.split('\n')[0].slice(0, 150) + '...';
   };
 
@@ -54,15 +53,15 @@ export async function generateStaticParams() {
     slug: post.slug
   }));
 }
+
 const components = {
-  h1: (props) => <h1 className="text-3xl font-bold mt-8 mb-4" {...props} />,
-  h2: (props) => <h2 className="text-2xl font-bold mt-6 mb-3" {...props} />,
-  h3: (props) => <h3 className="text-xl font-bold mt-4 mb-2" {...props} />,
+  h1: (props) => <h1 className="text-3xl font-serif font-bold mt-10 mb-4 text-text-main" {...props} />,
+  h2: (props) => <h2 className="text-2xl font-serif font-bold mt-10 mb-3 pb-2 border-b border-border text-text-main" {...props} />,
+  h3: (props) => <h3 className="text-xl font-serif font-bold mt-8 mb-2 text-text-main" {...props} />,
   ul: (props) => <ul className="list-disc pl-5 mb-4" {...props} />,
   ol: (props) => <ol className="list-decimal pl-5 mb-4" {...props} />,
   li: (props) => <li className="mb-1" {...props} />,
   pre: ({ children, ...props }) => {
-    // Check if the children is a code block with language-mermaid
     const codeElement = React.Children.toArray(children).find(
       child => React.isValidElement(child) &&
         child.type === 'code' &&
@@ -78,13 +77,11 @@ const components = {
     const isMermaid = className?.includes('language-mermaid');
 
     if (isMermaid) {
-      // Helper to recursively extract text from React children
       const extractText = (node) => {
         if (typeof node === 'string') return node;
         if (typeof node === 'number') return String(node);
         if (Array.isArray(node)) return node.map(extractText).join('');
         if (React.isValidElement(node)) {
-          // Handle self-closing HTML tags (br, hr) that MDXRemote converts from <br/> etc.
           if (node.type === 'br') return '<br/>';
           if (node.type === 'hr') return '<hr/>';
           if (node.props && node.props.children) {
@@ -111,7 +108,7 @@ export default async function PostPage({ params }) {
   }
 
   return (
-    <main className="min-h-screen py-20 px-4 relative overflow-hidden">
+    <main className="min-h-screen py-12">
       {/* Structured Data */}
       <script
         type="application/ld+json"
@@ -128,33 +125,40 @@ export default async function PostPage({ params }) {
         }}
       />
 
-      {/* Background Elements */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
-        <div className="absolute top-10 right-10 w-96 h-96 bg-primary/5 rounded-full blur-[100px] animate-pulse-slow" />
-        <div className="absolute bottom-10 left-10 w-96 h-96 bg-secondary/5 rounded-full blur-[100px] animate-pulse-slow" style={{ animationDelay: '2s' }} />
-      </div>
+      <article className="max-w-3xl mx-auto">
+        <header className="mb-10 animate-fade-in">
+          {post.tags && post.tags.length > 0 && (
+            <div className="flex flex-wrap gap-1.5 mb-4">
+              {post.tags.map((tag) => (
+                <Link
+                  key={tag}
+                  href={`/tags/${tag}`}
+                  className="text-xs text-text-light px-2 py-0.5 bg-surface rounded hover:bg-surface-hover hover:text-text-muted transition-colors no-underline"
+                >
+                  {tag}
+                </Link>
+              ))}
+            </div>
+          )}
 
-      <article className="max-w-4xl mx-auto relative">
-        <header className="mb-16 text-center space-y-6 animate-fade-in">
-          <div className="inline-block relative">
-            <h1 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-light via-white to-secondary tracking-tight drop-shadow-lg pb-2 leading-tight">
-              {post.title ?? 'Untitled'}
-            </h1>
-            <div className="h-1 w-full bg-gradient-to-r from-transparent via-primary to-transparent rounded-full opacity-50 mb-6" />
+          <h1 className="text-3xl md:text-4xl font-serif font-bold text-text-main leading-tight mb-3 border-none">
+            {post.title ?? 'Untitled'}
+          </h1>
 
-            {post.date && (
-              <time className="block text-primary/60 font-mono text-sm tracking-wider uppercase">
-                {new Date(post.date).toLocaleDateString('zh-CN', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric'
-                })}
-              </time>
-            )}
-          </div>
+          {post.date && (
+            <time className="block text-sm text-text-light font-mono">
+              {new Date(post.date).toLocaleDateString('zh-CN', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+              })}
+            </time>
+          )}
+
+          <div className="h-px w-full bg-border mt-6" />
         </header>
 
-        <div className="prose prose-lg prose-invert max-w-none mb-16 animate-slide-up glass p-8 md:p-12 rounded-3xl border border-white/5 shadow-2xl">
+        <div className="prose prose-lg max-w-none mb-12 animate-fade-in" style={{ animationDelay: '0.1s' }}>
           <MDXRemote
             source={post.content}
             components={components}
@@ -168,41 +172,19 @@ export default async function PostPage({ params }) {
               }
             }}
           />
-
         </div>
 
         <div className="mb-8">
           <ShareButtons title={post.title} slug={slug} />
         </div>
 
-        {post.tags && post.tags.length > 0 && (
-          <footer className="border-t border-white/10 pt-8 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-            <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-              <div className="text-text-muted font-medium min-w-max flex items-center gap-2">
-                TAG
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {post.tags.map((tag) => (
-                  <Link
-                    key={tag}
-                    href={`/tags/${tag}`}
-                    className="px-4 py-1.5 rounded-full bg-surface/50 border border-white/10 text-sm text-text-muted hover:bg-primary/20 hover:text-primary hover:border-primary/30 transition-all duration-300"
-                  >
-                    {tag}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </footer>
-        )}
-
-        <div className="mt-12 text-center animate-fade-in" style={{ animationDelay: '0.6s' }}>
+        <div className="border-t border-border pt-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
           <Link
             href="/posts"
-            className="inline-flex items-center gap-2 text-text-muted hover:text-primary transition-colors group"
+            className="inline-flex items-center gap-2 text-sm text-text-muted hover:text-text-main transition-colors no-underline hover:no-underline"
           >
-            <span className="group-hover:-translate-x-1 transition-transform">←</span>
-            Back to Posts
+            <span>←</span>
+            返回全部文章
           </Link>
         </div>
       </article>

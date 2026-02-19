@@ -3,22 +3,20 @@
 import SideBar from './SideBar';
 import Breadcrumbs from '@/app/components/breadcrumbs';
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { FaMugSaucer } from "react-icons/fa6";
+import { FiMenu } from "react-icons/fi";
 
 export default function ClientLayout({ children }) {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const sidebarRef = useRef(null);
 
     useEffect(() => {
-        // Check screen size on component mount and resize
         const handleResize = () => {
-            setIsSidebarOpen(window.innerWidth >= 768); // Adjust breakpoint as needed
+            setIsSidebarOpen(window.innerWidth >= 768);
         };
 
-        handleResize(); // Set initial state
+        handleResize();
         window.addEventListener('resize', handleResize);
 
-        // Clean up event listener on component unmount
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
@@ -38,18 +36,18 @@ export default function ClientLayout({ children }) {
     }, [isSidebarOpen]);
 
     return (
-        <div className="w-full min-h-screen bg-background text-text-main selection:bg-primary/30 selection:text-primary-light">
+        <div className="w-full min-h-screen bg-white text-text-main selection:bg-primary-light selection:text-primary-dark">
             <SideBar isOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} ref={sidebarRef} />
-            <div className={`w-full ${isSidebarOpen ? 'md:pl-72' : ''} transition-all duration-500 ease-out min-h-screen flex flex-col`}>
-                <div className="p-8 flex-grow">
+            <div className={`w-full ${isSidebarOpen ? 'md:pl-64' : ''} transition-all duration-300 ease-out min-h-screen flex flex-col`}>
+                <div className="px-6 py-6 md:px-12 md:py-8 flex-grow">
                     <button
-                        className="md:hidden mb-8 text-text-muted hover:text-primary transition-colors"
+                        className="md:hidden mb-6 text-text-muted hover:text-text-main transition-colors p-1 rounded-md hover:bg-surface-hover"
                         onClick={toggleSidebar}
                     >
-                        <FaMugSaucer size={28} />
+                        <FiMenu size={22} />
                     </button>
                     <Breadcrumbs />
-                    <main className="container mx-auto flex-grow mt-8">
+                    <main className="container mx-auto flex-grow mt-4 max-w-4xl">
                         {children}
                     </main>
                 </div>

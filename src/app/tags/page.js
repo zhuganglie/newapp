@@ -3,10 +3,10 @@ import Link from 'next/link'
 import { generateMetadata as generateSEOMetadata } from '@/lib/seo'
 
 export const metadata = generateSEOMetadata({
-  title: '全部标签',
-  description: '按标签浏览文章，包括政治学、比较政治、威权政治、笔记管理等主题。',
+  title: '主题标签',
+  description: '按主题浏览「政治的逻辑」全部文章，包括独裁政治、比较政治、民主化等。',
   path: '/tags',
-  keywords: ['标签', '分类', '话题']
+  keywords: ['标签', '分类', '主题', '政治科学']
 });
 
 
@@ -19,39 +19,28 @@ export default async function TagsPage() {
     })
   );
 
-  // Sort tags by post count (descending)
   const sortedTagCounts = tagCounts.sort((a, b) => b.count - a.count);
 
   return (
-    <main className="min-h-screen py-20 px-4 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-[100px] animate-pulse-slow" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-[100px] animate-pulse-slow" style={{ animationDelay: '2s' }} />
-      </div>
-
-      <div className="max-w-5xl mx-auto space-y-16">
-        <h1 className="text-5xl md:text-6xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-primary-light via-white to-secondary animate-fade-in tracking-tight drop-shadow-lg">
-          全部标签
+    <main className="min-h-screen py-12">
+      <div className="max-w-3xl mx-auto">
+        <h1 className="text-3xl font-serif font-bold text-text-main mb-8 border-none animate-fade-in">
+          主题标签
         </h1>
 
-        <div className="flex flex-wrap justify-center gap-4 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-          {sortedTagCounts.map(({ tag, count }, index) => (
+        <div className="flex flex-wrap gap-2 animate-fade-in" style={{ animationDelay: '0.1s' }}>
+          {sortedTagCounts.map(({ tag, count }) => (
             <Link
               key={tag}
               href={`/tags/${tag}`}
-              className="group relative"
-              style={{ animation: `fadeIn 0.5s ease-out forwards ${index * 0.05}s`, opacity: 0 }}
+              className="group inline-flex items-center gap-2 px-4 py-2 bg-surface border border-border rounded-md text-sm text-text-main hover:bg-surface-hover hover:border-border-dark transition-all duration-150 no-underline hover:no-underline"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="relative flex items-center gap-3 px-6 py-3 bg-surface/40 backdrop-blur-md border border-white/10 rounded-full transition-all duration-300 group-hover:bg-surface/60 group-hover:scale-105 group-hover:border-primary/30 shadow-lg">
-                <span className="text-lg font-medium text-text-main group-hover:text-primary transition-colors">
-                  {tag}
-                </span>
-                <span className="flex items-center justify-center h-6 min-w-[1.5rem] px-2 text-xs font-bold text-surface bg-primary/80 rounded-full group-hover:bg-primary group-hover:text-black transition-colors">
-                  {count}
-                </span>
-              </div>
+              <span className="font-medium group-hover:text-primary transition-colors">
+                {tag}
+              </span>
+              <span className="text-xs text-text-light bg-white px-1.5 py-0.5 rounded">
+                {count}
+              </span>
             </Link>
           ))}
         </div>

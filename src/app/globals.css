@@ -3,15 +3,17 @@
 @tailwind utilities;
 
 :root {
-  --background: #0f172a;
-  --foreground: #f8fafc;
+  --background: #ffffff;
+  --foreground: #37352f;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Inter', 'Noto Sans SC', system-ui, sans-serif;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @font-face {
@@ -31,16 +33,16 @@ body {
 }
 
 @layer utilities {
-  .glass {
-    @apply bg-surface/70 backdrop-blur-lg border border-white/10 shadow-xl;
+  .notion-card {
+    @apply bg-white rounded-lg border border-border transition-all duration-200;
   }
 
-  .glass-hover {
-    @apply hover:bg-surface/90 transition-all duration-300;
+  .notion-card-hover {
+    @apply hover:bg-surface-hover hover:shadow-sm transition-all duration-200;
   }
 
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-light via-primary to-primary-hover;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-text-main to-text-muted;
   }
 
   .text-balance {
@@ -50,12 +52,12 @@ body {
 
 @layer base {
   :root {
-    --font-scale: 1.18;
-    --line-height: 1.45;
+    --font-scale: 1;
+    --line-height: 1.6;
   }
 
   html {
-    @apply text-[118%] leading-[var(--line-height)] box-border overflow-y-scroll bg-zinc-900 text-zinc-300 antialiased;
+    @apply text-base leading-[var(--line-height)] box-border overflow-y-scroll bg-white text-text-main antialiased;
     font-feature-settings: "kern", "liga", "clig", "calt";
   }
 
@@ -103,7 +105,7 @@ body {
   }
 
   a:hover {
-    @apply text-primary-hover outline-none;
+    @apply text-primary-hover;
   }
 
   a:focus-visible {
@@ -111,12 +113,12 @@ body {
   }
 
   abbr[title] {
-    @apply border-b border-dotted border-black/50 cursor-help no-underline;
+    @apply border-b border-dotted border-text-light cursor-help no-underline;
   }
 
   b,
   strong {
-    @apply font-bold;
+    @apply font-semibold text-text-main;
   }
 
   dfn {
@@ -124,7 +126,7 @@ body {
   }
 
   :is(h1, h2, h3, h4, h5, h6) {
-    @apply font-bold text-zinc-100 mb-6;
+    @apply font-bold text-text-main mb-4 font-serif;
   }
 
   h1 {
@@ -132,23 +134,23 @@ body {
   }
 
   h2 {
-    @apply text-[1.62671rem] leading-tight mt-12;
+    @apply text-[1.5rem] leading-tight mt-10 pb-2 border-b border-border;
   }
 
   h3 {
-    @apply text-[1.38316rem] leading-tight mt-8;
+    @apply text-[1.25rem] leading-tight mt-8;
   }
 
   h4 {
-    @apply text-[1.2rem] leading-tight mt-6;
+    @apply text-[1.1rem] leading-tight mt-6;
   }
 
   h5 {
-    @apply text-[1.1rem] leading-tight mt-4;
+    @apply text-[1rem] leading-tight mt-4;
   }
 
   h6 {
-    @apply text-[1rem] leading-tight mt-4;
+    @apply text-[0.9rem] leading-tight mt-4 text-text-muted;
   }
 
   :is(code, kbd, pre, samp) {
@@ -160,7 +162,7 @@ body {
   }
 
   hr {
-    @apply my-8 border-none h-px bg-zinc-800;
+    @apply my-8 border-none h-px bg-border;
   }
 
   button,
@@ -193,26 +195,26 @@ body {
   }
 
   fieldset {
-    @apply my-6 border border-solid border-zinc-700 rounded-lg p-4;
+    @apply my-6 border border-solid border-border rounded-lg p-4;
   }
 
   legend {
-    @apply px-2 text-zinc-300;
+    @apply px-2 text-text-main;
   }
 
   textarea {
-    @apply overflow-auto bg-zinc-800 text-zinc-300 border border-zinc-700 rounded-md p-2;
+    @apply overflow-auto bg-surface text-text-main border border-border rounded-md p-2;
   }
 
   select {
-    @apply bg-zinc-800 text-zinc-300 border border-zinc-700 rounded-md p-2;
+    @apply bg-surface text-text-main border border-border rounded-md p-2;
   }
 
   input[type="text"],
   input[type="email"],
   input[type="password"],
   input[type="search"] {
-    @apply bg-zinc-800 text-zinc-300 border border-zinc-700 rounded-md px-3 py-2;
+    @apply bg-surface text-text-main border border-border rounded-md px-3 py-2;
   }
 
   [type='checkbox'],
@@ -243,15 +245,15 @@ body {
   }
 
   :is(ul, ol) {
-    @apply my-6 pl-8 space-y-2;
+    @apply my-4 pl-6 space-y-1;
   }
 
   ul {
-    @apply list-disc marker:text-zinc-500;
+    @apply list-disc marker:text-text-light;
   }
 
   ol {
-    @apply list-decimal marker:text-zinc-500;
+    @apply list-decimal marker:text-text-light;
   }
 
   dl {
@@ -263,19 +265,19 @@ body {
   }
 
   p {
-    @apply my-6 max-w-prose text-zinc-300;
+    @apply my-4 max-w-prose text-text-main leading-relaxed;
   }
 
   pre {
-    @apply my-6 text-[0.85rem] leading-relaxed bg-black/40 rounded-lg overflow-x-auto p-6;
+    @apply my-6 text-sm leading-relaxed bg-surface rounded-lg overflow-x-auto p-5 border border-border;
   }
 
   table {
-    @apply my-6 w-full border-collapse text-[0.95rem] leading-relaxed;
+    @apply my-6 w-full border-collapse text-sm leading-relaxed;
   }
 
   blockquote {
-    @apply my-8 pl-6 border-l-4 border-zinc-700 italic text-zinc-300;
+    @apply my-6 pl-4 border-l-[3px] border-text-main/20 text-text-main;
   }
 
   :is(form, noscript, iframe, address) {
@@ -287,15 +289,15 @@ body {
   }
 
   th {
-    @apply font-bold;
+    @apply font-semibold;
   }
 
   li {
-    @apply mb-2;
+    @apply mb-1;
   }
 
   li> :is(ol, ul) {
-    @apply mt-2 ml-6;
+    @apply mt-1 ml-4;
   }
 
   :is(blockquote, li, p) *:last-child {
@@ -303,52 +305,52 @@ body {
   }
 
   li>p {
-    @apply mb-2;
+    @apply mb-1;
   }
 
   code {
-    @apply text-[0.85rem] leading-[1.45rem];
+    @apply text-sm leading-[1.45rem];
   }
 
   kbd {
-    @apply text-[0.85rem] leading-[1.45rem];
+    @apply text-sm leading-[1.45rem];
   }
 
   samp {
-    @apply text-[0.85rem] leading-[1.45rem];
+    @apply text-sm leading-[1.45rem];
   }
 
   :is(abbr, acronym) {
-    @apply border-b border-dotted border-zinc-600 cursor-help;
+    @apply border-b border-dotted border-text-light cursor-help;
   }
 
   thead {
-    @apply text-left bg-zinc-800/50;
+    @apply text-left bg-surface;
   }
 
   th {
-    @apply text-left py-3 px-4 text-zinc-200 font-bold border-b border-zinc-700;
+    @apply text-left py-2.5 px-3 text-text-main font-semibold border-b border-border;
   }
 
   td {
-    @apply text-left py-3 px-4 border-b border-zinc-800;
+    @apply text-left py-2.5 px-3 border-b border-border;
   }
 
   :is(th, td):first-child {
-    @apply pl-4;
+    @apply pl-3;
   }
 
   :is(th, td):last-child {
-    @apply pr-4;
+    @apply pr-3;
   }
 
   tt,
   code {
-    @apply bg-black rounded-sm font-mono py-[0.2em];
+    @apply bg-surface/80 rounded px-1 py-0.5 font-mono text-secondary;
   }
 
   pre code {
-    @apply bg-transparent leading-[1.42];
+    @apply bg-transparent text-text-main p-0;
   }
 
   code:before,
@@ -363,6 +365,10 @@ body {
   pre tt:before,
   pre tt:after {
     content: '';
+  }
+
+  ::selection {
+    @apply bg-primary-light text-primary-dark;
   }
 
   @media only screen and (max-width: 480px) {

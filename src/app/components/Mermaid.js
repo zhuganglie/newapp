@@ -14,7 +14,7 @@ const Mermaid = ({ chart }) => {
                     const mermaid = (await import('mermaid')).default;
                     mermaid.initialize({
                         startOnLoad: false,
-                        theme: 'dark',
+                        theme: 'default',
                         securityLevel: 'loose',
                         fontFamily: 'inherit',
                     });

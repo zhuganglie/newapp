@@ -1,8 +1,8 @@
 // SEO configuration and utility functions
 
 export const siteConfig = {
-    name: 'Why? 为什么？',
-    description: 'Why? 我的好奇心 - 记录学习（摸鱼）日常，偶尔假装正经。',
+    name: '政治的逻辑',
+    description: '用政治科学的方法，解读真实世界的政治逻辑。',
     url: 'https://zhuganglie.vercel.app',
     locale: 'zh-CN',
     author: {
@@ -10,20 +10,12 @@ export const siteConfig = {
         url: 'https://zhuganglie.vercel.app/about'
     },
     social: {
-        twitter: '@zhuganglie' // Update with actual Twitter handle if available
+        twitter: '@zhuganglie'
     }
 };
 
 /**
  * Generate metadata for a page
- * @param {Object} options - Metadata options
- * @param {string} options.title - Page title
- * @param {string} options.description - Page description
- * @param {string} options.path - Page path (relative to site root)
- * @param {string[]} [options.keywords] - SEO keywords
- * @param {string} [options.image] - Open Graph image URL
- * @param {string} [options.type] - Open Graph type (default: 'website')
- * @returns {Object} Next.js metadata object
  */
 export function generateMetadata({
     title,
@@ -87,13 +79,6 @@ export function generateMetadata({
 
 /**
  * Generate JSON-LD structured data for an article
- * @param {Object} article - Article data
- * @param {string} article.title - Article title
- * @param {string} article.description - Article description
- * @param {string} article.slug - Article slug
- * @param {string} article.date - Publication date (ISO string)
- * @param {string[]} [article.tags] - Article tags
- * @returns {Object} JSON-LD structured data
  */
 export function generateArticleSchema({ title, description, slug, date, tags = [] }) {
     return {
@@ -121,7 +106,6 @@ export function generateArticleSchema({ title, description, slug, date, tags = [
 
 /**
  * Generate JSON-LD structured data for the website
- * @returns {Object} JSON-LD structured data
  */
 export function generateWebSiteSchema() {
     return {
@@ -141,7 +125,6 @@ export function generateWebSiteSchema() {
 
 /**
  * Generate JSON-LD structured data for a person
- * @returns {Object} JSON-LD structured data
  */
 export function generatePersonSchema() {
     return {
@@ -149,16 +132,14 @@ export function generatePersonSchema() {
         '@type': 'Person',
         name: siteConfig.author.name,
         url: siteConfig.author.url,
-        description: 'Life-long learner, grassroots leader, and hobbyist. A middle-aged guy who believes he has a few good years left.',
-        jobTitle: 'Educator & Life-long Learner',
-        knowsAbout: ['Political Science', 'Education', 'Go (Board Game)', 'Cycling']
+        description: '政治科学爱好者，终身学习者。用理论工具解读真实世界的政治现象。',
+        jobTitle: '政治科学科普作者',
+        knowsAbout: ['Political Science', 'Comparative Politics', 'Authoritarian Politics', 'Go (Board Game)', 'Cycling']
     };
 }
 
 /**
  * Generate JSON-LD structured data for breadcrumbs
- * @param {Array<{name: string, url: string}>} items - Breadcrumb items
- * @returns {Object} JSON-LD structured data
  */
 export function generateBreadcrumbSchema(items) {
     return {
