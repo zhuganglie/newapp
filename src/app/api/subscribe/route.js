@@ -27,7 +27,7 @@ export async function POST(request) {
             },
             body: JSON.stringify({
                 email_address: email,
-                type: 'regular',
+                type: 'unactivated',
             }),
         });
 
