@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { getPosts } from '@/lib/posts'
 import { generateMetadata as generateSEOMetadata, generateWebSiteSchema } from '@/lib/seo'
+import SubscribeCTA from '@/app/components/SubscribeCTA'
 
 export const metadata = generateSEOMetadata({
   title: '政治的逻辑',
@@ -111,6 +112,10 @@ export default async function HomePage() {
           ))}
         </div>
       </section>
+
+      {/* Subscribe CTA */}
+      <hr className="border-border" />
+      <SubscribeCTA />
     </main>
   )
 }

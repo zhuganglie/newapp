@@ -9,6 +9,7 @@ import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
 import { generateMetadata as generateSEOMetadata, generateArticleSchema } from '@/lib/seo'
 import ShareButtons from '@/app/components/ShareButtons'
+import SubscribeCTA from '@/app/components/SubscribeCTA'
 import Mermaid from '@/app/components/Mermaid'
 
 // Generate metadata for the post page
@@ -177,6 +178,8 @@ export default async function PostPage({ params }) {
         <div className="mb-8">
           <ShareButtons title={post.title} slug={slug} />
         </div>
+
+        <SubscribeCTA />
 
         <div className="border-t border-border pt-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
           <Link

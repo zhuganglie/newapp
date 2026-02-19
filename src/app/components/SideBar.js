@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { forwardRef } from 'react';
 import { FiFileText, FiHash, FiUser, FiMail, FiTwitter, FiYoutube } from 'react-icons/fi';
+import SubscribeForm from './SubscribeForm';
 
 const SOCIAL_LINKS = [
   { icon: FiMail, href: 'mailto:pyrrhonianpig@gmail.com', ariaLabel: 'Email' },
@@ -75,8 +76,17 @@ const SideBar = forwardRef(({ isOpen, setIsSidebarOpen }, ref) => {
         </nav>
       </div>
 
-      {/* Footer / Socials */}
+      {/* Footer / Subscribe + Socials */}
       <div className="space-y-4">
+        {/* Subscribe */}
+        <div className="px-3">
+          <p className="text-xs font-medium text-text-muted mb-2 flex items-center gap-1.5">
+            <FiMail size={12} />
+            订阅更新
+          </p>
+          <SubscribeForm compact />
+        </div>
+
         <div className="flex justify-start gap-3 px-3">
           {SOCIAL_LINKS.map(({ icon: Icon, href, ariaLabel }) => (
             <a
