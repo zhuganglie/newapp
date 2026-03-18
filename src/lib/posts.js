@@ -2,8 +2,8 @@ import matter from 'gray-matter'
 import { promises as fs, existsSync } from 'fs'
 import path from 'path'
 
-export async function getPosts() {
-  const postsDirectory = path.join(process.cwd(), 'src/posts')
+export async function getPosts(dir = 'src/posts') {
+  const postsDirectory = path.join(process.cwd(), dir)
   const filenames = await fs.readdir(postsDirectory)
 
   const posts = await Promise.all(
@@ -23,6 +23,7 @@ export async function getPosts() {
         content,
         tags: data?.tags || [], // Add tags field
         date: data.date,
+        type: dir.split('/').pop(), // Extract 'posts' or 'offtopic' from dir string
         ...data,
       }
     })
@@ -31,19 +32,30 @@ export async function getPosts() {
   return posts.filter(post => post !== null).sort((a, b) => new Date(b.date) - new Date(a.date))
 }
 
+export async function getAllPosts() {
+  const posts = await getPosts('src/posts')
+  
+  let offtopic = []
+  if (existsSync(path.join(process.cwd(), 'src/offtopic'))) {
+    offtopic = await getPosts('src/offtopic')
+  }
+  
+  return [...posts, ...offtopic].sort((a, b) => new Date(b.date) - new Date(a.date))
+}
+
 export async function getUniqueTags() {
-  const posts = await getPosts()
+  const posts = await getAllPosts()
   const allTags = posts.flatMap(post => post.tags);
   return [...new Set(allTags)];
 }
 
 export async function getPostsByTag(tag) {
-  const posts = await getPosts()
+  const posts = await getAllPosts()
   return posts.filter(post => post.tags.includes(tag));
 }
 
-export async function getPostBySlug(slug) {
-  const postsDirectory = path.join(process.cwd(), 'src/posts')
+export async function getPostBySlug(slug, dir = 'src/posts') {
+  const postsDirectory = path.join(process.cwd(), dir)
   let fullPath = path.join(postsDirectory, `${slug}.md`)
   if (!existsSync(fullPath)) {
     fullPath = path.join(postsDirectory, `${slug}.mdx`)

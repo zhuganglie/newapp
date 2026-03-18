@@ -55,7 +55,7 @@ export default async function TagPage({ params }) {
             {posts.map((post, index) => (
               <Link
                 key={post.slug}
-                href={`/posts/${post.slug}`}
+                href={`/${post.type || 'posts'}/${post.slug}`}
                 className="group flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4 py-3 px-3 -mx-3 rounded-md hover:bg-surface-hover transition-colors no-underline hover:no-underline"
               >
                 {post.date && (
