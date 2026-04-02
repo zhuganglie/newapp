@@ -6,9 +6,9 @@ import { FiFileText, FiHash, FiUser, FiMail, FiTwitter, FiYoutube, FiCoffee } fr
 import SubscribeForm from './SubscribeForm';
 
 const SOCIAL_LINKS = [
-  { icon: FiMail, href: 'mailto:pyrrhonianpig@gmail.com', ariaLabel: 'Email' },
-  { icon: FiTwitter, href: 'https://twitter.com/zhugangliet', ariaLabel: 'Twitter' },
-  { icon: FiYoutube, href: 'https://www.youtube.com/@gangliezhu7951', ariaLabel: 'Youtube' }
+  { icon: FiMail, href: 'mailto:logicofpolitics25@gmail.com', ariaLabel: 'Email' },
+  { icon: FiTwitter, href: 'https://twitter.com/zhengzhideluoji', ariaLabel: 'Twitter' },
+  { icon: FiYoutube, href: 'https://www.youtube.com/@the_logic_of_politics', ariaLabel: 'Youtube' }
 ];
 
 const NAV_LINKS = [
