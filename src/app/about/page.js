@@ -24,7 +24,7 @@ export default function AboutPage() {
     {
       title: "谁在写？",
       icon: FiUsers,
-      content: "一个对政治科学保持热情的人，一直没停止阅读和思考。这个网站是我和 AI 一起搭的，文章也无一例外是在 AI 的帮助下写的——算是一个人加一台机器的科普实验。不写东西的时候，我在下围棋或者骑脚踏车。",
+      content: "这个网站由我独立选题、搭建与写作，AI 参与资料整理、结构打磨与技术实现。但我真正关心的，是如何把政治学的解释框架讲清楚。不写东西的时候，我在下围棋或者骑脚踏车。",
     }
   ];
 
@@ -70,12 +70,6 @@ export default function AboutPage() {
           ))}
         </div>
 
-        {/* Footer Quote */}
-        <section className="mt-16 pt-8 border-t border-border animate-fade-in" style={{ animationDelay: '0.4s' }}>
-          <blockquote className="text-text-muted italic border-none pl-0 text-base">
-            "The purpose of political science is not to tell people what to think, but to teach them how to think about politics."
-          </blockquote>
-        </section>
       </div>
     </main>
   );

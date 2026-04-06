@@ -14,7 +14,7 @@ const SOCIAL_LINKS = [
 const NAV_LINKS = [
   { href: '/posts', label: '全部文章', icon: FiFileText },
   { href: '/tags', label: '主题标签', icon: FiHash },
-  { href: '/offtopic', label: '闲言碎语', icon: FiCoffee },
+  // { href: '/offtopic', label: '闲言碎语', icon: FiCoffee },
   { href: '/about', label: '关于', icon: FiUser }
 ];
 
@@ -88,9 +88,14 @@ const SideBar = forwardRef(({ isOpen, setIsSidebarOpen }, ref) => {
               订阅更新
             </p>
           </div>
-          <p className="text-[11px] text-text-muted leading-relaxed m-0 p-0 mb-3 px-1">
-            新文章发布时通知你，<br />不定期更新。
-          </p>
+          <div className="text-[11px] text-text-muted leading-relaxed m-0 p-0 mb-3 px-1 text-left">
+            <p className="font-bold text-text-main mb-1.5 opacity-90">订阅后你会收到：</p>
+            <ul className="list-none space-y-1 mt-0 p-0">
+              <li className="flex items-start gap-1.5"><span className="w-1 h-1 rounded-full bg-primary flex-shrink-0 mt-1.5"></span>新文章更新</li>
+              <li className="flex items-start gap-1.5"><span className="w-1 h-1 rounded-full bg-primary flex-shrink-0 mt-1.5"></span>主题书单 / 阅读顺序</li>
+              <li className="flex items-start gap-1.5"><span className="w-1 h-1 rounded-full bg-primary flex-shrink-0 mt-1.5"></span>偶尔发送的政治学入门整理</li>
+            </ul>
+          </div>
           <SubscribeForm compact />
         </div>
 

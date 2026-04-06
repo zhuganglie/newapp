@@ -35,7 +35,7 @@ export default function SubscribeForm({ compact = false }) {
                 setTimeout(() => setStatus('idle'), 3000);
             } else {
                 setStatus('error');
-                setErrorMsg(data.error || '订阅失败，请稍后重试');
+                setErrorMsg(data.error || '免费订阅失败，请稍后重试');
             }
         } catch {
             setStatus('error');
@@ -47,7 +47,7 @@ export default function SubscribeForm({ compact = false }) {
         return (
             <div className={`flex items-center gap-2 text-accent-green ${compact ? 'text-xs py-2' : 'text-sm'}`}>
                 <FiCheck size={compact ? 14 : 16} className="flex-shrink-0" />
-                <span>订阅成功！请查收确认邮件。</span>
+                <span>免费订阅成功！请查收确认邮件。</span>
             </div>
         );
     }
@@ -80,7 +80,7 @@ export default function SubscribeForm({ compact = false }) {
                     ) : (
                         <>
                             <FiSend size={compact ? 12 : 14} />
-                            <span>订阅</span>
+                            <span>免费订阅</span>
                         </>
                     )}
                 </button>

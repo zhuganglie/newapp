@@ -15,9 +15,14 @@ export default function SubscribeCTA() {
                         <h3 className="text-base font-serif font-bold text-text-main m-0 p-0 border-none">
                             订阅「政治的逻辑」
                         </h3>
-                        <p className="text-sm text-text-muted m-0 p-0 mt-1 max-w-md">
-                            新文章发布时，直接送到你的收件箱。不定期更新，没有垃圾邮件。
-                        </p>
+                        <div className="text-sm text-text-muted m-0 p-0 mt-2 max-w-md">
+                            <p className="font-bold text-text-main mb-2 opacity-90">订阅后你会收到：</p>
+                            <ul className="list-none space-y-1.5 mt-0 p-0">
+                                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>新文章更新</li>
+                                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>主题书单 / 阅读顺序</li>
+                                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>偶尔发送的政治学入门整理</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div className="max-w-md ml-0 md:ml-11">

@@ -5,7 +5,7 @@ import SubscribeCTA from '@/app/components/SubscribeCTA'
 
 export const metadata = generateSEOMetadata({
   title: '政治的逻辑',
-  description: '用政治科学的方法，解读真实世界的政治逻辑。探索比较政治、威权政治、民主化等话题。',
+  description: '给认真理解政治的人，一套更清晰的分析框架。探索比较政治、威权政治、民主化等话题。',
   path: '/',
   keywords: ['政治科学', '比较政治', '威权政治', '政治学科普', '播客', 'comparative politics', 'authoritarian politics']
 });
@@ -45,7 +45,7 @@ export default async function HomePage() {
           </h1>
 
           <p className="text-lg md:text-xl text-text-muted leading-relaxed mb-8 max-w-xl">
-            用政治科学的方法，解读真实世界的政治逻辑。
+            给认真理解政治的人，一套更清晰的分析框架
           </p>
 
           <div className="flex gap-3">
