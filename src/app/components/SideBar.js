@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { forwardRef } from 'react';
-import { FiFileText, FiHash, FiUser, FiMail, FiTwitter, FiYoutube, FiCoffee } from 'react-icons/fi';
+import { FiFileText, FiHash, FiUser, FiMail, FiTwitter, FiYoutube } from 'react-icons/fi';
 import SubscribeForm from './SubscribeForm';
 
 const SOCIAL_LINKS = [
@@ -13,7 +13,6 @@ const SOCIAL_LINKS = [
 
 const NAV_LINKS = [
   { href: '/posts', label: '全部文章', icon: FiFileText },
-  { href: '/notes', label: '读书笔记', icon: FiCoffee },
   { href: '/tags', label: '主题标签', icon: FiHash },
   { href: '/about', label: '关于', icon: FiUser }
 ];

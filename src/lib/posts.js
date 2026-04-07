@@ -23,7 +23,7 @@ export async function getPosts(dir = 'src/posts') {
         content,
         tags: data?.tags || [], // Add tags field
         date: data.date,
-        type: dir.split('/').pop(), // Extract 'posts' or 'notes' from dir string
+        type: dir.split('/').pop(), // Extract 'posts' from dir string
         ...data,
       }
     })
@@ -33,15 +33,7 @@ export async function getPosts(dir = 'src/posts') {
 }
 
 export async function getAllPosts() {
-  const posts = await getPosts('src/posts')
-
-
-  let notes = []
-  if (existsSync(path.join(process.cwd(), 'src/notes'))) {
-    notes = await getPosts('src/notes')
-  }
-
-  return [...posts, ...notes].sort((a, b) => new Date(b.date) - new Date(a.date))
+  return await getPosts('src/posts')
 }
 
 export async function getUniqueTags() {

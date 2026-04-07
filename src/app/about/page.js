@@ -1,4 +1,4 @@
-import { FiBookOpen, FiUsers, FiTarget } from 'react-icons/fi';
+import { FiBookOpen, FiUsers, FiTarget, FiZap } from 'react-icons/fi';
 import { generateMetadata as generateSEOMetadata, generatePersonSchema } from '@/lib/seo';
 
 export const metadata = generateSEOMetadata({
@@ -19,12 +19,17 @@ export default function AboutPage() {
     {
       title: "为什么做这个？",
       icon: FiTarget,
-      content: "政治科学拥有大量有趣且深刻的理论工具，但这些知识大多被锁在学术论文和英文教科书里。我希望把这些工具介绍给更多中文读者，帮助大家用「政治科学的方法」来理解我们所生活的这个世界。",
+      content: "政治科学拥有大量有趣且深刻的理论工具，但这些知识大多被锁在学术论文和英文教科书里。我希望分享这些工具，共同探索理解真实世界的路径。",
+    },
+    {
+      title: "你能获得什么？",
+      icon: FiZap,
+      content: "在这里，你不会看到情绪化的复读或立场先行的争吵，而是一套看透迷雾的分析框架。这里致力于理清复杂现象背后的因果逻辑，让理性的政治科学思维，成为理解真实世界的本能。",
     },
     {
       title: "谁在写？",
       icon: FiUsers,
-      content: "这个网站由我独立选题、搭建与写作，AI 参与资料整理、文字润色、结构打磨与技术实现。但我真正关心的，是如何把政治学的解释框架讲清楚。不写东西的时候，我在下围棋或者骑脚踏车。",
+      content: "我是一名对政治科学充满热情的创作者。在这里，我负责内容策划与最终呈现——通过整合学术框架与个人的观察和思考，试图把繁复的政治逻辑讲得通俗而不失深度。我希望在这里构建一个理性的讨论空间。不在这里打磨内容时，我在下围棋或者骑脚踏车。",
     }
   ];
 
