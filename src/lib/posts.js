@@ -83,3 +83,16 @@ export async function getPostBySlug(slug, dir = 'src/posts') {
     ...data,
   }
 }
+
+export async function searchPosts(query) {
+  if (!query) return []
+  const posts = await getAllPosts()
+  const lowerQuery = query.toLowerCase()
+  
+  return posts.filter(post => 
+    post.title?.toLowerCase().includes(lowerQuery) ||
+    post.description?.toLowerCase().includes(lowerQuery) ||
+    post.tags?.some(tag => tag.toLowerCase().includes(lowerQuery)) ||
+    post.category?.toLowerCase().includes(lowerQuery)
+  )
+}

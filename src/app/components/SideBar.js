@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { forwardRef } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
+import { forwardRef, useState } from 'react';
 import { FiFileText, FiHash, FiUser, FiMail, FiTwitter, FiYoutube } from 'react-icons/fi';
 import SubscribeForm from './SubscribeForm';
 
@@ -25,10 +25,20 @@ const CATEGORY_LINKS = [
 
 const SideBar = forwardRef(({ isOpen, setIsSidebarOpen }, ref) => {
   const pathname = usePathname();
+  const router = useRouter();
+  const [searchQuery, setSearchQuery] = useState('');
 
   const handleClick = () => {
     if (window.innerWidth < 768) {
       setIsSidebarOpen(false);
+    }
+  };
+
+  const handleSearch = (e) => {
+    if (e.key === 'Enter' && searchQuery.trim()) {
+      router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
+      handleClick();
+      setSearchQuery('');
     }
   };
 
@@ -60,11 +70,14 @@ const SideBar = forwardRef(({ isOpen, setIsSidebarOpen }, ref) => {
 
         {/* Navigation */}
         <nav className="w-full space-y-10">
-          {/* Search Placeholder */}
-          <section className="px-1">
+          {/* Search */}
+          <section className="px-1 relative group/search">
             <input 
               type="text" 
               placeholder="搜索文章或主题..." 
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              onKeyDown={handleSearch}
               className="w-full bg-surface-hover/50 border border-border/40 rounded-md py-2 px-3.5 text-xs placeholder:text-text-light focus:outline-none focus:border-primary/30 transition-all font-sans"
             />
           </section>
