@@ -16,34 +16,35 @@ const config: Config = {
       },
       colors: {
         background: '#ffffff',
-        surface: '#f7f6f3',
-        'surface-hover': '#efefed',
+        surface: '#fcfcfc',
+        'surface-hover': '#f5f5f5',
         primary: {
-          DEFAULT: '#2383e2',
-          hover: '#1a6dbe',
-          light: '#e8f0fe',
-          dark: '#155da0',
+          DEFAULT: '#800000', // Deep Academy Red
+          hover: '#660000',
+          light: '#fff1f1',
+          dark: '#4a0000',
         },
         secondary: {
-          DEFAULT: '#eb5757',
-          hover: '#d44040',
+          DEFAULT: '#37352f', // Neutral for text/secondary
+          hover: '#000000',
         },
         accent: {
           orange: '#d9730d',
           yellow: '#dfab01',
           green: '#0f7b6c',
-          blue: '#2383e2',
+          blue: '#1a5fb4', // More classic blue
           purple: '#6940a5',
           pink: '#ad1a72',
+          red: '#800000',
         },
         text: {
-          main: '#37352f',
-          muted: '#787774',
-          light: '#9b9a97',
+          main: '#1a1a1a', // Slightly darker for academic reading
+          muted: '#595959',
+          light: '#8c8c8c',
         },
         border: {
-          DEFAULT: '#e9e9e7',
-          dark: '#d3d3d0',
+          DEFAULT: '#e5e5e5',
+          dark: '#b3b3b3',
         },
       },
       animation: {
@@ -69,17 +70,17 @@ const config: Config = {
         DEFAULT: {
           css: {
             '--tw-prose-body': theme('colors.text.main'),
-            '--tw-prose-headings': theme('colors.text.main'),
+            '--tw-prose-headings': theme('colors.primary.DEFAULT'), // Headings in Deep Red
             '--tw-prose-lead': theme('colors.text.muted'),
             '--tw-prose-links': theme('colors.primary.DEFAULT'),
             '--tw-prose-bold': theme('colors.text.main'),
             '--tw-prose-counters': theme('colors.text.muted'),
-            '--tw-prose-bullets': theme('colors.text.light'),
+            '--tw-prose-bullets': theme('colors.primary.DEFAULT'),
             '--tw-prose-hr': theme('colors.border.DEFAULT'),
             '--tw-prose-quotes': theme('colors.text.main'),
-            '--tw-prose-quote-borders': theme('colors.border.dark'),
+            '--tw-prose-quote-borders': theme('colors.primary.DEFAULT'),
             '--tw-prose-captions': theme('colors.text.muted'),
-            '--tw-prose-code': theme('colors.secondary.DEFAULT'),
+            '--tw-prose-code': theme('colors.primary.DEFAULT'),
             '--tw-prose-pre-code': theme('colors.text.main'),
             '--tw-prose-pre-bg': theme('colors.surface'),
             '--tw-prose-th-borders': theme('colors.border.DEFAULT'),

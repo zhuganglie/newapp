@@ -4,13 +4,15 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #37352f;
+  --foreground: #1a1a1a;
+  --primary: #800000;
+  --primary-foreground: #ffffff;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: 'Inter', 'Noto Sans SC', system-ui, sans-serif;
+  font-family: var(--font-serif);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -47,6 +49,40 @@ body {
 
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* Academic Blocks (Beamer-inspired) */
+  .academic-block {
+    @apply my-8 rounded-lg overflow-hidden border shadow-sm;
+  }
+
+  .academic-block-header {
+    @apply px-4 py-2 font-bold text-sm uppercase tracking-wider text-white;
+  }
+
+  .academic-block-content {
+    @apply px-4 py-4 text-[0.95rem] leading-relaxed;
+  }
+
+  .block-concept {
+    @apply border-primary/20 bg-primary/5;
+  }
+  .block-concept .academic-block-header {
+    @apply bg-primary;
+  }
+
+  .block-theory {
+    @apply border-accent-blue/20 bg-accent-blue/5;
+  }
+  .block-theory .academic-block-header {
+    @apply bg-accent-blue;
+  }
+
+  .block-example {
+    @apply border-text-muted/20 bg-surface;
+  }
+  .block-example .academic-block-header {
+    @apply bg-text-muted;
   }
 }
 
@@ -126,19 +162,19 @@ body {
   }
 
   :is(h1, h2, h3, h4, h5, h6) {
-    @apply font-bold text-text-main mb-4 font-serif;
+    @apply font-bold text-primary mb-4 font-serif tracking-tight text-balance;
   }
 
   h1 {
-    @apply text-[2.25rem] leading-tight;
+    @apply text-[2.5rem] leading-[1.1] font-black;
   }
 
   h2 {
-    @apply text-[1.5rem] leading-tight mt-10 pb-2 border-b border-border;
+    @apply text-[1.75rem] mt-12 pb-3 border-b-2 border-primary/10;
   }
 
   h3 {
-    @apply text-[1.25rem] leading-tight mt-8;
+    @apply text-[1.4rem] mt-10;
   }
 
   h4 {

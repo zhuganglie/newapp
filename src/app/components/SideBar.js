@@ -40,11 +40,12 @@ const SideBar = forwardRef(({ isOpen, setIsSidebarOpen }, ref) => {
       {/* Header / Logo Area */}
       <div>
         <Link href="/" onClick={handleClick} className="block mb-8 no-underline group">
-          <div className="flex flex-col items-center space-y-1 text-center">
-            <h1 className="font-serif font-bold text-xl text-text-main tracking-tight border-none m-0 p-0 group-hover:text-primary transition-colors duration-200">
+          <div className="flex flex-col items-center space-y-1.5 text-center">
+            <h1 className="font-serif font-black text-2xl text-primary tracking-tighter border-none m-0 p-0 transition-transform duration-300 group-hover:scale-[1.02]">
               政治的逻辑
             </h1>
-            <p className="text-xs text-text-muted m-0 p-0 tracking-wide font-medium">
+            <div className="h-px w-8 bg-primary/30 group-hover:w-12 transition-all duration-300"></div>
+            <p className="text-[10px] uppercase text-text-muted m-0 p-0 tracking-[0.2em] font-bold italic">
               The Logic of Politics
             </p>
           </div>
@@ -60,7 +61,7 @@ const SideBar = forwardRef(({ isOpen, setIsSidebarOpen }, ref) => {
                   <Link
                     href={href}
                     onClick={handleClick}
-                    className={`flex items-center gap-3 px-4 py-2.5 rounded-lg transition-all duration-200 text-sm no-underline font-medium
+                    className={`flex items-center gap-3 px-4 py-2.5 rounded-lg transition-all duration-200 text-sm no-underline font-medium w-fit mx-auto min-w-[120px]
                       ${active
                         ? 'bg-primary/10 text-primary'
                         : 'text-text-muted hover:text-text-main hover:bg-surface-hover'

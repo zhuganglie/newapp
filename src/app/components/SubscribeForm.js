@@ -72,7 +72,7 @@ export default function SubscribeForm({ compact = false }) {
                     disabled={status === 'loading'}
                     className={`inline-flex items-center justify-center gap-1.5 rounded-md font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed ${compact
                         ? 'w-full px-3 py-2 text-xs bg-primary text-white hover:bg-primary-hover shadow-sm hover:shadow'
-                        : 'px-4 py-2 text-sm bg-text-main text-white hover:bg-text-main/90 flex-shrink-0'
+                        : 'px-4 py-2 text-sm bg-primary text-white hover:bg-primary-hover shadow-sm hover:shadow flex-shrink-0'
                         }`}
                 >
                     {status === 'loading' ? (

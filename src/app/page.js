@@ -40,7 +40,7 @@ export default async function HomePage() {
       {/* Hero Section */}
       <section className="py-16 md:py-24 animate-fade-in">
         <div className="max-w-2xl">
-          <h1 className="text-4xl md:text-5xl font-serif font-bold text-text-main tracking-tight mb-4 border-none">
+          <h1 className="text-4xl md:text-5xl font-serif font-black text-text-main tracking-tight mb-4 border-none">
             政治的逻辑
           </h1>
 
@@ -51,7 +51,7 @@ export default async function HomePage() {
           <div className="flex gap-3">
             <Link
               href="/posts"
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-text-main text-white rounded-md text-sm font-medium hover:bg-text-main/90 transition-colors no-underline hover:no-underline"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-md text-sm font-bold hover:bg-primary-hover transition-all duration-300 shadow-sm hover:shadow-md no-underline hover:no-underline"
             >
               浏览全部文章
             </Link>
