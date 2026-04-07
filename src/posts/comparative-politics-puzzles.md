@@ -1,10 +1,11 @@
 ---
 title: 政治的谜题
 subtitle: 比较政治学的研究问题
-date: "2025-11-22"
+date: "2024-05-10"
+category: 专题研究
 tags:
-- 比较政治学
-- 研究问题
+- 比较政治
+- 学术谜题
 draft: false
 ---
 

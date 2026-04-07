@@ -2,6 +2,7 @@
 
 import SideBar from './SideBar';
 import Breadcrumbs from '@/app/components/breadcrumbs';
+import SiteFooter from './SiteFooter';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { FiMenu } from "react-icons/fi";
 
@@ -47,8 +48,9 @@ export default function ClientLayout({ children }) {
                         <FiMenu size={22} />
                     </button>
                     <Breadcrumbs />
-                    <main className="container mx-auto flex-grow mt-4 max-w-4xl">
+                    <main className="container mx-auto flex-grow mt-4 max-w-4xl paper-texture min-h-[60vh]">
                         {children}
+                        <SiteFooter />
                     </main>
                 </div>
             </div>

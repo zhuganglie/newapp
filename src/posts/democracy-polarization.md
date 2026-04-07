@@ -1,6 +1,7 @@
 ---
 title: 为什么民主国家也会走向政治极化？
 date: "2026-03-08"
+category: 深度科普
 tags: ["民主政治", "政治极化"]
 draft: false
 ---

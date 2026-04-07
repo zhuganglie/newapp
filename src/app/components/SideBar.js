@@ -14,7 +14,13 @@ const SOCIAL_LINKS = [
 const NAV_LINKS = [
   { href: '/posts', label: '全部文章', icon: FiFileText },
   { href: '/tags', label: '主题标签', icon: FiHash },
-  { href: '/about', label: '关于', icon: FiUser }
+  { href: '/about', label: '关于本站', icon: FiUser }
+];
+
+const CATEGORY_LINKS = [
+  { href: '/category/专题研究', label: '专题研究', color: 'bg-primary' },
+  { href: '/category/深度科普', label: '深度科普', color: 'bg-emerald-500' },
+  { href: '/category/读书笔记', label: '读书笔记', color: 'bg-amber-500' },
 ];
 
 const SideBar = forwardRef(({ isOpen, setIsSidebarOpen }, ref) => {
@@ -27,9 +33,11 @@ const SideBar = forwardRef(({ isOpen, setIsSidebarOpen }, ref) => {
   };
 
   const isActiveLink = (path) => {
-    return path === '/about'
-      ? pathname === path
-      : pathname.includes(path);
+    const decodedPath = decodeURIComponent(pathname);
+    const decodedTarget = decodeURIComponent(path);
+    return decodedTarget === '/about'
+      ? decodedPath === decodedTarget
+      : decodedPath.includes(decodedTarget);
   };
 
   return (
@@ -39,81 +47,107 @@ const SideBar = forwardRef(({ isOpen, setIsSidebarOpen }, ref) => {
     >
       {/* Header / Logo Area */}
       <div>
-        <Link href="/" onClick={handleClick} className="block mb-8 no-underline group">
-          <div className="flex flex-col items-center space-y-1.5 text-center">
-            <h1 className="font-serif font-black text-2xl text-primary tracking-tighter border-none m-0 p-0 transition-transform duration-300 group-hover:scale-[1.02]">
+        <Link href="/" onClick={handleClick} className="block mb-10 no-underline group px-2">
+          <div className="flex flex-col items-start space-y-1">
+            <h1 className="font-serif font-black text-2xl text-primary tracking-tighter border-none m-0 p-0 transition-all duration-300 group-hover:tracking-normal">
               政治的逻辑
             </h1>
-            <div className="h-px w-8 bg-primary/30 group-hover:w-12 transition-all duration-300"></div>
-            <p className="text-[10px] uppercase text-text-muted m-0 p-0 tracking-[0.2em] font-bold italic">
+            <p className="text-[9px] uppercase text-text-muted m-0 p-0 tracking-[0.25em] font-bold italic opacity-70">
               The Logic of Politics
             </p>
           </div>
         </Link>
 
         {/* Navigation */}
-        <nav className="w-full px-2">
-          <ul className="space-y-1 list-none p-0 m-0">
-            {NAV_LINKS.map(({ href, label, icon: Icon }) => {
-              const active = isActiveLink(href);
-              return (
-                <li key={href} className="m-0 p-0">
-                  <Link
-                    href={href}
-                    onClick={handleClick}
-                    className={`flex items-center gap-3 px-4 py-2.5 rounded-lg transition-all duration-200 text-sm no-underline font-medium w-fit mx-auto min-w-[120px]
-                      ${active
-                        ? 'bg-primary/10 text-primary'
-                        : 'text-text-muted hover:text-text-main hover:bg-surface-hover'
-                      }`}
-                  >
-                    <Icon size={18} className={`flex-shrink-0 ${active ? 'text-primary' : 'text-text-light group-hover:text-text-main'}`} />
-                    <span>{label}</span>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
+        <nav className="w-full space-y-10">
+          {/* Search Placeholder */}
+          <section className="px-1">
+            <input 
+              type="text" 
+              placeholder="搜索文章或主题..." 
+              className="w-full bg-surface-hover/50 border border-border/40 rounded-md py-2 px-3.5 text-xs placeholder:text-text-light focus:outline-none focus:border-primary/30 transition-all font-sans"
+            />
+          </section>
+
+          {/* Main Links */}
+          <section>
+            <ul className="space-y-1 list-none p-0 m-0">
+              {NAV_LINKS.map(({ href, label, icon: Icon }) => {
+                const active = isActiveLink(href);
+                return (
+                  <li key={href} className="m-0 p-0">
+                    <Link
+                      href={href}
+                      onClick={handleClick}
+                      className={`flex items-center gap-3 px-3 py-2 rounded-md transition-all duration-200 text-sm no-underline font-medium
+                        ${active
+                          ? 'bg-primary/10 text-primary shadow-sm'
+                          : 'text-text-muted hover:text-text-main hover:bg-surface-hover'
+                        }`}
+                    >
+                      <Icon size={16} className={`flex-shrink-0 ${active ? 'text-primary' : 'text-text-light'}`} />
+                      <span>{label}</span>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
+
+          {/* Knowledge Map */}
+          <section>
+            <h2 className="px-3 text-[10px] uppercase tracking-[0.15em] text-text-light font-bold mb-3 border-none m-0">
+              知识地图
+            </h2>
+            <ul className="space-y-1 list-none p-0 m-0">
+              {CATEGORY_LINKS.map(({ href, label, color }) => {
+                const active = isActiveLink(href);
+                return (
+                  <li key={href} className="m-0 p-0">
+                    <Link
+                      href={href}
+                      onClick={handleClick}
+                      className={`flex items-center gap-3 px-3 py-2 rounded-md transition-all duration-200 text-sm no-underline font-medium
+                        ${active
+                          ? 'bg-primary/10 text-primary shadow-sm'
+                          : 'text-text-muted hover:text-text-main hover:bg-surface-hover'
+                        }`}
+                    >
+                      <span className={`w-1.5 h-1.5 rounded-full ${color} ${active ? 'ring-4 ring-primary/10' : 'opacity-60'}`} />
+                      <span>{label}</span>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
         </nav>
       </div>
 
-      {/* Subscribe Card */}
-      <div className="space-y-5 pb-2">
-        <div className="mx-2 rounded-xl bg-gradient-to-br from-white to-surface-hover border border-border/60 shadow-sm p-4 text-center">
-          <div className="flex flex-col items-center gap-1.5 mb-3">
-            <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-              <FiMail size={14} />
-            </div>
-            <p className="text-xs font-bold text-text-main m-0 p-0">
-              邮件订阅
-            </p>
-          </div>
-          <p className="text-[11px] text-text-muted leading-relaxed m-0 p-0 mb-3 px-1 text-center">
-            获取最新文章更新
-          </p>
+      {/* Footer Area */}
+      <div className="space-y-8">
+        {/* Subscribe Compact */}
+        <div className="mx-0 rounded-lg bg-surface-hover/30 border border-border/40 p-4 shadow-sm">
+          <p className="text-[11px] font-bold text-text-main mb-3 px-1 uppercase tracking-wider">邮件订阅</p>
           <SubscribeForm compact />
         </div>
 
-        <div className="flex justify-center gap-4 px-3">
-          {SOCIAL_LINKS.map(({ icon: Icon, href, ariaLabel }) => (
-            <a
-              key={ariaLabel}
-              href={href}
-              aria-label={ariaLabel}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 rounded-full text-text-light hover:text-primary hover:bg-primary/5 transition-all duration-200"
-            >
-              <Icon size={18} />
-            </a>
-          ))}
+        <div className="flex flex-col gap-5 px-1">
+          <div className="flex items-center gap-4">
+            {SOCIAL_LINKS.map(({ icon: Icon, href, ariaLabel }) => (
+              <a
+                key={ariaLabel}
+                href={href}
+                aria-label={ariaLabel}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-text-light hover:text-primary transition-all duration-200"
+              >
+                <Icon size={16} />
+              </a>
+            ))}
+          </div>
         </div>
-
-        <footer className="border-t border-border/60 pt-4 px-3 text-center">
-          <p className="text-text-light text-[10px] m-0 font-medium tracking-wide">
-            &copy; {new Date().getFullYear()} 政治的逻辑
-          </p>
-        </footer>
       </div>
     </aside>
   );

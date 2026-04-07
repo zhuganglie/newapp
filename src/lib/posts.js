@@ -22,6 +22,7 @@ export async function getPosts(dir = 'src/posts') {
         title: data?.title,
         content,
         tags: data?.tags || [], // Add tags field
+        category: data?.category || '未分类', // Add category field
         date: data.date,
         type: dir.split('/').pop(), // Extract 'posts' from dir string
         ...data,
@@ -47,6 +48,17 @@ export async function getPostsByTag(tag) {
   return posts.filter(post => post.tags.includes(tag));
 }
 
+export async function getUniqueCategories() {
+  const posts = await getAllPosts()
+  const allCategories = posts.map(post => post.category).filter(Boolean);
+  return [...new Set(allCategories)];
+}
+
+export async function getPostsByCategory(category) {
+  const posts = await getAllPosts()
+  return posts.filter(post => post.category === category);
+}
+
 export async function getPostBySlug(slug, dir = 'src/posts') {
   const postsDirectory = path.join(process.cwd(), dir)
   let fullPath = path.join(postsDirectory, `${slug}.md`)
@@ -67,6 +79,7 @@ export async function getPostBySlug(slug, dir = 'src/posts') {
     title: data?.title,
     content,
     tags: data?.tags || [], // Add tags field
+    category: data?.category || '未分类', // Add category field
     ...data,
   }
 }

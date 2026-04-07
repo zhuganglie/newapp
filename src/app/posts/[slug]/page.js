@@ -100,6 +100,8 @@ const components = {
 }
 
 
+import CategoryBadge from '@/app/components/CategoryBadge'
+
 export default async function PostPage({ params }) {
   const { slug } = await params;
   const post = await getPostBySlug(slug);
@@ -128,35 +130,38 @@ export default async function PostPage({ params }) {
 
       <article className="max-w-3xl mx-auto">
         <header className="mb-10 animate-fade-in">
+          <div className="flex flex-wrap items-center gap-4 mb-6">
+            <CategoryBadge category={post.category} className="px-3 py-1 text-xs" />
+            {post.date && (
+              <time className="text-sm text-text-light font-mono">
+                {new Date(post.date).toLocaleDateString('zh-CN', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric'
+                })}
+              </time>
+            )}
+          </div>
+
+          <h1 className="text-3xl md:text-4xl font-serif font-bold text-text-main leading-tight mb-6 border-none">
+            {post.title ?? 'Untitled'}
+          </h1>
+
           {post.tags && post.tags.length > 0 && (
-            <div className="flex flex-wrap gap-1.5 mb-4">
+            <div className="flex flex-wrap gap-2 mb-8">
               {post.tags.map((tag) => (
                 <Link
                   key={tag}
                   href={`/tags/${tag}`}
-                  className="text-xs text-text-light px-2 py-0.5 bg-surface rounded hover:bg-surface-hover hover:text-text-muted transition-colors no-underline"
+                  className="text-xs text-text-muted hover:text-primary transition-colors no-underline"
                 >
-                  {tag}
+                  # {tag}
                 </Link>
               ))}
             </div>
           )}
 
-          <h1 className="text-3xl md:text-4xl font-serif font-bold text-text-main leading-tight mb-3 border-none">
-            {post.title ?? 'Untitled'}
-          </h1>
-
-          {post.date && (
-            <time className="block text-sm text-text-light font-mono">
-              {new Date(post.date).toLocaleDateString('zh-CN', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-              })}
-            </time>
-          )}
-
-          <div className="h-px w-full bg-border mt-6" />
+          <div className="h-px w-full bg-border" />
         </header>
 
         <div className="prose prose-lg max-w-none mb-12 animate-fade-in" style={{ animationDelay: '0.1s' }}>

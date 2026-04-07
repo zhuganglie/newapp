@@ -7,6 +7,8 @@
   --foreground: #1a1a1a;
   --primary: #800000;
   --primary-foreground: #ffffff;
+  --font-sans: 'Inter', "Noto Sans SC", sans-serif;
+  --font-serif: "Noto Serif SC", "Source Serif Pro", Georgia, serif;
 }
 
 body {
@@ -36,11 +38,24 @@ body {
 
 @layer utilities {
   .notion-card {
-    @apply bg-white rounded-lg border border-border transition-all duration-200;
+    @apply bg-white rounded-lg border border-border transition-all duration-300;
   }
 
   .notion-card-hover {
-    @apply hover:bg-surface-hover hover:shadow-sm transition-all duration-200;
+    @apply hover:bg-surface-hover hover:border-primary/20 hover:shadow-md transition-all duration-300;
+  }
+
+  .paper-texture {
+    position: relative;
+  }
+  .paper-texture::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    pointer-events: none;
+    background-image: url("https://www.transparenttextures.com/patterns/felt.png");
+    z-index: 10;
   }
 
   .text-gradient {
