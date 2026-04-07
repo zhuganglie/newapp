@@ -2,7 +2,7 @@
 title: 为什么谣言比真相更具颠覆性？
 date: "2026-02-10"
 category: 深度科普
-tags: ["信息政治", "真相"]
+tags: ["信息政治", "谣言"]
 draft: false
 ---
 

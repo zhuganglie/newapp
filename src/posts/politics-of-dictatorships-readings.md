@@ -3,7 +3,7 @@ title: 独裁政治学阅读书目
 date: "2024-09-28"
 category: 读书笔记
 tags:
-- 独裁政治
+- 独裁
 - 阅读指南
 draft: false
 ---

@@ -3,7 +3,7 @@ title: 独裁者为何分享权力
 date: "2023-11-20"
 category: 读书笔记
 tags:
-- 独裁政治
+- 独裁
 - 权力分享
 draft: false
 ---

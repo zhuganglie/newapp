@@ -4,8 +4,8 @@ subtitle: 重读《农民的道义经济》
 date: "2024-06-15"
 category: 读书笔记
 tags:
-- 政治经济学
-- 詹姆斯·斯科特
+- 抗争政治
+- 道义经济
 draft: false
 ---
 

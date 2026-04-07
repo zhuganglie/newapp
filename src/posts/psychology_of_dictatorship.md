@@ -3,8 +3,8 @@ title: 《独裁心理学》笔记
 date: "2024-10-12"
 category: 读书笔记
 tags:
-- 独裁政治
-- 政治心理学
+- 独裁
+- 政治心理
 draft: false
 ---
 
