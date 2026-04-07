@@ -3,21 +3,21 @@ import { getPosts } from '@/lib/posts'
 import { generateMetadata as generateSEOMetadata } from '@/lib/seo'
 
 export const metadata = generateSEOMetadata({
-  title: '闲言碎语',
-  description: '浏览「政治的逻辑」全部闲言碎语文章。',
-  path: '/offtopic',
-  keywords: ['闲言碎语', '随笔']
+  title: '读书笔记',
+  description: '浏览「读书笔记」全部读书笔记文章。',
+  path: '/notes',
+  keywords: ['读书笔记', '政治的逻辑']
 });
 
 
-export default async function OfftopicPage() {
-  const posts = await getPosts('src/offtopic')
+export default async function NotesPage() {
+  const posts = await getPosts('src/notes')
 
   return (
     <main className="min-h-screen py-12">
       <div className="max-w-3xl mx-auto">
         <h1 className="text-3xl font-serif font-bold text-text-main mb-8 border-none animate-fade-in">
-          闲言碎语
+          读书笔记
         </h1>
 
         <div className="space-y-0">
@@ -28,7 +28,7 @@ export default async function OfftopicPage() {
               style={{ animationDelay: `${index * 0.03}s` }}
             >
               <Link
-                href={`/offtopic/${post.slug}`}
+                href={`/notes/${post.slug}`}
                 className="group flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4 py-3 px-3 -mx-3 rounded-md hover:bg-surface-hover transition-colors no-underline hover:no-underline"
               >
                 <time className="text-sm text-text-light font-mono whitespace-nowrap flex-shrink-0 tabular-nums">

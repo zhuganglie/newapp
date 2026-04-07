@@ -13,8 +13,8 @@ const SOCIAL_LINKS = [
 
 const NAV_LINKS = [
   { href: '/posts', label: '全部文章', icon: FiFileText },
+  { href: '/notes', label: '读书笔记', icon: FiCoffee },
   { href: '/tags', label: '主题标签', icon: FiHash },
-  // { href: '/offtopic', label: '闲言碎语', icon: FiCoffee },
   { href: '/about', label: '关于', icon: FiUser }
 ];
 
@@ -80,22 +80,17 @@ const SideBar = forwardRef(({ isOpen, setIsSidebarOpen }, ref) => {
       {/* Subscribe Card */}
       <div className="space-y-5 pb-2">
         <div className="mx-2 rounded-xl bg-gradient-to-br from-white to-surface-hover border border-border/60 shadow-sm p-4 text-center">
-          <div className="flex flex-col items-center gap-2 mb-2">
-            <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-0.5">
+          <div className="flex flex-col items-center gap-1.5 mb-3">
+            <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
               <FiMail size={14} />
             </div>
             <p className="text-xs font-bold text-text-main m-0 p-0">
-              订阅更新
+              邮件订阅
             </p>
           </div>
-          <div className="text-[11px] text-text-muted leading-relaxed m-0 p-0 mb-3 px-1 text-left">
-            <p className="font-bold text-text-main mb-1.5 opacity-90">订阅后你会收到：</p>
-            <ul className="list-none space-y-1 mt-0 p-0">
-              <li className="flex items-start gap-1.5"><span className="w-1 h-1 rounded-full bg-primary flex-shrink-0 mt-1.5"></span>新文章更新</li>
-              <li className="flex items-start gap-1.5"><span className="w-1 h-1 rounded-full bg-primary flex-shrink-0 mt-1.5"></span>主题书单 / 阅读顺序</li>
-              <li className="flex items-start gap-1.5"><span className="w-1 h-1 rounded-full bg-primary flex-shrink-0 mt-1.5"></span>偶尔发送的政治学入门整理</li>
-            </ul>
-          </div>
+          <p className="text-[11px] text-text-muted leading-relaxed m-0 p-0 mb-3 px-1 text-center">
+            获取最新文章更新
+          </p>
           <SubscribeForm compact />
         </div>
 

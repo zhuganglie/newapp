@@ -15,7 +15,7 @@ import Mermaid from '@/app/components/Mermaid'
 // Generate metadata for the offtopic page
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-  const post = await getPostBySlug(slug, 'src/offtopic');
+  const post = await getPostBySlug(slug, 'src/notes');
 
   if (!post) {
     return {
@@ -41,7 +41,7 @@ export async function generateMetadata({ params }) {
   return generateSEOMetadata({
     title: post.title || 'Untitled',
     description,
-    path: `/offtopic/${slug}`,
+    path: `/notes/${slug}`,
     keywords: post.tags || [],
     type: 'article'
   });
@@ -49,7 +49,7 @@ export async function generateMetadata({ params }) {
 
 // Generate static params for all offtopic posts
 export async function generateStaticParams() {
-  const posts = await getPosts('src/offtopic');
+  const posts = await getPosts('src/notes');
   return posts.map((post) => ({
     slug: post.slug
   }));
@@ -100,9 +100,9 @@ const components = {
 }
 
 
-export default async function OfftopicPostPage({ params }) {
+export default async function NotesPostPage({ params }) {
   const { slug } = await params;
-  const post = await getPostBySlug(slug, 'src/offtopic');
+  const post = await getPostBySlug(slug, 'src/notes');
 
   if (!post) {
     return notFound()
@@ -176,18 +176,18 @@ export default async function OfftopicPostPage({ params }) {
         </div>
 
         <div className="mb-8">
-          <ShareButtons title={post.title} slug={`offtopic/${slug}`} />
+          <ShareButtons title={post.title} slug={`notes/${slug}`} />
         </div>
 
         <SubscribeCTA />
 
         <div className="border-t border-border pt-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
           <Link
-            href="/offtopic"
+            href="/notes"
             className="inline-flex items-center gap-2 text-sm text-text-muted hover:text-text-main transition-colors no-underline hover:no-underline"
           >
             <span>←</span>
-            返回闲言碎语
+            返回读书笔记
           </Link>
         </div>
       </article>
