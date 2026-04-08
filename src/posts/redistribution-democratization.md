@@ -1,6 +1,6 @@
 ---
 title: 不平等与民主转型
-date: "2024-11-05"
+date: "2025-11-05"
 category: 深度科普
 tags: ["民主化", "不平等", "政治转型"] 
 draft: false
