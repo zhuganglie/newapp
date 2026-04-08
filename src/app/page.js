@@ -16,7 +16,7 @@ export default async function HomePage() {
   const posts = await getPosts()
 
   // Group posts by category
-  const categories = ['专题研究', '深度科普', '读书笔记']
+  const categories = ['读书笔记', '深度科普', '专题研究']
   const groupedPosts = categories.reduce((acc, cat) => {
     acc[cat] = posts.filter(p => p.category === cat).slice(0, 4)
     return acc

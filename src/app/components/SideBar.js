@@ -18,9 +18,9 @@ const NAV_LINKS = [
 ];
 
 const CATEGORY_LINKS = [
-  { href: '/category/专题研究', label: '专题研究', color: 'bg-primary' },
-  { href: '/category/深度科普', label: '深度科普', color: 'bg-emerald-500' },
   { href: '/category/读书笔记', label: '读书笔记', color: 'bg-amber-500' },
+  { href: '/category/深度科普', label: '深度科普', color: 'bg-emerald-500' },
+  { href: '/category/专题研究', label: '专题研究', color: 'bg-primary' },
 ];
 
 const SideBar = forwardRef(({ isOpen, setIsSidebarOpen }, ref) => {
