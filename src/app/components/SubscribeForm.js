@@ -32,10 +32,10 @@ export default function SubscribeForm({ compact = false }) {
             if (res.ok && data.success) {
                 setStatus('success');
                 setEmail('');
-                setTimeout(() => setStatus('idle'), 3000);
+                setTimeout(() => setStatus('idle'), 5000);
             } else {
                 setStatus('error');
-                setErrorMsg(data.error || '免费订阅失败，请稍后重试');
+                setErrorMsg(data.error || '订阅失败，请稍后重试');
             }
         } catch {
             setStatus('error');
@@ -45,16 +45,16 @@ export default function SubscribeForm({ compact = false }) {
 
     if (status === 'success') {
         return (
-            <div className={`flex items-center gap-2 text-accent-green ${compact ? 'text-xs py-2' : 'text-sm'}`}>
-                <FiCheck size={compact ? 14 : 16} className="flex-shrink-0" />
-                <span>免费订阅成功！请查收确认邮件。</span>
+            <div className={`p-4 bg-accent-green/10 border border-accent-green/20 rounded-lg flex items-center gap-3 text-accent-green animate-in fade-in slide-in-from-bottom-2 ${compact ? 'text-xs py-2 px-3' : 'text-sm'}`}>
+                <FiCheck size={compact ? 16 : 18} className="flex-shrink-0" />
+                <span className="font-medium">订阅申请已发送！我会尽快为您处理。</span>
             </div>
         );
     }
 
     return (
         <form onSubmit={handleSubmit} className="w-full">
-            <div className={compact ? 'space-y-2' : 'flex gap-2'}>
+            <div className={`flex gap-2 ${compact ? 'flex-col' : 'flex-row'}`}>
                 <input
                     type="email"
                     value={email}
@@ -63,35 +63,44 @@ export default function SubscribeForm({ compact = false }) {
                         if (status === 'error') setStatus('idle');
                     }}
                     placeholder="your@email.com"
-                    className={`w-full bg-white text-text-main border border-border rounded-md transition-all duration-200 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/15 placeholder:text-text-light ${compact ? 'px-3 py-2 text-xs' : 'px-3 py-2 text-sm'
-                        } ${status === 'error' ? 'border-secondary' : ''}`}
+                    className={`flex-grow bg-white text-text-main border-2 rounded-md transition-all duration-200 focus:outline-none focus:ring-0 placeholder:text-text-light/50 ${compact ? 'px-3 py-2 text-xs' : 'px-4 py-3 text-sm'
+                        } ${status === 'error'
+                            ? 'border-secondary focus:border-secondary'
+                            : 'border-border/40 focus:border-primary'
+                        }`}
                     disabled={status === 'loading'}
                 />
                 <button
                     type="submit"
                     disabled={status === 'loading'}
-                    className={`inline-flex items-center justify-center gap-1.5 rounded-md font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed ${compact
-                        ? 'w-full px-3 py-2 text-xs bg-primary text-white hover:bg-primary-hover shadow-sm hover:shadow'
-                        : 'px-4 py-2 text-sm bg-primary text-white hover:bg-primary-hover shadow-sm hover:shadow flex-shrink-0'
+                    className={`inline-flex items-center justify-center gap-2 font-semibold transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed bg-primary text-white hover:bg-primary-hover active:scale-[0.98] ${compact
+                            ? 'w-full px-4 py-2 text-xs rounded-md shadow-sm'
+                            : 'px-8 py-3 text-sm rounded-r-lg shadow-sm hover:shadow-md'
                         }`}
                 >
                     {status === 'loading' ? (
-                        <span className="inline-block w-3.5 h-3.5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                        <span className="inline-block w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                     ) : (
                         <>
-                            <FiSend size={compact ? 12 : 14} />
-                            <span>免费订阅</span>
+                            <FiSend size={compact ? 14 : 16} />
+                            <span>立即订阅</span>
                         </>
                     )}
                 </button>
             </div>
 
             {status === 'error' && errorMsg && (
-                <div className={`flex items-center gap-1.5 text-secondary mt-1.5 ${compact ? 'text-[10px]' : 'text-xs'}`}>
-                    <FiAlertCircle size={12} className="flex-shrink-0" />
+                <div className={`flex items-center gap-1.5 text-secondary mt-2 animate-in fade-in slide-in-from-top-1 ${compact ? 'text-[10px]' : 'text-xs'}`}>
+                    <FiAlertCircle size={14} className="flex-shrink-0" />
                     <span>{errorMsg}</span>
                 </div>
             )}
+
+            {!status || status === 'idle' || status === 'loading' ? (
+                <p className={`text-text-light mt-3 font-serif italic ${compact ? 'text-[10px]' : 'text-xs'}`}>
+                    * 私密发送，请放心订阅。
+                </p>
+            ) : null}
         </form>
     );
 }

@@ -11,46 +11,59 @@ export async function POST(request) {
             );
         }
 
-        const apiKey = process.env.BUTTONDOWN_API_KEY;
+        const apiKey = process.env.RESEND_API_KEY;
+        const adminEmail = process.env.ADMIN_EMAIL || "logicofpolitics25@gmail.com";
 
-        // Dev mode: return mock success if no API key configured
+        // Dev mode hint
         if (!apiKey) {
-            console.log(`[Dev] Subscribe request for: ${email}`);
+            console.log(`[Dev] New subscription notification for: ${email}`);
             return NextResponse.json({ success: true });
         }
 
-        const res = await fetch('https://api.buttondown.com/v1/subscribers', {
+        // Send notification email to Admin instead of adding to Audience
+        const res = await fetch('https://api.resend.com/emails', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                Authorization: `Token ${apiKey}`,
+                Authorization: `Bearer ${apiKey}`,
             },
             body: JSON.stringify({
-                email_address: email,
-                type: 'unactivated',
+                from: 'Blog Subscribe <onboarding@resend.dev>',
+                to: adminEmail,
+                subject: '🔔 发现新订阅者',
+                html: `
+                    <div style="font-family: sans-serif; padding: 20px; border: 1px solid #eee; border-radius: 10px;">
+                        <h2 style="color: #333;">新订阅通知</h2>
+                        <p>有读者在您的博客提交了订阅申请：</p>
+                        <div style="background: #f9f9f9; padding: 15px; border-radius: 5px; font-size: 1.2em; font-weight: bold; border-left: 4px solid #0070f3;">
+                            ${email}
+                        </div>
+                        <p style="color: #666; font-size: 0.9em; margin-top: 20px;">
+                            提示：您可以手动将此邮箱添加至您的发送列表。
+                        </p>
+                    </div>
+                `
             }),
         });
+
+        const data = await res.json();
 
         if (res.ok) {
             return NextResponse.json({ success: true });
         }
 
-        const data = await res.json();
-
-        // Buttondown returns 400 if already subscribed
-        if (res.status === 400 && JSON.stringify(data).includes('already')) {
-            return NextResponse.json({ success: true }); // Treat as success
-        }
-
-        console.error('Buttondown API error:', data);
+        console.error('Resend Notification Error:', data);
+        
+        // If Resend fails because of unverified domain or other reasons, 
+        // we still want to log it but maybe tell the user it failed.
         return NextResponse.json(
-            { error: '订阅失败，请稍后重试' },
+            { error: '发送通知失败，但您的申请已记录在后台。' },
             { status: 500 }
         );
     } catch (error) {
         console.error('Subscribe error:', error);
         return NextResponse.json(
-            { error: '服务器错误，请稍后重试' },
+            { error: '服务器繁忙，请稍后重试' },
             { status: 500 }
         );
     }

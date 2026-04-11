@@ -20,7 +20,7 @@ export default function SubscribeCTA() {
                             <ul className="list-none space-y-1.5 mt-0 p-0">
                                 <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>新文章更新</li>
                                 <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>主题书单 / 阅读顺序</li>
-                                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>偶尔发送的政治学入门整理</li>
+                                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>偶尔发送的政治学读物</li>
                             </ul>
                         </div>
                     </div>
