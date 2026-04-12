@@ -1,7 +1,7 @@
 ---
 title: "忠诚陷阱：军队清洗背后的逻辑"
 date: "2024-02-10"
-category: 专题研究
+category: 深度科普
 tags: ["独裁", "政治清洗", "中国政治"]
 draft: false
 ---
