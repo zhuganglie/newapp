@@ -1,7 +1,7 @@
 import { getPosts, getUniqueTags } from '@/lib/posts'
 
 export default async function sitemap() {
-    const siteUrl = 'https://zhuganglie.vercel.app';
+    const siteUrl = 'https://logicofpolitics.vercel.app';
     const posts = await getPosts();
     const tags = await getUniqueTags();
 

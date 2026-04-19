@@ -3,14 +3,14 @@
 export const siteConfig = {
     name: '政治的逻辑',
     description: '用政治科学的方法，解读真实世界的政治逻辑。',
-    url: 'https://zhuganglie.vercel.app',
+    url: 'https://logicofpolitics.vercel.app',
     locale: 'zh-CN',
     author: {
         name: 'zhuganglie',
-        url: 'https://zhuganglie.vercel.app/about'
+        url: 'https://logicofpolitics.vercel.app/about'
     },
     social: {
-        twitter: '@zhuganglie'
+        twitter: '@zhengzhideluoji'
     }
 };
 
@@ -37,6 +37,9 @@ export function generateMetadata({
         creator: siteConfig.author.name,
         publisher: siteConfig.author.name,
         metadataBase: new URL(siteConfig.url),
+        icons: {
+            icon: '/favicon.svg',
+        },
         alternates: {
             canonical: url
         },
