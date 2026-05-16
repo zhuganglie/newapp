@@ -1,5 +1,5 @@
 ---
-title: "战争的理性解释：为什么理性国家也会走向战争？"
+title: 为什么理性国家也会走向战争？
 date: "2026-05-15"
 tags: ["战争","冲突政治","国际政治"]
 category: 读书笔记
@@ -8,7 +8,7 @@ draft: false
 
 
 
-> **原文**：James D. Fearon, "Rationalist Explanations for War," *International Organization*, Vol. 49, No. 3 (Summer 1995), pp. 379-414.
+> **解读文献**：James D. Fearon, "Rationalist Explanations for War," *International Organization*, Vol. 49, No. 3 (Summer 1995), pp. 379-414.
 
 ---
 
