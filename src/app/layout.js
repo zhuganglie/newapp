@@ -7,7 +7,7 @@ import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 
 export const metadata = generateSEOMetadata({
   title: '政治的逻辑',
-  description: '用政治科学的方法，解读真实世界的政治逻辑。',
+  description: '给认真理解政治的人，一套清晰的分析框架',
   path: '/',
   keywords: ['政治科学', '比较政治', '威权政治', '政治学科普', 'comparative politics', 'authoritarian politics', '播客']
 });
