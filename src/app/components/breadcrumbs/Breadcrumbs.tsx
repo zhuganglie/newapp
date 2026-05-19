@@ -3,6 +3,7 @@
 import { BreadcrumbsProps } from './types';
 import { useBreadcrumbs } from './hooks/useBreadcrumbs';
 import BreadcrumbsList from './BreadcrumbsList';
+import { generateBreadcrumbSchema } from '@/lib/seo';
 
 /**
  * Breadcrumbs component that shows the current page location in a hierarchy.
@@ -35,12 +36,25 @@ export default function Breadcrumbs({
     return null;
   }
 
+  // Map local items to the format expected by generateBreadcrumbSchema
+  // BreadcrumbItem has { label, href }, while generateBreadcrumbSchema expects { name, url }
+  const schemaItems = items.map(item => ({
+    name: item.label,
+    url: item.href
+  }));
+
   return (
-    <nav 
-      aria-label="Breadcrumb navigation"
-      className={`flex sticky top-4 z-10 mb-6 mx-4 overflow-x-auto scrollbar-hide motion-safe:animate-fadeIn ${className ?? ''}`}
-    >
-      <BreadcrumbsList items={items} />
-    </nav>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema(schemaItems)) }}
+      />
+      <nav 
+        aria-label="Breadcrumb navigation"
+        className={`flex sticky top-4 z-10 mb-6 mx-4 overflow-x-auto scrollbar-hide motion-safe:animate-fadeIn ${className ?? ''}`}
+      >
+        <BreadcrumbsList items={items} />
+      </nav>
+    </>
   );
 }

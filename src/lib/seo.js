@@ -6,7 +6,7 @@ export const siteConfig = {
     url: 'https://logicofpolitics.vercel.app',
     locale: 'zh-CN',
     author: {
-        name: 'zhuganglie',
+        name: 'Zhuganglie',
         url: 'https://logicofpolitics.vercel.app/about'
     },
     social: {
@@ -27,7 +27,7 @@ export function generateMetadata({
 }) {
     const fullTitle = title === siteConfig.name ? title : `${title} | ${siteConfig.name}`;
     const url = `${siteConfig.url}${path}`;
-    const ogImage = image || `${siteConfig.url}/a.png`;
+    const ogImage = image || `${siteConfig.url}/images/demo.png`;
 
     return {
         title: fullTitle,
@@ -83,12 +83,14 @@ export function generateMetadata({
 /**
  * Generate JSON-LD structured data for an article
  */
-export function generateArticleSchema({ title, description, slug, date, tags = [] }) {
+export function generateArticleSchema({ title, description, slug, date, tags = [], image }) {
+    const imageUrl = image || `${siteConfig.url}/images/demo.png`;
     return {
         '@context': 'https://schema.org',
         '@type': 'Article',
         headline: title,
         description,
+        image: imageUrl,
         url: `${siteConfig.url}/posts/${slug}`,
         datePublished: date,
         dateModified: date,
@@ -98,9 +100,12 @@ export function generateArticleSchema({ title, description, slug, date, tags = [
             url: siteConfig.author.url
         },
         publisher: {
-            '@type': 'Person',
-            name: siteConfig.author.name,
-            url: siteConfig.url
+            '@type': 'Organization',
+            name: siteConfig.name,
+            logo: {
+                '@type': 'ImageObject',
+                url: `${siteConfig.url}/images/logo-primary-lockup.svg`
+            }
         },
         keywords: tags.join(', '),
         inLanguage: siteConfig.locale

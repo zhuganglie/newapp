@@ -12,6 +12,13 @@ export const metadata = generateSEOMetadata({
   keywords: ['政治科学', '比较政治', '威权政治', '政治学科普', 'comparative politics', 'authoritarian politics', '播客']
 });
 
+export const viewport = {
+  themeColor: '#ffffff',
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="zh" suppressHydrationWarning>
