@@ -1,9 +1,13 @@
 ---
 title: 战争为什么发生？—— Fearon 对理性主义战争理论的清算与重建
-date: "2026-05-15"
-tags: ["战争","冲突政治","国际政治"]
+date: '2026-05-15'
+tags:
+  - 战争
+  - 冲突政治
+  - 国际政治
 category: 读书笔记
 draft: true
+description: 深度解读Fearon经典论文《战争的理性主义解释》，剖析战争作为“事后无效率”选择的内在逻辑与事前博弈的谈判区间难题。
 ---
 
  > 解读 James D. Fearon, Rationalist Explanations for War, 

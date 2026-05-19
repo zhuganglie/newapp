@@ -1,9 +1,12 @@
 ---
 title: 威权真的高效吗？--- Rory Truex《Authoritarian Gridlock?》深度解读
-date: "2026-04-13"
-tags: ["独裁", "立法僵局"]
+date: '2026-04-13'
+tags:
+  - 独裁
+  - 立法僵局
 category: 读书笔记
 draft: true
+description: 威权体制下的立法僵局：解读Rory Truex对中国立法系统的研究，揭示表面高效运作背后、法案形成前隐秘的利益拉扯与政治拖延。
 ---
 
 

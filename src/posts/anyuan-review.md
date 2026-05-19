@@ -1,9 +1,15 @@
 ---
-title: "安源、文化与革命传统的生产——评 Elizabeth J. Perry《Anyuan: Mining China's Revolutionary Tradition》"
-date: "2026-04-16"
-tags: ["革命","中国政治","书评"]
+title: >-
+  安源、文化与革命传统的生产——评 Elizabeth J. Perry《Anyuan: Mining China's Revolutionary
+  Tradition》
+date: '2026-04-16'
+tags:
+  - 革命
+  - 中国政治
+  - 书评
 category: 书评
 draft: true
+description: 深度书评《安源》：剖析中国革命中的“文化定位”与“文化赞助”，重新审视“尊严”这一常被遮蔽的线索在群众动员中的核心作用。
 ---
 
 ## 引论：一座煤矿，两幅图像

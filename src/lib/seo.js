@@ -3,11 +3,11 @@
 export const siteConfig = {
     name: '政治的逻辑',
     description: '用政治科学的方法，解读真实世界的政治逻辑。',
-    url: 'https://logicofpolitics.vercel.app',
+    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://logicofpolitics.vercel.app',
     locale: 'zh-CN',
     author: {
         name: 'Zhuganglie',
-        url: 'https://logicofpolitics.vercel.app/about'
+        url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://logicofpolitics.vercel.app'}/about`
     },
     social: {
         twitter: '@zhengzhideluoji'

@@ -1,9 +1,12 @@
 ---
-title: "行业兴衰的政治逻辑"
-date: "2026-05-08"
-tags: ["威权生存", "行业政治" ]
+title: 行业兴衰的政治逻辑
+date: '2026-05-08'
+tags:
+  - 威权生存
+  - 行业政治
 category: 深度科普
 draft: false
+description: 中国行业兴衰的底层政治逻辑：从教培清场到新能源扶持，打破“国进民退”刻板印象，深度追问威权体制下资源与大棒的终极配置代码。
 ---
 
 ![行业兴衰](/images/industry-outcomes.png)

@@ -1,7 +1,8 @@
 import { getPosts, getUniqueTags } from '@/lib/posts'
+import { siteConfig } from '@/lib/seo'
 
 export default async function sitemap() {
-    const siteUrl = 'https://logicofpolitics.vercel.app';
+    const siteUrl = siteConfig.url;
     const posts = await getPosts();
     const tags = await getUniqueTags();
 

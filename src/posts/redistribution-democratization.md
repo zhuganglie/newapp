@@ -1,9 +1,13 @@
 ---
 title: 不平等与民主转型
-date: "2025-11-05"
+date: '2025-11-05'
 category: 深度科普
-tags: ["民主化", "不平等", "政治转型"] 
+tags:
+  - 民主化
+  - 不平等
+  - 政治转型
 draft: false
+description: 再分配博弈与民主化路径：对比Boix与Acemoglu-Robinson的经典理论，探讨资产流动性与革命威胁如何左右精英的政治选择。
 ---
 
 ## 一个关于选择的故事
