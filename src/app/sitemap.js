@@ -1,10 +1,11 @@
-import { getPosts, getUniqueTags } from '@/lib/posts'
+import { getPosts, getUniqueTags, getUniqueCategories } from '@/lib/posts'
 import { siteConfig } from '@/lib/seo'
 
 export default async function sitemap() {
     const siteUrl = siteConfig.url;
     const posts = await getPosts();
     const tags = await getUniqueTags();
+    const categories = await getUniqueCategories();
 
     // Static pages
     const staticPages = [
@@ -50,5 +51,14 @@ export default async function sitemap() {
         priority: 0.6
     }));
 
-    return [...staticPages, ...postPages, ...tagPages];
+    // Category pages
+    const categoryPages = categories.map((category) => ({
+        url: `${siteUrl}/category/${encodeURIComponent(category)}`,
+        lastModified: new Date(),
+        changeFrequency: 'weekly',
+        priority: 0.7
+    }));
+
+    return [...staticPages, ...postPages, ...tagPages, ...categoryPages];
 }
+

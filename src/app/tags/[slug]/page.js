@@ -11,7 +11,7 @@ export async function generateMetadata({ params }) {
   return generateSEOMetadata({
     title: `${decodedSlug}`,
     description: `浏览所有关于「${decodedSlug}」的文章 (${posts.length} 篇)`,
-    path: `/tags/${slug}`,
+    path: `/tags/${encodeURIComponent(decodedSlug)}`,
     keywords: [decodedSlug, '标签', '政治科学']
   });
 }

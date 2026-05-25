@@ -33,7 +33,7 @@ export default async function BlogPage() {
             {categories.map(cat => (
               <Link 
                 key={cat} 
-                href={`/category/${cat}`}
+                href={`/category/${encodeURIComponent(cat)}`}
                 className="px-3 py-1 bg-surface border border-border text-text-muted hover:text-primary transition-colors rounded-full text-xs font-medium no-underline"
               >
                 {cat}

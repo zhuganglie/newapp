@@ -32,7 +32,7 @@ export default async function TagsPage() {
           {sortedTagCounts.map(({ tag, count }) => (
             <Link
               key={tag}
-              href={`/tags/${tag}`}
+              href={`/tags/${encodeURIComponent(tag)}`}
               className="group inline-flex items-center gap-2 px-4 py-2 bg-surface border border-border rounded-md text-sm text-text-main hover:bg-surface-hover hover:border-border-dark transition-all duration-150 no-underline hover:no-underline"
             >
               <span className="font-medium group-hover:text-primary transition-colors">

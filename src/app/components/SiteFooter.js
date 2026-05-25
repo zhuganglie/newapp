@@ -40,9 +40,9 @@ const SiteFooter = () => {
         <div>
           <h4 className="text-xs font-bold uppercase tracking-widest text-text-main mb-6">专题</h4>
           <ul className="space-y-4 list-none p-0 m-0">
-            <li><Link href="/category/专题研究" className="text-sm text-text-muted hover:text-primary no-underline transition-colors">专题研究</Link></li>
-            <li><Link href="/category/深度科普" className="text-sm text-text-muted hover:text-primary no-underline transition-colors">深度科普</Link></li>
-            <li><Link href="/category/读书笔记" className="text-sm text-text-muted hover:text-primary no-underline transition-colors">读书笔记</Link></li>
+            <li><Link href={`/category/${encodeURIComponent('专题研究')}`} className="text-sm text-text-muted hover:text-primary no-underline transition-colors">专题研究</Link></li>
+            <li><Link href={`/category/${encodeURIComponent('深度科普')}`} className="text-sm text-text-muted hover:text-primary no-underline transition-colors">深度科普</Link></li>
+            <li><Link href={`/category/${encodeURIComponent('读书笔记')}`} className="text-sm text-text-muted hover:text-primary no-underline transition-colors">读书笔记</Link></li>
           </ul>
         </div>
       </div>

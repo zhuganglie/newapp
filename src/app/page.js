@@ -82,7 +82,7 @@ export default async function HomePage() {
                 <CategoryBadge category={category} />
               </div>
               <Link
-                href={`/category/${category}`}
+                href={`/category/${encodeURIComponent(category)}`}
                 className="text-xs text-text-muted hover:text-primary transition-colors font-medium no-underline"
               >
                 查看更多 &rarr;

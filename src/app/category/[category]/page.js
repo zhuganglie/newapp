@@ -10,7 +10,7 @@ export async function generateMetadata({ params }) {
   return generateSEOMetadata({
     title: `${decodedCategory} - 文章列表`,
     description: `浏览「政治的逻辑」中关于 ${decodedCategory} 的深度内容。`,
-    path: `/category/${category}`,
+    path: `/category/${encodeURIComponent(decodedCategory)}`,
   })
 }
 

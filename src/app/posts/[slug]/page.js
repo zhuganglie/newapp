@@ -152,7 +152,7 @@ export default async function PostPage({ params }) {
               {post.tags.map((tag) => (
                 <Link
                   key={tag}
-                  href={`/tags/${tag}`}
+                  href={`/tags/${encodeURIComponent(tag)}`}
                   className="text-xs text-text-muted hover:text-primary transition-colors no-underline"
                 >
                   # {tag}
