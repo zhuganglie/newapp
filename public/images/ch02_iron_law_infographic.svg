@@ -1,0 +1,299 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 780" width="100%" height="100%">
+  <defs>
+    <style>
+      .bg { fill: #f8fafc; }
+      
+      .title-main { font-family: 'Noto Sans CJK SC', 'PingFang SC', sans-serif; font-size: 23px; font-weight: 800; fill: #0f172a; letter-spacing: 0.5px; }
+      .title-sub { font-family: 'Noto Sans CJK SC', 'PingFang SC', sans-serif; font-size: 12px; fill: #64748b; }
+      
+      .driver-scale { fill: #ffffff; stroke: #0284c7; stroke-width: 1.8; rx: 10; }
+      .driver-comp { fill: #ffffff; stroke: #d97706; stroke-width: 1.8; rx: 10; }
+      
+      .gear-card-1 { fill: #ffffff; stroke: #0891b2; stroke-width: 1.8; rx: 10; }
+      .gear-card-2 { fill: #ffffff; stroke: #e11d48; stroke-width: 1.8; rx: 10; }
+      .gear-card-3 { fill: #ffffff; stroke: #7c3aed; stroke-width: 1.8; rx: 10; }
+      
+      .card-step-box-1 { fill: #f0fdfa; stroke: #ccfbf1; stroke-width: 1; rx: 6; }
+      .card-step-box-2 { fill: #fff1f2; stroke: #ffe4e6; stroke-width: 1; rx: 6; }
+      .card-step-box-3 { fill: #faf5ff; stroke: #f3e8ff; stroke-width: 1; rx: 6; }
+      
+      .lock-card { fill: #ffffff; stroke: #dc2626; stroke-width: 2; rx: 10; }
+      .lock-subbox { fill: #fff5f5; stroke: #fecaca; stroke-width: 1; rx: 6; }
+      
+      .footer-card { fill: #f0fdf4; stroke: #10b981; stroke-width: 1.6; rx: 10; }
+      
+      .badge-text { font-family: 'Noto Sans CJK SC', 'PingFang SC', sans-serif; font-size: 11px; font-weight: 700; text-anchor: middle; }
+      .sect-title { font-family: 'Noto Sans CJK SC', 'PingFang SC', sans-serif; font-size: 14px; font-weight: 700; fill: #0f172a; }
+      
+      .step-title-1 { font-family: 'Noto Sans CJK SC', 'PingFang SC', sans-serif; font-size: 11.5px; font-weight: 700; fill: #0e7490; }
+      .step-title-2 { font-family: 'Noto Sans CJK SC', 'PingFang SC', sans-serif; font-size: 11.5px; font-weight: 700; fill: #be123c; }
+      .step-title-3 { font-family: 'Noto Sans CJK SC', 'PingFang SC', sans-serif; font-size: 11.5px; font-weight: 700; fill: #6d28d9; }
+      
+      .body-text { font-family: 'Noto Sans CJK SC', 'PingFang SC', sans-serif; font-size: 11px; fill: #475569; line-height: 1.45; }
+      .result-tag-1 { font-family: 'Noto Sans CJK SC', 'PingFang SC', sans-serif; font-size: 10.5px; font-weight: 700; fill: #0891b2; }
+      .result-tag-2 { font-family: 'Noto Sans CJK SC', 'PingFang SC', sans-serif; font-size: 10.5px; font-weight: 700; fill: #e11d48; }
+      .result-tag-3 { font-family: 'Noto Sans CJK SC', 'PingFang SC', sans-serif; font-size: 10.5px; font-weight: 700; fill: #7c3aed; }
+      
+      .lock-quote { font-family: 'Noto Sans CJK SC', 'PingFang SC', sans-serif; font-size: 13.5px; font-weight: 800; fill: #991b1b; }
+      .lock-h { font-family: 'Noto Sans CJK SC', 'PingFang SC', sans-serif; font-size: 11.5px; font-weight: 700; fill: #991b1b; }
+      
+      .footer-title { font-family: 'Noto Sans CJK SC', 'PingFang SC', sans-serif; font-size: 13px; font-weight: 800; fill: #065f46; }
+      .footer-body { font-family: 'Noto Sans CJK SC', 'PingFang SC', sans-serif; font-size: 11px; fill: #14532d; }
+    </style>
+    
+    <filter id="soft-shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#0f172a" flood-opacity="0.05"/>
+    </filter>
+
+    <marker id="arrow-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <polygon points="0 0, 7 3.5, 0 7" fill="#0284c7" />
+    </marker>
+    <marker id="arrow-amber" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <polygon points="0 0, 7 3.5, 0 7" fill="#d97706" />
+    </marker>
+    <marker id="arrow-cyan" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <polygon points="0 0, 7 3.5, 0 7" fill="#0891b2" />
+    </marker>
+    <marker id="arrow-rose" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <polygon points="0 0, 7 3.5, 0 7" fill="#e11d48" />
+    </marker>
+    <marker id="arrow-violet" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <polygon points="0 0, 7 3.5, 0 7" fill="#7c3aed" />
+    </marker>
+    <marker id="arrow-red" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <polygon points="0 0, 7 3.5, 0 7" fill="#dc2626" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="780" class="bg"/>
+
+  <!-- Top Title Banner -->
+  <g transform="translate(40, 24)">
+    <rect x="0" y="0" width="195" height="22" rx="11" fill="#e2e8f0"/>
+    <text x="97" y="15" class="badge-text" fill="#0284c7">ORGANIZATIONAL SOCIOLOGY</text>
+    <text x="0" y="50" class="title-main">寡头统治铁律：组织规模、技术分工与科层自毁机制</text>
+    <text x="0" y="72" class="title-sub">Robert Michels (1911) &amp; Max Weber (1919)：大众民主政党何以不可逆地蜕变为少数官僚封闭堡垒</text>
+  </g>
+
+  <!-- ================= SECTION 1: DUAL DRIVING ENGINES ================= -->
+  <!-- Scale Driver Card -->
+  <g transform="translate(40, 108)" filter="url(#soft-shadow)">
+    <rect width="445" height="82" class="driver-scale"/>
+    <rect x="14" y="12" width="85" height="20" rx="4" fill="#e0f2fe"/>
+    <text x="56" y="26" class="badge-text" fill="#0284c7">内生驱动源泉</text>
+    <text x="110" y="27" class="sect-title">组织规模极速扩张 (Scale Expansion)</text>
+    <text x="14" y="50" class="body-text">从同质街垒社群迈向数十万人大众政党；直接民主遭遇“规模诅咒”，</text>
+    <text x="14" y="68" class="body-text">全员商议与普遍表决技术性瘫痪，倒逼组织建立常任行政代理人。</text>
+  </g>
+
+  <!-- Competition Driver Card -->
+  <g transform="translate(515, 108)" filter="url(#soft-shadow)">
+    <rect width="445" height="82" class="driver-comp"/>
+    <rect x="14" y="12" width="85" height="20" rx="4" fill="#fef3c7"/>
+    <text x="56" y="26" class="badge-text" fill="#b45309">外生环境压迫</text>
+    <text x="110" y="27" class="sect-title">严酷外部竞争压力 (External Competition)</text>
+    <text x="14" y="50" class="body-text">直面资本财阀与专制官僚国家机器；瞬息万变的选举博弈与生存对抗，</text>
+    <text x="14" y="68" class="body-text">要求决策分秒必争、行动高度集权，彻底粉碎了松散协商的幻想。</text>
+  </g>
+
+  <!-- ================= CONNECTORS: TIER 1 -> TIER 2 ================= -->
+  <!-- Center Coordination Bridge -->
+  <path d="M 262,190 L 262,204 L 182,204 L 182,222" fill="none" stroke="#0891b2" stroke-width="1.8" marker-end="url(#arrow-cyan)"/>
+  <path d="M 400,190 L 400,204 L 500,204 L 500,222" fill="none" stroke="#e11d48" stroke-width="1.8" marker-end="url(#arrow-rose)"/>
+  <path d="M 737,190 L 737,204 L 818,204 L 818,222" fill="none" stroke="#7c3aed" stroke-width="1.8" marker-end="url(#arrow-violet)"/>
+
+  <!-- ================= SECTION 2: THREE INTERLOCKING GEARS ================= -->
+  <!-- Gear Column 1: Technical Axis -->
+  <g transform="translate(40, 224)" filter="url(#soft-shadow)">
+    <rect width="285" height="278" class="gear-card-1"/>
+    
+    <rect x="14" y="12" width="135" height="22" rx="4" fill="#ecfeff"/>
+    <text x="81" y="27" class="badge-text" fill="#0891b2">⚙️ 齿轮一 · 技术分工</text>
+    <text x="270" y="27" font-family="'Noto Sans CJK SC', sans-serif" font-size="10px" font-weight="700" fill="#64748b" text-anchor="end">[韦伯理性科层]</text>
+    
+    <text x="14" y="52" class="sect-title">信息不对称与专业垄断</text>
+    <line x1="14" y1="60" x2="271" y2="60" stroke="#f1f5f9" stroke-width="1.5"/>
+
+    <!-- Step 1.1 -->
+    <g transform="translate(14, 68)">
+      <rect width="257" height="54" class="card-step-box-1"/>
+      <text x="10" y="18" class="step-title-1">① 劳动分工与功能分化</text>
+      <text x="10" y="34" class="body-text">日常行政脱离全员大会；专设全职</text>
+      <text x="10" y="48" class="body-text">受薪干事，大众将管理权永久委托。</text>
+    </g>
+
+    <!-- Step 1.2 -->
+    <g transform="translate(14, 128)">
+      <rect width="257" height="54" class="card-step-box-1"/>
+      <text x="10" y="18" class="step-title-1">② 秘密档案与知识黑箱</text>
+      <text x="10" y="34" class="body-text">官僚垄断档案机密(Aktenmäßigkeit)、</text>
+      <text x="10" y="48" class="body-text">财务细目与法条程序，构筑技术壁垒。</text>
+    </g>
+
+    <!-- Step 1.3 -->
+    <g transform="translate(14, 188)">
+      <rect width="257" height="60" class="card-step-box-1"/>
+      <text x="10" y="18" class="step-title-1">③ 纵向知情鸿沟与依附</text>
+      <text x="10" y="34" class="body-text">官僚化身“不可替代的技术工程师”；</text>
+      <text x="10" y="48" class="body-text">基层沦为信息文盲，实质监督权丧失。</text>
+    </g>
+
+    <text x="14" y="268" class="result-tag-1">→ 核心后果：权力天平向受薪行政层倾斜</text>
+  </g>
+
+  <!-- Horizontal Coupling 1-2 -->
+  <g transform="translate(325, 345)">
+    <line x1="4" y1="0" x2="28" y2="0" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="3,3"/>
+    <text x="16" y="-6" font-family="'Noto Sans CJK SC', sans-serif" font-size="9px" font-weight="700" fill="#94a3b8" text-anchor="middle">协同</text>
+    <text x="16" y="14" font-family="'Noto Sans CJK SC', sans-serif" font-size="9px" font-weight="700" fill="#94a3b8" text-anchor="middle">咬合</text>
+  </g>
+
+  <!-- Gear Column 2: Leader Axis -->
+  <g transform="translate(357, 224)" filter="url(#soft-shadow)">
+    <rect width="285" height="278" class="gear-card-2"/>
+    
+    <rect x="14" y="12" width="135" height="22" rx="4" fill="#ffe4e6"/>
+    <text x="81" y="27" class="badge-text" fill="#e11d48">⚙️ 齿轮二 · 权力异化</text>
+    <text x="270" y="27" font-family="'Noto Sans CJK SC', sans-serif" font-size="10px" font-weight="700" fill="#64748b" text-anchor="end">[米歇尔斯/帕内比亚科]</text>
+    
+    <text x="14" y="52" class="sect-title">领袖阶层漂移与目标置换</text>
+    <line x1="14" y1="60" x2="271" y2="60" stroke="#f1f5f9" stroke-width="1.5"/>
+
+    <!-- Step 2.1 -->
+    <g transform="translate(14, 68)">
+      <rect width="257" height="54" class="card-step-box-2"/>
+      <text x="10" y="18" class="step-title-2">① 阶层跃升与职业化</text>
+      <text x="10" y="34" class="body-text">脱下粗布工装，换上粗花呢西装；</text>
+      <text x="10" y="48" class="body-text">跨越社会天梯，实现“依靠政治而生活”。</text>
+    </g>
+
+    <!-- Step 2.2 -->
+    <g transform="translate(14, 128)">
+      <rect width="257" height="54" class="card-step-box-2"/>
+      <text x="10" y="18" class="step-title-2">② 目标置换 (Goal Displacement)</text>
+      <text x="10" y="34" class="body-text">保全千万党产与自身生计压倒一切；</text>
+      <text x="10" y="48" class="body-text">意识形态使命沦为装饰，存续成终极目的。</text>
+    </g>
+
+    <!-- Step 2.3 -->
+    <g transform="translate(14, 188)">
+      <rect width="257" height="60" class="card-step-box-2"/>
+      <text x="10" y="18" class="step-title-2">③ 自卫防线与近亲繁殖</text>
+      <text x="10" y="34" class="body-text">视重返车间为“社会性自杀”，任用亲信；</text>
+      <text x="10" y="48" class="body-text">封杀党内后起之秀，组织沦为自闭俱乐部。</text>
+    </g>
+
+    <text x="14" y="268" class="result-tag-2">→ 核心后果：官僚阶级利益背离劳工初衷</text>
+  </g>
+
+  <!-- Horizontal Coupling 2-3 -->
+  <g transform="translate(642, 345)">
+    <line x1="4" y1="0" x2="29" y2="0" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="3,3"/>
+    <text x="16" y="-6" font-family="'Noto Sans CJK SC', sans-serif" font-size="9px" font-weight="700" fill="#94a3b8" text-anchor="middle">协同</text>
+    <text x="16" y="14" font-family="'Noto Sans CJK SC', sans-serif" font-size="9px" font-weight="700" fill="#94a3b8" text-anchor="middle">咬合</text>
+  </g>
+
+  <!-- Gear Column 3: Mass Psychology Axis -->
+  <g transform="translate(675, 224)" filter="url(#soft-shadow)">
+    <rect width="285" height="278" class="gear-card-3"/>
+    
+    <rect x="14" y="12" width="135" height="22" rx="4" fill="#f3e8ff"/>
+    <text x="81" y="27" class="badge-text" fill="#7c3aed">⚙️ 齿轮三 · 心理依附</text>
+    <text x="270" y="27" font-family="'Noto Sans CJK SC', sans-serif" font-size="10px" font-weight="700" fill="#64748b" text-anchor="end">[奥尔森集体行动]</text>
+    
+    <text x="14" y="52" class="sect-title">理性冷漠与领袖崇拜</text>
+    <line x1="14" y1="60" x2="271" y2="60" stroke="#f1f5f9" stroke-width="1.5"/>
+
+    <!-- Step 3.1 -->
+    <g transform="translate(14, 68)">
+      <rect width="257" height="54" class="card-step-box-3"/>
+      <text x="10" y="18" class="step-title-3">① 搭便车与理性冷漠</text>
+      <text x="10" y="34" class="body-text">监督成本高昂而个体边际收益为零；</text>
+      <text x="10" y="48" class="body-text">面对海量专业账目，理性成员放弃参政。</text>
+    </g>
+
+    <!-- Step 3.2 -->
+    <g transform="translate(14, 128)">
+      <rect width="257" height="54" class="card-step-box-3"/>
+      <text x="10" y="18" class="step-title-3">② 认知过载与托付惰性</text>
+      <text x="10" y="34" class="body-text">现代政策纷繁复杂，大众心理深处</text>
+      <text x="10" y="48" class="body-text">潜藏逃避决断的惰性，渴望权威代劳。</text>
+    </g>
+
+    <!-- Step 3.3 -->
+    <g transform="translate(14, 188)">
+      <rect width="257" height="60" class="card-step-box-3"/>
+      <text x="10" y="18" class="step-title-3">③ 领袖魅力崇拜 (Hero-Worship)</text>
+      <text x="10" y="34" class="body-text">对雄辩领袖产生盲目感恩与造神依附；</text>
+      <text x="10" y="48" class="body-text">将思考权拱手相让，主动腾出擅权真空。</text>
+    </g>
+
+    <text x="14" y="268" class="result-tag-3">→ 核心后果：自下而上监督防线彻底瓦解</text>
+  </g>
+
+  <!-- ================= CONNECTORS: TIER 2 -> TIER 3 ================= -->
+  <g transform="translate(0, 502)">
+    <path d="M 182,0 L 182,22" fill="none" stroke="#0891b2" stroke-width="1.8" marker-end="url(#arrow-cyan)"/>
+    <text x="182" y="-3" font-family="'Noto Sans CJK SC', sans-serif" font-size="9.5px" font-weight="700" fill="#0891b2" text-anchor="middle">信息壁垒垄断</text>
+    
+    <path d="M 500,0 L 500,22" fill="none" stroke="#e11d48" stroke-width="1.8" marker-end="url(#arrow-rose)"/>
+    <text x="500" y="-3" font-family="'Noto Sans CJK SC', sans-serif" font-size="9.5px" font-weight="700" fill="#e11d48" text-anchor="middle">生存自利置换</text>
+    
+    <path d="M 818,0 L 818,22" fill="none" stroke="#7c3aed" stroke-width="1.8" marker-end="url(#arrow-violet)"/>
+    <text x="818" y="-3" font-family="'Noto Sans CJK SC', sans-serif" font-size="9.5px" font-weight="700" fill="#7c3aed" text-anchor="middle">监督防线真空</text>
+  </g>
+
+  <!-- ================= SECTION 3: THE OLIGARCHIC LOCK ================= -->
+  <g transform="translate(40, 526)" filter="url(#soft-shadow)">
+    <rect width="920" height="120" class="lock-card"/>
+    
+    <rect x="14" y="10" width="165" height="22" rx="4" fill="#fee2e2"/>
+    <text x="96" y="25" class="badge-text" fill="#991b1b">终局形态 · 寡头统治铁律</text>
+    <text x="190" y="26" class="lock-quote">“谁说组织，谁就说寡头” (Wer Organisation sagt, sagt Oligarchie)</text>
+    <text x="895" y="25" font-family="'Noto Sans CJK SC', sans-serif" font-size="10.5px" font-weight="700" fill="#dc2626" text-anchor="end">【自利闭环完全锁死】</text>
+
+    <!-- Sub-panel A -->
+    <g transform="translate(14, 40)">
+      <rect width="285" height="68" class="lock-subbox"/>
+      <text x="12" y="20" class="lock-h">【手段反客为主：工具异化】</text>
+      <text x="12" y="38" class="body-text">组织从“解放大众的武器”退化为</text>
+      <text x="12" y="54" class="body-text">“统治大众的牢笼”；民主沦为形式门面。</text>
+    </g>
+
+    <!-- Sub-panel B -->
+    <g transform="translate(317, 40)">
+      <rect width="285" height="68" class="lock-subbox"/>
+      <text x="12" y="20" class="lock-h">【利益建制化：阶级妥协】</text>
+      <text x="12" y="38" class="body-text">受薪官僚与资产阶级建制达成默契；</text>
+      <text x="12" y="54" class="body-text">为求自保投票支持战争（1914世纪背叛）。</text>
+    </g>
+
+    <!-- Sub-panel C -->
+    <g transform="translate(620, 40)">
+      <rect width="285" height="68" class="lock-subbox"/>
+      <text x="12" y="20" class="lock-h">【不可逆自利：近亲繁殖】</text>
+      <text x="12" y="38" class="body-text">上层垄断提拔晋升权与财政资源；</text>
+      <text x="12" y="54" class="body-text">系统性清洗革新派，形成自我保护死锁。</text>
+    </g>
+  </g>
+
+  <!-- ================= SECTION 4: INSTITUTIONAL ANTIDOTES ================= -->
+  <g transform="translate(40, 656)" filter="url(#soft-shadow)">
+    <rect width="920" height="106" class="footer-card"/>
+    
+    <rect x="16" y="10" width="125" height="22" rx="4" fill="#059669"/>
+    <text x="78" y="25" class="badge-text" fill="#ffffff">制度解药与承重墙</text>
+    <text x="152" y="26" class="footer-title">李普塞特“工会民主”三大抗体：打破铁律魔咒的承重结构 (Lipset et al., 1956)</text>
+
+    <text x="16" y="52" class="footer-body">
+      ① 制度化合法反对派：党章保障“内部两党制”（独立派 vs. 进步派），各自拥有法定经费与独立机关报，公开竞争粉碎在位者信息黑箱；
+    </text>
+    <text x="16" y="72" class="footer-body">
+      ② 消除权力特权溢价：工会领袖薪资严格锚定车间最高级别排版工人，落选即重返车间操作机器，从根本上切断阶层漂移后的生存恐惧；
+    </text>
+    <text x="16" y="92" class="footer-body">
+      ③ 致密独立的微观自治网络：体育会、读书会与行业互助社完全独立于党部行政系统，构筑抵御官僚洗脑与擅权动员的基层社会免疫力。
+    </text>
+  </g>
+</svg>
