@@ -48,42 +48,8 @@ description: "人类政治文明史上最深沉的悲剧，往往不是民主被
 
 这三大齿轮在组织演进中严密咬合：技术分工确立了信息壁垒，阶层漂移锁死了领袖的自利防线，而大众的理性冷漠则从底层拆除了防御阵地。三者合力，最终将一个追求平等的大众政党，不可逆地推向了由少数受薪官僚掌控一切的寡头统治终局。
 
-```mermaid
-flowchart TD
-    subgraph 驱动源泉
-        Scale["组织规模极速扩张<br>从同质社群迈向大众政党"]
-        Comp["外部严酷竞争压力<br>对抗官僚国家与资本集团"]
-    end
-
-    subgraph 技术与分工轴线
-        Division["劳动分工与功能分化<br>日常运转脱离直接民主"]
-        Expertise["专业知识与信息垄断<br>掌控档案、财务与程序修辞"]
-        Asymmetry["纵向信息权力不对称<br>官僚管理层与基层的知情鸿沟"]
-    end
-
-    subgraph 领袖与大众心理轴线
-        ClassDrift["领袖阶层漂移与职业化<br>从义务代言人跃升为受薪精英"]
-        Survival["组织生存压倒初衷目标<br>沉没成本保护与职务保全本能"]
-        Apathy["大众理性冷漠与认知过载<br>搭便车心态与个人魅力崇拜"]
-    end
-
-    subgraph 终局形态
-        Oligarchy["寡头统治铁律的成型<br>权力由不可逆的自利闭环垄断"]
-    end
-
-    Scale --> Division
-    Comp --> Division
-    Division --> Expertise
-    Expertise --> Asymmetry
-    
-    Scale --> ClassDrift
-    ClassDrift --> Survival
-    Scale --> Apathy
-    
-    Asymmetry --> Oligarchy
-    Survival --> Oligarchy
-    Apathy --> Oligarchy
-```
+![寡头统治铁律：组织规模、技术分工与科层自毁机制](/images/ch02_iron_law_infographic.png)
+*[图 2-1：寡头统治铁律：组织规模、技术分工与科层自毁机制（点击可查看 [高清矢量图 (SVG)](file:///images/ch02_iron_law_infographic.svg)）]*
 
 > [!TIP] 核心机制闭环：科层自毁与寡头化生成逻辑  
 > 组织规模扩张与外部竞争压力倒逼出精细分工，使全职受薪官僚凭借技术档案与议程垄断筑起坚不可摧的信息不对称壁垒；跨越阶层的平民领袖出于保全优渥生计与沉没成本的自利本能，将组织存续置于首位，完成了从意识形态使命向职务生存的目标置换；面对海量决策的普通成员陷入搭便车的理性冷漠与领袖崇拜，三股力量严密咬合，最终将民主解放工具锁死在不可逆的寡头自利回路之中。
