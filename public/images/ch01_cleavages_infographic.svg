@@ -1,0 +1,203 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 780" width="100%" height="100%">
+  <defs>
+    <style>
+      .bg { fill: #f8fafc; }
+      .card-base { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1.5; rx: 12; }
+      
+      .card-accent-red { fill: #ffffff; stroke: #f43f5e; stroke-width: 2; rx: 12; }
+      .card-accent-blue { fill: #ffffff; stroke: #0284c7; stroke-width: 2; rx: 12; }
+      
+      .card-c1 { fill: #ffffff; stroke: #9333ea; stroke-width: 1.8; rx: 10; }
+      .card-c2 { fill: #ffffff; stroke: #0891b2; stroke-width: 1.8; rx: 10; }
+      .card-c3 { fill: #ffffff; stroke: #d97706; stroke-width: 1.8; rx: 10; }
+      .card-c4 { fill: #ffffff; stroke: #dc2626; stroke-width: 1.8; rx: 10; }
+      
+      .card-party { fill: #f1f5f9; stroke: #cbd5e1; stroke-width: 1.2; rx: 8; }
+      
+      .title-main { font-family: 'Noto Sans CJK SC', 'PingFang SC', sans-serif; font-size: 24px; font-weight: 800; fill: #0f172a; letter-spacing: 0.5px; }
+      .title-sub { font-family: 'Noto Sans CJK SC', 'PingFang SC', sans-serif; font-size: 13px; fill: #64748b; }
+      
+      .rev-title { font-family: 'Noto Sans CJK SC', 'PingFang SC', sans-serif; font-size: 16px; font-weight: 700; fill: #0f172a; }
+      .rev-sub { font-family: 'Noto Sans CJK SC', 'PingFang SC', sans-serif; font-size: 12px; fill: #475569; }
+      
+      .cleav-num { font-family: 'Noto Sans CJK SC', 'PingFang SC', sans-serif; font-size: 12px; font-weight: 800; }
+      .cleav-title { font-family: 'Noto Sans CJK SC', 'PingFang SC', sans-serif; font-size: 15px; font-weight: 700; fill: #0f172a; }
+      .cleav-conflict { font-family: 'Noto Sans CJK SC', 'PingFang SC', sans-serif; font-size: 11.5px; fill: #475569; line-height: 1.4; }
+      
+      .party-title { font-family: 'Noto Sans CJK SC', 'PingFang SC', sans-serif; font-size: 12.5px; font-weight: 700; fill: #1e293b; }
+      .party-desc { font-family: 'Noto Sans CJK SC', 'PingFang SC', sans-serif; font-size: 11px; fill: #475569; }
+      
+      .footer-bg { fill: #eff6ff; stroke: #3b82f6; stroke-width: 1.5; rx: 10; }
+      .footer-text { font-family: 'Noto Sans CJK SC', 'PingFang SC', sans-serif; font-size: 13px; fill: #1e40af; font-weight: 700; }
+    </style>
+    
+    <filter id="soft-shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.06"/>
+    </filter>
+
+    <marker id="arrow-red" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <polygon points="0 0, 7 3.5, 0 7" fill="#f43f5e" />
+    </marker>
+    <marker id="arrow-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <polygon points="0 0, 7 3.5, 0 7" fill="#0284c7" />
+    </marker>
+    <marker id="arrow-gray" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <polygon points="0 0, 7 3.5, 0 7" fill="#64748b" />
+    </marker>
+  </defs>
+
+  <!-- Bright Background -->
+  <rect width="1000" height="780" class="bg"/>
+
+  <!-- Top Title Banner -->
+  <g transform="translate(40, 30)">
+    <rect x="0" y="0" width="180" height="24" rx="12" fill="#e2e8f0"/>
+    <text x="90" y="16" font-family="'Noto Sans CJK SC', sans-serif" font-size="11px" fill="#0284c7" font-weight="700" text-anchor="middle">COMPARATIVE POLITICS</text>
+    <text x="0" y="58" class="title-main">两次历史巨震、四大社会断层与现代政党起源</text>
+    <text x="0" y="82" class="title-sub">Lipset &amp; Rokkan (1967) 裂痕理论（Cleavage Theory）与西方政党体系生成机制</text>
+  </g>
+
+  <!-- Section 1: The Two Great Revolutions -->
+  <!-- National Revolution Card -->
+  <g transform="translate(40, 130)" filter="url(#soft-shadow)">
+    <rect width="440" height="100" class="card-accent-red"/>
+    <rect x="18" y="14" width="80" height="20" rx="4" fill="#ffe4e6"/>
+    <text x="58" y="28" font-family="'Noto Sans CJK SC', sans-serif" font-size="11px" fill="#e11d48" font-weight="700" text-anchor="middle">政治断层动力</text>
+    <text x="18" y="58" class="rev-title">国民革命 (National Revolution)</text>
+    <text x="18" y="80" class="rev-sub">近代民族主权国家构建 • 领土与官僚集权 • 司法与教育世俗化规训</text>
+  </g>
+
+  <!-- Industrial Revolution Card -->
+  <g transform="translate(520, 130)" filter="url(#soft-shadow)">
+    <rect width="440" height="100" class="card-accent-blue"/>
+    <rect x="18" y="14" width="80" height="20" rx="4" fill="#e0f2fe"/>
+    <text x="58" y="28" font-family="'Noto Sans CJK SC', sans-serif" font-size="11px" fill="#0284c7" font-weight="700" text-anchor="middle">经济断层动力</text>
+    <text x="18" y="58" class="rev-title">工业革命 (Industrial Revolution)</text>
+    <text x="18" y="80" class="rev-sub">资本主义商品经济扩张 • 城市化与阶层异质化 • 机器工业与劳资分立</text>
+  </g>
+
+  <!-- Flow Arrows Down from Revolutions to Cleavages -->
+  <path d="M 180,230 L 180,265 L 140,265 L 140,290" fill="none" stroke="#f43f5e" stroke-width="2" marker-end="url(#arrow-red)"/>
+  <path d="M 340,230 L 340,265 L 370,265 L 370,290" fill="none" stroke="#f43f5e" stroke-width="2" marker-end="url(#arrow-red)"/>
+  <path d="M 660,230 L 660,265 L 630,265 L 630,290" fill="none" stroke="#0284c7" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <path d="M 820,230 L 820,265 L 860,265 L 860,290" fill="none" stroke="#0284c7" stroke-width="2" marker-end="url(#arrow-blue)"/>
+
+  <!-- Section 2: Four Structural Cleavages (4 Columns) -->
+  <!-- Cleavage 1 -->
+  <g transform="translate(40, 295)" filter="url(#soft-shadow)">
+    <rect width="210" height="180" class="card-c1"/>
+    <circle cx="28" cy="28" r="14" fill="#faf5ff"/>
+    <text x="28" y="33" class="cleav-num" fill="#9333ea" text-anchor="middle">01</text>
+    <text x="52" y="33" class="cleav-title">中心 vs. 边缘</text>
+    <text x="16" y="55" font-family="'Noto Sans CJK SC', sans-serif" font-size="11px" fill="#9333ea" font-weight="700">Center vs. Periphery</text>
+    <line x1="16" y1="66" x2="194" y2="66" stroke="#f1f5f9" stroke-width="1.5"/>
+    <text x="16" y="88" class="cleav-conflict" font-weight="700" fill="#0f172a">【主导冲突】</text>
+    <text x="16" y="108" class="cleav-conflict">中央政权行政集权、国语</text>
+    <text x="16" y="126" class="cleav-conflict">统摄与税收渗透，激化偏远</text>
+    <text x="16" y="144" class="cleav-conflict">族群捍卫方言、自治习惯法</text>
+    <text x="16" y="162" class="cleav-conflict">与地方文化特权。</text>
+  </g>
+
+  <!-- Cleavage 2 -->
+  <g transform="translate(270, 295)" filter="url(#soft-shadow)">
+    <rect width="210" height="180" class="card-c2"/>
+    <circle cx="28" cy="28" r="14" fill="#ecfeff"/>
+    <text x="28" y="33" class="cleav-num" fill="#0891b2" text-anchor="middle">02</text>
+    <text x="52" y="33" class="cleav-title">国家 vs. 教会</text>
+    <text x="16" y="55" font-family="'Noto Sans CJK SC', sans-serif" font-size="11px" fill="#0891b2" font-weight="700">State vs. Church</text>
+    <line x1="16" y1="66" x2="194" y2="66" stroke="#f1f5f9" stroke-width="1.5"/>
+    <text x="16" y="88" class="cleav-conflict" font-weight="700" fill="#0f172a">【主导冲突】</text>
+    <text x="16" y="108" class="cleav-conflict">世俗民族国家强制剥夺教会</text>
+    <text x="16" y="126" class="cleav-conflict">司法与人生认证垄断，推行</text>
+    <text x="16" y="144" class="cleav-conflict">世俗公立教育，争夺对下一</text>
+    <text x="16" y="162" class="cleav-conflict">代信仰与道德解释权。</text>
+  </g>
+
+  <!-- Cleavage 3 -->
+  <g transform="translate(520, 295)" filter="url(#soft-shadow)">
+    <rect width="210" height="180" class="card-c3"/>
+    <circle cx="28" cy="28" r="14" fill="#fffbeb"/>
+    <text x="28" y="33" class="cleav-num" fill="#d97706" text-anchor="middle">03</text>
+    <text x="52" y="33" class="cleav-title">土地 vs. 工业</text>
+    <text x="16" y="55" font-family="'Noto Sans CJK SC', sans-serif" font-size="11px" fill="#d97706" font-weight="700">Land vs. Industry</text>
+    <line x1="16" y1="66" x2="194" y2="66" stroke="#f1f5f9" stroke-width="1.5"/>
+    <text x="16" y="88" class="cleav-conflict" font-weight="700" fill="#0f172a">【主导冲突】</text>
+    <text x="16" y="108" class="cleav-conflict">传统封建农业地主主张严苛</text>
+    <text x="16" y="126" class="cleav-conflict">农产关税护租（谷物法）；</text>
+    <text x="16" y="144" class="cleav-conflict">城市工商业资本家力主自由</text>
+    <text x="16" y="162" class="cleav-conflict">贸易以压低生存成本。</text>
+  </g>
+
+  <!-- Cleavage 4 -->
+  <g transform="translate(750, 295)" filter="url(#soft-shadow)">
+    <rect width="210" height="180" class="card-c4"/>
+    <circle cx="28" cy="28" r="14" fill="#fef2f2"/>
+    <text x="28" y="33" class="cleav-num" fill="#dc2626" text-anchor="middle">04</text>
+    <text x="52" y="33" class="cleav-title">资本 vs. 劳动</text>
+    <text x="16" y="55" font-family="'Noto Sans CJK SC', sans-serif" font-size="11px" fill="#dc2626" font-weight="700">Capital vs. Labor</text>
+    <line x1="16" y1="66" x2="194" y2="66" stroke="#f1f5f9" stroke-width="1.5"/>
+    <text x="16" y="88" class="cleav-conflict" font-weight="700" fill="#0f172a">【主导冲突】</text>
+    <text x="16" y="108" class="cleav-conflict">雇主追逐资本积累与压低成</text>
+    <text x="16" y="126" class="cleav-conflict">本；产业雇工依托工会结社</text>
+    <text x="16" y="144" class="cleav-conflict">争取8小时工作制、社保福利</text>
+    <text x="16" y="162" class="cleav-conflict">与财富再分配权。</text>
+  </g>
+
+  <!-- Connecting Arrows to Parties -->
+  <path d="M 145,475 L 145,510" fill="none" stroke="#9333ea" stroke-width="1.8" marker-end="url(#arrow-gray)"/>
+  <path d="M 375,475 L 375,510" fill="none" stroke="#0891b2" stroke-width="1.8" marker-end="url(#arrow-gray)"/>
+  <path d="M 625,475 L 625,510" fill="none" stroke="#d97706" stroke-width="1.8" marker-end="url(#arrow-gray)"/>
+  <path d="M 855,475 L 855,510" fill="none" stroke="#dc2626" stroke-width="1.8" marker-end="url(#arrow-gray)"/>
+
+  <!-- Section 3: Institutional Parties Formed -->
+  <!-- Party Family 1 -->
+  <g transform="translate(40, 515)" filter="url(#soft-shadow)">
+    <rect width="210" height="110" class="card-party"/>
+    <text x="16" y="30" class="party-title">地方自治 / 民族党</text>
+    <text x="16" y="52" class="party-desc">代表案列：</text>
+    <text x="16" y="70" class="party-desc">• 苏格兰民族党 (SNP)</text>
+    <text x="16" y="88" class="party-desc">• 西班牙加泰罗尼亚各党</text>
+    <text x="16" y="102" class="party-desc">• 北爱尔兰民族主义派系</text>
+  </g>
+
+  <!-- Party Family 2 -->
+  <g transform="translate(270, 515)" filter="url(#soft-shadow)">
+    <rect width="210" height="110" class="card-party"/>
+    <text x="16" y="30" class="party-title">基督教民主党 vs 自由派</text>
+    <text x="16" y="52" class="party-desc">代表案列：</text>
+    <text x="16" y="70" class="party-desc">• 德国基民盟 (CDU/CSU)</text>
+    <text x="16" y="88" class="party-desc">• 意大利天主教民主党</text>
+    <text x="16" y="102" class="party-desc">• 欧陆世俗自由激进党</text>
+  </g>
+
+  <!-- Party Family 3 -->
+  <g transform="translate(520, 515)" filter="url(#soft-shadow)">
+    <rect width="210" height="110" class="card-party"/>
+    <text x="16" y="30" class="party-title">传统农业党 vs 自由工商业</text>
+    <text x="16" y="52" class="party-desc">代表案列：</text>
+    <text x="16" y="70" class="party-desc">• 英国早期托利党 / 辉格党</text>
+    <text x="16" y="88" class="party-desc">• 北欧诸国农业党 (Agrarian)</text>
+    <text x="16" y="102" class="party-desc">• 大陆商贸城市自由主义派</text>
+  </g>
+
+  <!-- Party Family 4 -->
+  <g transform="translate(750, 515)" filter="url(#soft-shadow)">
+    <rect width="210" height="110" class="card-party"/>
+    <text x="16" y="30" class="party-title">社会民主党 vs 资产阶级保守派</text>
+    <text x="16" y="52" class="party-desc">代表案列：</text>
+    <text x="16" y="70" class="party-desc">• 英国工党 (Labour Party)</text>
+    <text x="16" y="88" class="party-desc">• 德国社会民主党 (SPD)</text>
+    <text x="16" y="102" class="party-desc">• 20世纪现代代议制左右主轴</text>
+  </g>
+
+  <!-- Bottom Banner: The Freezing Lock -->
+  <g transform="translate(40, 655)" filter="url(#soft-shadow)">
+    <rect width="920" height="85" class="footer-bg"/>
+    <rect x="20" y="16" width="90" height="22" rx="4" fill="#3b82f6"/>
+    <text x="65" y="31" font-family="'Noto Sans CJK SC', sans-serif" font-size="11.5px" fill="#ffffff" font-weight="700" text-anchor="middle">冰冻假说机制</text>
+    <text x="125" y="32" class="footer-text">1920年代普选权确立：社会冷冻机彻底闭合安全阀</text>
+    <text x="22" y="62" font-family="'Noto Sans CJK SC', sans-serif" font-size="12px" fill="#1e3a8a">
+      微观齿轮：全景生活方式包裹（工会报纸、俱乐部、专属公墓）• 宏观护城河：迪韦尔热多数决绞杀、比例代表制得票门槛与国库财政补贴
+    </text>
+  </g>
+</svg>

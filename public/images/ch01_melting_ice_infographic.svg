@@ -1,0 +1,187 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 780" width="100%" height="100%">
+  <defs>
+    <style>
+      .bg { fill: #f8fafc; }
+      
+      .driver-card { fill: #ffffff; stroke: #f59e0b; stroke-width: 1.8; rx: 10; }
+      .manifest-card { fill: #ffffff; stroke: #0284c7; stroke-width: 1.8; rx: 10; }
+      .end-card { fill: #ffffff; stroke: #6366f1; stroke-width: 2; rx: 12; }
+      
+      .title-main { font-family: 'Noto Sans CJK SC', 'PingFang SC', sans-serif; font-size: 24px; font-weight: 800; fill: #0f172a; letter-spacing: 0.5px; }
+      .title-sub { font-family: 'Noto Sans CJK SC', 'PingFang SC', sans-serif; font-size: 13px; fill: #64748b; }
+      
+      .stage-tag { font-family: 'Noto Sans CJK SC', sans-serif; font-size: 11px; font-weight: 700; text-anchor: middle; }
+      
+      .card-title { font-family: 'Noto Sans CJK SC', sans-serif; font-size: 15px; font-weight: 700; fill: #0f172a; }
+      .card-sub { font-family: 'Noto Sans CJK SC', sans-serif; font-size: 11px; font-weight: 700; }
+      .card-body { font-family: 'Noto Sans CJK SC', sans-serif; font-size: 11.5px; fill: #475569; line-height: 1.4; }
+      
+      .versus-text { font-family: 'Noto Sans CJK SC', sans-serif; font-size: 14px; font-weight: 900; fill: #ffffff; text-anchor: middle; }
+      
+      .pole-open { fill: #f0fdf4; stroke: #10b981; stroke-width: 1.5; rx: 8; }
+      .pole-protect { fill: #fff1f2; stroke: #f43f5e; stroke-width: 1.5; rx: 8; }
+      
+      .footer-bg { fill: #fef2f2; stroke: #ef4444; stroke-width: 1.5; rx: 10; }
+    </style>
+    
+    <filter id="soft-shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.06"/>
+    </filter>
+
+    <marker id="arrow-gold" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <polygon points="0 0, 7 3.5, 0 7" fill="#f59e0b" />
+    </marker>
+    <marker id="arrow-cyan" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <polygon points="0 0, 7 3.5, 0 7" fill="#0284c7" />
+    </marker>
+  </defs>
+
+  <!-- Bright Background -->
+  <rect width="1000" height="780" class="bg"/>
+
+  <!-- Top Title Banner -->
+  <g transform="translate(40, 30)">
+    <rect x="0" y="0" width="190" height="24" rx="12" fill="#e2e8f0"/>
+    <text x="95" y="16" font-family="'Noto Sans CJK SC', sans-serif" font-size="11px" fill="#0284c7" font-weight="700" text-anchor="middle">CONTEMPORARY DYNAMICS</text>
+    <text x="0" y="58" class="title-main">融冰纪元：政党冷冻机解体与全球化新裂痕</text>
+    <text x="0" y="82" class="title-sub">从组织脱嵌、去联盟化（Dealignment）到“开放 vs. 保护”地质重组的动力学推演</text>
+  </g>
+
+  <!-- Three Columns: Drivers -> Manifestations -> Neo-cleavage -->
+
+  <!-- Column 1: Drivers (3 small cards) -->
+  <g transform="translate(40, 125)">
+    <rect x="0" y="0" width="280" height="26" rx="4" fill="#fef3c7"/>
+    <text x="140" y="18" class="stage-tag" fill="#b45309">① 结构瓦解动因 (1970s~)</text>
+
+    <!-- Card D1 -->
+    <g transform="translate(0, 36)" filter="url(#soft-shadow)">
+      <rect width="280" height="135" class="driver-card"/>
+      <text x="16" y="28" class="card-title">去工业化与阶层异质化</text>
+      <text x="16" y="46" class="card-sub" fill="#d97706">Deindustrialization</text>
+      <line x1="16" y1="54" x2="264" y2="54" stroke="#f1f5f9" stroke-width="1.5"/>
+      <text x="16" y="74" class="card-body">重工业流水线衰落与产业外移，</text>
+      <text x="16" y="92" class="card-body">传统产业工会会员雪崩；松散灵活</text>
+      <text x="16" y="110" class="card-body">的服务业消解了均质化阶级社区。</text>
+    </g>
+
+    <!-- Card D2 -->
+    <g transform="translate(0, 186)" filter="url(#soft-shadow)">
+      <rect width="280" height="135" class="driver-card"/>
+      <text x="16" y="28" class="card-title">大众传媒与个体化崛起</text>
+      <text x="16" y="46" class="card-sub" fill="#d97706">Individualization &amp; Media</text>
+      <line x1="16" y1="54" x2="264" y2="54" stroke="#f1f5f9" stroke-width="1.5"/>
+      <text x="16" y="74" class="card-body">电视与互联网打破教区、酒馆与</text>
+      <text x="16" y="92" class="card-body">党部的信息垄断；政治交往走向私</text>
+      <text x="16" y="110" class="card-body">域化消费，终结全景生活包裹。</text>
+    </g>
+
+    <!-- Card D3 -->
+    <g transform="translate(0, 336)" filter="url(#soft-shadow)">
+      <rect width="280" height="135" class="driver-card"/>
+      <text x="16" y="28" class="card-title">后物质主义价值转向</text>
+      <text x="16" y="46" class="card-sub" fill="#d97706">Post-materialism (Inglehart)</text>
+      <line x1="16" y1="54" x2="264" y2="54" stroke="#f1f5f9" stroke-width="1.5"/>
+      <text x="16" y="74" class="card-body">战后繁荣一代告别温饱生存焦虑，</text>
+      <text x="16" y="92" class="card-body">转向追求生态环保、多元文化与个</text>
+      <text x="16" y="110" class="card-body">体表达，与传统物质主义纲领分裂。</text>
+    </g>
+  </g>
+
+  <!-- Connectors from Col 1 to Col 2 -->
+  <path d="M 320,225 L 360,225 L 360,250 L 375,250" fill="none" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrow-gold)"/>
+  <path d="M 320,380 L 360,380 L 360,420 L 375,420" fill="none" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrow-gold)"/>
+
+  <!-- Column 2: Manifestations (2 medium cards) -->
+  <g transform="translate(380, 125)">
+    <rect x="0" y="0" width="260" height="26" rx="4" fill="#e0f2fe"/>
+    <text x="130" y="18" class="stage-tag" fill="#0369a1">② 制度融冰两极表现</text>
+
+    <!-- Card R1 -->
+    <g transform="translate(0, 50)" filter="url(#soft-shadow)">
+      <rect width="260" height="185" class="manifest-card"/>
+      <text x="16" y="28" class="card-title">去联盟化 (Dealignment)</text>
+      <text x="16" y="46" class="card-sub" fill="#0284c7">政党认同全面雪崩</text>
+      <line x1="16" y1="54" x2="244" y2="54" stroke="#f1f5f9" stroke-width="1.5"/>
+      <text x="16" y="76" class="card-body">• 铁杆党员占选民比暴跌至2%以下</text>
+      <text x="16" y="98" class="card-body">• 浮动游荡选民激增，投票率滑落</text>
+      <text x="16" y="120" class="card-body">• 选举波动率（Pedersen指数）冲高</text>
+      <text x="16" y="142" class="card-body">• 主流大党卡特尔化合谋、组织空心化</text>
+      <text x="16" y="164" class="card-body">• 政治超市模型被动生效，品牌贬值</text>
+    </g>
+
+    <!-- Card R2 -->
+    <g transform="translate(0, 270)" filter="url(#soft-shadow)">
+      <rect width="260" height="185" class="manifest-card"/>
+      <text x="16" y="28" class="card-title">中左翼大党的身份分裂</text>
+      <text x="16" y="46" class="card-sub" fill="#0284c7">内生协调困境</text>
+      <line x1="16" y1="54" x2="244" y2="54" stroke="#f1f5f9" stroke-width="1.5"/>
+      <text x="16" y="76" class="card-body">• 迎合大学与都市白领激进文化</text>
+      <text x="16" y="98" class="card-body">  → 疏离传统保守蓝领劳工基本盘</text>
+      <text x="16" y="122" class="card-body">• 固守传统阶级保护与工会特权</text>
+      <text x="16" y="144" class="card-body">  → 选票被绿党与新左翼掏空后院</text>
+      <text x="16" y="168" class="card-body">• 左右一维经济轴线彻底失灵失效</text>
+    </g>
+  </g>
+
+  <!-- Connectors from Col 2 to Col 3 -->
+  <path d="M 640,240 L 670,240 L 670,300 L 690,300" fill="none" stroke="#0284c7" stroke-width="2" marker-end="url(#arrow-cyan)"/>
+  <path d="M 640,360 L 670,360 L 670,350 L 690,350" fill="none" stroke="#0284c7" stroke-width="2" marker-end="url(#arrow-cyan)"/>
+
+  <!-- Column 3: The Neo-Cleavage Landscape -->
+  <g transform="translate(695, 125)" filter="url(#soft-shadow)">
+    <rect width="265" height="480" class="end-card"/>
+    <rect x="18" y="16" width="229" height="26" rx="4" fill="#e0e7ff"/>
+    <text x="132" y="33" class="stage-tag" fill="#4338ca">③ 全球化新裂痕终局</text>
+
+    <text x="18" y="72" class="card-title" fill="#312e81">新裂痕重构 (Kriesi 2008)</text>
+    <text x="18" y="92" class="card-sub" fill="#4f46e5">Integration vs. Demarcation</text>
+    <line x1="18" y1="102" x2="247" y2="102" stroke="#e0e7ff" stroke-width="1.5"/>
+
+    <!-- Open Pole -->
+    <g transform="translate(18, 115)">
+      <rect width="229" height="120" class="pole-open"/>
+      <text x="14" y="24" font-family="'Noto Sans CJK SC', sans-serif" font-size="13px" font-weight="700" fill="#065f46">全球开放派 (Integration)</text>
+      <text x="14" y="44" font-family="'Noto Sans CJK SC', sans-serif" font-size="11px" fill="#047857">都市创意阶层 • 高学历知识精英</text>
+      <text x="14" y="62" font-family="'Noto Sans CJK SC', sans-serif" font-size="11px" fill="#047857">跨国资本与科技新贵 • 自由贸易</text>
+      <text x="14" y="80" font-family="'Noto Sans CJK SC', sans-serif" font-size="11px" fill="#047857">世界主义 • 文化包容 • 气候政治</text>
+      <text x="14" y="100" font-family="'Noto Sans CJK SC', sans-serif" font-size="10.5px" fill="#059669" font-weight="600">代表：绿党、跨国技术官僚自由党</text>
+    </g>
+
+    <!-- VS Badge -->
+    <g transform="translate(112, 243)">
+      <circle cx="20" cy="18" r="16" fill="#ef4444"/>
+      <text x="20" y="23" class="versus-text">VS</text>
+    </g>
+
+    <!-- Protect Pole -->
+    <g transform="translate(18, 285)">
+      <rect width="229" height="120" class="pole-protect"/>
+      <text x="14" y="24" font-family="'Noto Sans CJK SC', sans-serif" font-size="13px" font-weight="700" fill="#9f1239">本土保护派 (Demarcation)</text>
+      <text x="14" y="44" font-family="'Noto Sans CJK SC', sans-serif" font-size="11px" fill="#be123c">传统铁锈蓝领 • 农业社群 • 边缘群体</text>
+      <text x="14" y="62" font-family="'Noto Sans CJK SC', sans-serif" font-size="11px" fill="#be123c">全球化利益受损者 • 反移民浪潮</text>
+      <text x="14" y="80" font-family="'Noto Sans CJK SC', sans-serif" font-size="11px" fill="#be123c">国家主权边界重申 • 贸易保护主义</text>
+      <text x="14" y="100" font-family="'Noto Sans CJK SC', sans-serif" font-size="10.5px" fill="#e11d48" font-weight="600">代表：激进右翼民粹党、疑欧本土派</text>
+    </g>
+
+    <text x="18" y="430" font-family="'Noto Sans CJK SC', sans-serif" font-size="11px" fill="#3730a3" font-weight="700">【重组后果】</text>
+    <text x="18" y="448" font-family="'Noto Sans CJK SC', sans-serif" font-size="10.5px" fill="#475569">旧左右经济轴线被垂直切割，</text>
+    <text x="18" y="466" font-family="'Noto Sans CJK SC', sans-serif" font-size="10.5px" fill="#475569">跨越传统阶级形成全新政治阵营。</text>
+  </g>
+
+  <!-- Bottom Diagnostic Banner -->
+  <g transform="translate(40, 640)" filter="url(#soft-shadow)">
+    <rect width="920" height="95" class="footer-bg"/>
+    <rect x="20" y="16" width="100" height="22" rx="4" fill="#ef4444"/>
+    <text x="70" y="31" font-family="'Noto Sans CJK SC', sans-serif" font-size="11px" fill="#ffffff" font-weight="700" text-anchor="middle">当代病理学诊断</text>
+    <text x="135" y="32" font-family="'Noto Sans CJK SC', sans-serif" font-size="13px" fill="#b91c1c" font-weight="700">
+      地壳深处应力的终极释放：为什么民粹海啸从来不是偶然的个案？
+    </text>
+    <text x="22" y="60" font-family="'Noto Sans CJK SC', sans-serif" font-size="12px" fill="#334155">
+      中介机制失灵：政党卡特尔化导致底层受损者在建制内部失去代言人，传统减震器无法继续缓慢稀释深层社会创伤；
+    </text>
+    <text x="22" y="80" font-family="'Noto Sans CJK SC', sans-serif" font-size="12px" fill="#334155">
+      破坏性反噬：被压抑的本土保护诉求突破旧堤坝，以极化民粹的形式剧烈撞击传统代议制地表秩序。
+    </text>
+  </g>
+</svg>
