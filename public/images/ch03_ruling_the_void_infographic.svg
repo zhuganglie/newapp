@@ -1,0 +1,236 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 780" width="100%" height="100%">
+  <defs>
+    <style>
+      .bg { fill: #f8fafc; }
+      
+      .title-main { font-family: 'Noto Sans CJK SC', 'PingFang SC', sans-serif; font-size: 23px; font-weight: 800; fill: #0f172a; letter-spacing: 0.5px; }
+      .title-sub { font-family: 'Noto Sans CJK SC', 'PingFang SC', sans-serif; font-size: 12px; fill: #64748b; }
+      
+      .badge-text { font-family: 'Noto Sans CJK SC', 'PingFang SC', sans-serif; font-size: 10.5px; font-weight: 700; text-anchor: middle; }
+      .card-title { font-family: 'Noto Sans CJK SC', 'PingFang SC', sans-serif; font-size: 12px; font-weight: 800; fill: #0f172a; }
+      .body-text { font-family: 'Noto Sans CJK SC', 'PingFang SC', sans-serif; font-size: 10px; fill: #475569; line-height: 1.4; }
+      
+      .void-title { font-family: 'Noto Sans CJK SC', 'PingFang SC', sans-serif; font-size: 15px; font-weight: 900; fill: #991b1b; letter-spacing: 0.5px; }
+      .void-sub { font-family: 'Noto Sans CJK SC', 'PingFang SC', sans-serif; font-size: 10px; font-weight: 700; fill: #dc2626; }
+      .subcard-title { font-family: 'Noto Sans CJK SC', 'PingFang SC', sans-serif; font-size: 11px; font-weight: 700; fill: #0f172a; }
+      
+      .case-tag { font-family: 'Noto Sans CJK SC', 'PingFang SC', sans-serif; font-size: 10px; font-weight: 700; }
+      .case-title { font-family: 'Noto Sans CJK SC', 'PingFang SC', sans-serif; font-size: 10.5px; font-weight: 700; fill: #334155; }
+      .case-text { font-family: 'Noto Sans CJK SC', 'PingFang SC', sans-serif; font-size: 9.5px; fill: #475569; line-height: 1.35; }
+      
+      .footer-title { font-family: 'Noto Sans CJK SC', 'PingFang SC', sans-serif; font-size: 12px; font-weight: 800; fill: #9f1239; }
+      .footer-text { font-family: 'Noto Sans CJK SC', 'PingFang SC', sans-serif; font-size: 10px; fill: #881337; line-height: 1.4; }
+    </style>
+    
+    <filter id="soft-shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#0f172a" flood-opacity="0.05"/>
+    </filter>
+
+    <marker id="arrow-sky" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <polygon points="0 0, 6 3, 0 6" fill="#0284c7" />
+    </marker>
+    <marker id="arrow-rose" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <polygon points="0 0, 6 3, 0 6" fill="#e11d48" />
+    </marker>
+    <marker id="arrow-violet" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <polygon points="0 0, 6 3, 0 6" fill="#7c3aed" />
+    </marker>
+    <marker id="arrow-red" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <polygon points="0 0, 6 3, 0 6" fill="#ef4444" />
+    </marker>
+    <marker id="arrow-amber" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <polygon points="0 0, 6 3, 0 6" fill="#d97706" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="780" class="bg"/>
+
+  <!-- Top Title Banner -->
+  <g transform="translate(40, 22)">
+    <rect x="0" y="0" width="220" height="22" rx="11" fill="#fee2e2"/>
+    <text x="110" y="15" class="badge-text" fill="#dc2626">DEMOCRATIC PATHOLOGY &amp; POPULISM</text>
+    <text x="0" y="48" class="title-main">统治真空与民粹海啸：空心民主的制度异化与病理断裂</text>
+    <text x="0" y="69" class="title-sub">Peter Mair (2013)《统治真空》：当政党从“代表社会”蜕化为“管理社会”的技术官僚</text>
+  </g>
+
+  <!-- ================= SECTION 1: TOP ALIENATION TIER (3 CARDS) ================= -->
+  
+  <!-- Card 1: Subvention & Gatekeeping -->
+  <g transform="translate(40, 96)" filter="url(#soft-shadow)">
+    <rect width="295" height="130" rx="8" fill="#ffffff" stroke="#0284c7" stroke-width="1.6"/>
+    <rect x="10" y="10" width="128" height="20" rx="3" fill="#e0f2fe"/>
+    <text x="74" y="24" class="badge-text" fill="#0369a1">① 财政寄生与自利规制</text>
+    <text x="146" y="25" class="card-title">国库输血与门槛绞杀</text>
+    <line x1="10" y1="35" x2="285" y2="35" stroke="#f1f5f9" stroke-width="1.2"/>
+    <text x="10" y="53" class="body-text">• <tspan font-weight="700">自我授爵：</tspan>利用立法特权吸吮国库大选与常态补贴；</text>
+    <text x="10" y="73" class="body-text">• <tspan font-weight="700">封杀外部：</tspan>严禁企业社会大额捐资，切断挑战者生路；</text>
+    <text x="10" y="93" class="body-text">• <tspan font-weight="700">制度清洗：</tspan>筑起3%~5%补贴与席位门槛，窒息草根小党；</text>
+    <text x="10" y="113" class="body-text" fill="#0284c7" font-weight="700">→ 结果：摆脱对选民资金依附，蜕变为国家供养机关</text>
+  </g>
+
+  <!-- Card 2: Representation to Ruling -->
+  <g transform="translate(352, 96)" filter="url(#soft-shadow)">
+    <rect width="295" height="130" rx="8" fill="#ffffff" stroke="#e11d48" stroke-width="1.6"/>
+    <rect x="10" y="10" width="128" height="20" rx="3" fill="#ffe4e6"/>
+    <text x="74" y="24" class="badge-text" fill="#be123c">② 政治职能全面质变</text>
+    <text x="146" y="25" class="card-title">从“代表”沦为“治理”</text>
+    <line x1="10" y1="35" x2="285" y2="35" stroke="#f1f5f9" stroke-width="1.2"/>
+    <text x="10" y="53" class="body-text">• <tspan font-weight="700">传导带断裂：</tspan>基层纽带瓦解，不再是提炼疾苦的听诊器；</text>
+    <text x="10" y="73" class="body-text">• <tspan font-weight="700">派出所异化：</tspan>沦为国家向社会单向贯彻规训维稳的派出所；</text>
+    <text x="10" y="93" class="body-text">• <tspan font-weight="700">公职化蜕变：</tspan>政客变身支取公帑的特殊官僚，脱离社会问责；</text>
+    <text x="10" y="113" class="body-text" fill="#e11d48" font-weight="700">→ 结果：以治理效率替代价值代表，政党国家行政化</text>
+  </g>
+
+  <!-- Card 3: Technocratic Depoliticization -->
+  <g transform="translate(665, 96)" filter="url(#soft-shadow)">
+    <rect width="295" height="130" rx="8" fill="#ffffff" stroke="#7c3aed" stroke-width="1.6"/>
+    <rect x="10" y="10" width="128" height="20" rx="3" fill="#f3e8ff"/>
+    <text x="74" y="24" class="badge-text" fill="#7c3aed">③ 技术官僚去政治化</text>
+    <text x="146" y="25" class="card-title">政策趋同与争端剔除</text>
+    <line x1="10" y1="35" x2="285" y2="35" stroke="#f1f5f9" stroke-width="1.2"/>
+    <text x="10" y="53" class="body-text">• <tspan font-weight="700">寡头共识：</tspan>宏观财政与税收规制在左右两党间高度趋同；</text>
+    <text x="10" y="73" class="body-text">• <tspan font-weight="700">争端剔除：</tspan>大选剔除再分配与主权争论，沦为公关经理秀；</text>
+    <text x="10" y="93" class="body-text">• <tspan font-weight="700">深闱隐匿：</tspan>技术官僚防范人民打扰，选民沦为冷漠看客；</text>
+    <text x="10" y="113" class="body-text" fill="#7c3aed" font-weight="700">→ 结果：现代选举沦为无实质选择余地的“受众民主”</text>
+  </g>
+
+  <!-- Flow Arrows 1 -> Void -->
+  <path d="M 187,226 L 187,242" fill="none" stroke="#0284c7" stroke-width="1.8" marker-end="url(#arrow-sky)"/>
+  <path d="M 500,226 L 500,242" fill="none" stroke="#e11d48" stroke-width="1.8" marker-end="url(#arrow-rose)"/>
+  <path d="M 812,226 L 812,242" fill="none" stroke="#7c3aed" stroke-width="1.8" marker-end="url(#arrow-violet)"/>
+
+  <!-- ================= SECTION 2: THE CENTRAL FAULT LINE: THE VOID ================= -->
+  <g transform="translate(40, 244)" filter="url(#soft-shadow)">
+    <!-- Main Outer Container -->
+    <rect width="920" height="118" rx="8" fill="#fff7ed" stroke="#ea580c" stroke-width="1.6"/>
+
+    <!-- Left Subcard: Technocratic Cartel in Leviathan -->
+    <g transform="translate(10, 10)">
+      <rect width="250" height="98" rx="6" fill="#ffffff" stroke="#fed7aa" stroke-width="1.2"/>
+      <rect x="8" y="8" width="160" height="18" rx="3" fill="#ffedd5"/>
+      <text x="88" y="21" class="badge-text" fill="#c2410c">🏛️ 庙堂高位 · 技术官僚寡头</text>
+      <line x1="8" y1="31" x2="242" y2="31" stroke="#f1f5f9" stroke-width="1"/>
+      <text x="8" y="47" class="case-text">• 隐匿在国家深闱的建制精英同盟</text>
+      <text x="8" y="64" class="case-text">• 共享技术官僚辞令与宏观共识，合谋分肥</text>
+      <text x="8" y="81" class="case-text">• 极力防范大众参与打扰“专业理性治理”</text>
+    </g>
+
+    <!-- Center Rift: The Void Core -->
+    <g transform="translate(270, 8)">
+      <rect width="380" height="102" rx="6" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+      <rect x="130" y="8" width="120" height="18" rx="9" fill="#ef4444"/>
+      <text x="190" y="21" class="badge-text" fill="#ffffff">⚡ 核心病理断层 ⚡</text>
+      
+      <text x="190" y="48" class="void-title" text-anchor="middle">【统治真空】(The Void)</text>
+      <line x1="20" y1="56" x2="360" y2="56" stroke="#fca5a5" stroke-width="1.2"/>
+      
+      <text x="20" y="72" class="body-text" fill="#991b1b">• <tspan font-weight="700">传导链断裂：</tspan>政党不再代表社会，国家机器丧失民意反馈中介</text>
+      <text x="20" y="89" class="body-text" fill="#991b1b">• <tspan font-weight="700">信任库竭泽：</tspan>合法性防线悬空，建制与社会间掘出万丈深渊</text>
+    </g>
+
+    <!-- Right Subcard: Atomized Estranged Mass -->
+    <g transform="translate(660, 10)">
+      <rect width="250" height="98" rx="6" fill="#ffffff" stroke="#fed7aa" stroke-width="1.2"/>
+      <rect x="8" y="8" width="160" height="18" rx="3" fill="#ffedd5"/>
+      <text x="88" y="21" class="badge-text" fill="#c2410c">👥 江湖底层 · 原子化悬浮大众</text>
+      <line x1="8" y1="31" x2="242" y2="31" stroke="#f1f5f9" stroke-width="1"/>
+      <text x="8" y="47" class="case-text">• 阶级与社区网络解体，党员占比跌破2%</text>
+      <text x="8" y="64" class="case-text">• 面对同质官僚报表产生深刻“制度性幻灭”</text>
+      <text x="8" y="81" class="case-text">• 撤回私人领域的受损群体积累庞大怨怼</text>
+    </g>
+  </g>
+
+  <!-- Flow Arrows Void -> Section 3 -->
+  <path d="M 187,362 L 187,378" fill="none" stroke="#d97706" stroke-width="1.8" marker-end="url(#arrow-amber)"/>
+  <path d="M 500,362 L 500,378" fill="none" stroke="#ef4444" stroke-width="2" marker-end="url(#arrow-red)"/>
+  <path d="M 812,362 L 812,378" fill="none" stroke="#ef4444" stroke-width="1.8" marker-end="url(#arrow-red)"/>
+
+  <!-- ================= SECTION 3: BOTTOM POPULIST ERUPTION TIER ================= -->
+  
+  <!-- Card 4: Zero Efficacy -->
+  <g transform="translate(40, 380)" filter="url(#soft-shadow)">
+    <rect width="295" height="126" rx="8" fill="#ffffff" stroke="#d97706" stroke-width="1.6"/>
+    <rect x="10" y="10" width="128" height="20" rx="3" fill="#fef3c7"/>
+    <text x="74" y="24" class="badge-text" fill="#b45309">④ 政治效能感归零</text>
+    <text x="146" y="25" class="card-title">制度性绝望与解绑</text>
+    <line x1="10" y1="35" x2="285" y2="35" stroke="#f1f5f9" stroke-width="1.2"/>
+    <text x="10" y="52" class="body-text">• <tspan font-weight="700">被抛弃感：</tspan>选民痛感无论选谁上台，政策与自身命运毫无改变；</text>
+    <text x="10" y="70" class="body-text">• <tspan font-weight="700">常规失效：</tspan>传统代议程序沦为空头支票，常规维权通道锁死；</text>
+    <text x="10" y="88" class="body-text">• <tspan font-weight="700">应力蓄积：</tspan>去工业化与全球化受损阶层积聚深沉的破坏性怒火；</text>
+    <text x="10" y="108" class="body-text" fill="#d97706" font-weight="700">→ 心理机制：既然规则被合谋锁死，唯有诉诸掀翻赌桌</text>
+  </g>
+
+  <!-- Card 5: Populist Battering Ram -->
+  <g transform="translate(352, 380)" filter="url(#soft-shadow)">
+    <rect width="295" height="126" rx="8" fill="#ffffff" stroke="#dc2626" stroke-width="2"/>
+    <rect x="10" y="10" width="128" height="20" rx="3" fill="#fee2e2"/>
+    <text x="74" y="24" class="badge-text" fill="#dc2626">⑤ 反建制攻城槌爆发</text>
+    <text x="146" y="25" class="card-title">体制外破壁人撞击</text>
+    <line x1="10" y1="35" x2="285" y2="35" stroke="#f1f5f9" stroke-width="1.2"/>
+    <text x="10" y="52" class="body-text">• <tspan font-weight="700">寻找破壁人：</tspan>既然吊桥被拉起，大众借民粹强人猛烈撞击城堡；</text>
+    <text x="10" y="70" class="body-text">• <tspan font-weight="700">攻城槌崛起：</tspan>特朗普、脱欧派、五星运动、国民联盟席卷政坛；</text>
+    <text x="10" y="88" class="body-text">• <tspan font-weight="700">免疫排异：</tspan>民粹非偶发愚昧，而是系统阻断新陈代谢后的反噬；</text>
+    <text x="10" y="108" class="body-text" fill="#dc2626" font-weight="700">→ 行动逻辑：以粗暴言辞撕裂虚伪共识，摧毁卡特尔垄断</text>
+  </g>
+
+  <!-- Card 6: Breakwater Collapse -->
+  <g transform="translate(665, 380)" filter="url(#soft-shadow)">
+    <rect width="295" height="126" rx="8" fill="#ffffff" stroke="#64748b" stroke-width="1.6"/>
+    <rect x="10" y="10" width="128" height="20" rx="3" fill="#f1f5f9"/>
+    <text x="74" y="24" class="badge-text" fill="#475569">⑥ 防波堤体系脆断</text>
+    <text x="146" y="25" class="card-title">极端极化与地壳震荡</text>
+    <line x1="10" y1="35" x2="285" y2="35" stroke="#f1f5f9" stroke-width="1.2"/>
+    <text x="10" y="52" class="body-text">• <tspan font-weight="700">防波堤溃败：</tspan>主流中左、中右建制大党得票率遭遇断崖式滑坡；</text>
+    <text x="10" y="70" class="body-text">• <tspan font-weight="700">政治极化：</tspan>温和中间地带坍塌，极左与极右对立撕裂宪制基础；</text>
+    <text x="10" y="88" class="body-text">• <tspan font-weight="700">治理赤字：</tspan>去中介化运动缺乏专业执政能力，触发二次危机；</text>
+    <text x="10" y="108" class="body-text" fill="#475569" font-weight="700">→ 终局困境：卡特尔化最终未能保全精英，反导致系统脆断</text>
+  </g>
+
+  <!-- ================= SECTION 4: EMPIRICAL SPECIMENS (FRANCE & ITALY) ================= -->
+  
+  <!-- France Case -->
+  <g transform="translate(40, 516)" filter="url(#soft-shadow)">
+    <rect width="450" height="110" rx="8" fill="#ffffff" stroke="#0284c7" stroke-width="1.5"/>
+    <rect x="10" y="9" width="180" height="18" rx="3" fill="#e0f2fe"/>
+    <text x="100" y="22" class="case-tag" fill="#0369a1">🇫🇷 法国标本：凌空治国与中介坍塌</text>
+    <text x="198" y="23" class="case-title">【马克龙初创载体与极右勒庞崛起】</text>
+    <line x1="10" y1="32" x2="440" y2="32" stroke="#f1f5f9" stroke-width="1.2"/>
+    <text x="10" y="49" class="case-text">• <tspan font-weight="700">卡特尔溃灭：</tspan>2017年执政数十载的社会党与共和党首轮同时惨遭淘汰；</text>
+    <text x="10" y="68" class="case-text">• <tspan font-weight="700">去社会化奇迹：</tspan>马克龙以个人姓名首字母创办企业化政党，绕过中介凌空治国；</text>
+    <text x="10" y="87" class="case-text">• <tspan font-weight="700">真空反噬：</tspan>缺乏组织过滤导致“黄马甲”街头暴动，终将极右国民联盟推向权力边缘。</text>
+  </g>
+
+  <!-- Italy Case -->
+  <g transform="translate(510, 516)" filter="url(#soft-shadow)">
+    <rect width="450" height="110" rx="8" fill="#ffffff" stroke="#d97706" stroke-width="1.5"/>
+    <rect x="10" y="9" width="180" height="18" rx="3" fill="#fef3c7"/>
+    <text x="100" y="22" class="case-tag" fill="#b45309">🇮🇹 意大利标本：数字神话与建制同化</text>
+    <text x="198" y="23" class="case-title">【五星运动直接民主实验破灭与极右执政】</text>
+    <line x1="10" y1="32" x2="440" y2="32" stroke="#f1f5f9" stroke-width="1.2"/>
+    <text x="10" y="49" class="case-text">• <tspan font-weight="700">奇袭破壁：</tspan>借“去你妈的日”与卢梭网络平台，M5S以纯直接民主席卷全国第一；</text>
+    <text x="10" y="68" class="case-text">• <tspan font-weight="700">治理赤字：</tspan>缺乏理论与组织根基，在复杂财政治理中迅速失能，先后与极右、建制合谋；</text>
+    <text x="10" y="87" class="case-text">• <tspan font-weight="700">同化溃败：</tspan>激进底色消磨被卡特尔同化，选民彻底耗尽耐心，反推更坚硬极右梅洛尼掌权。</text>
+  </g>
+
+  <!-- ================= SECTION 5: CLOSED-LOOP TAKEAWAY BANNER ================= -->
+  <g transform="translate(40, 638)" filter="url(#soft-shadow)">
+    <rect width="920" height="118" rx="8" fill="#fff1f2" stroke="#f43f5e" stroke-width="1.6"/>
+    
+    <rect x="14" y="12" width="86" height="20" rx="4" fill="#e11d48"/>
+    <text x="57" y="26" class="badge-text" fill="#ffffff">核心机制闭环</text>
+    <text x="110" y="27" class="footer-title">统治真空与民粹反噬病理逻辑 (Pathology of The Void &amp; Populist Backlash)</text>
+    
+    <line x1="14" y1="38" x2="906" y2="38" stroke="#ffe4e6" stroke-width="1.2"/>
+
+    <text x="14" y="56" class="footer-text">
+      • <tspan font-weight="700">自我授爵与功能质变：</tspan>卡特尔政党通过国库财政输血与技术官僚趋同完成自我授爵，将政党职能从代表民众疾苦全面异化为单向规训社会的行政管理工具；
+    </text>
+    <text x="14" y="76" class="footer-text">
+      • <tspan font-weight="700">制造真空与切断回路：</tspan>这种去政治化操弄在国家机器与原子化大众之间撕裂出巨大的统治真空，彻底剥夺了底层受损阶层在体制内寻找代议出口的可能；
+    </text>
+    <text x="14" y="96" class="footer-text">
+      • <tspan font-weight="700">体系脆断与民粹破壁：</tspan>制度性绝望最终冲垮传统政党的防波堤，迫使被排斥的大众借由反建制的民粹攻城槌，对固步自封的卡特尔城堡发起破坏性的破壁清算。
+    </text>
+  </g>
+</svg>
